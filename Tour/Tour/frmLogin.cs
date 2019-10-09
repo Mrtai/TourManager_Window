@@ -24,7 +24,15 @@ namespace Tour
 
         private void jThinButton2_Click(object sender, EventArgs e)
         {
+            this.Close();
             Application.Exit();
+        }
+
+        private void jThinButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain main = new frmMain();
+            main.Show();
         }
     }
 }
