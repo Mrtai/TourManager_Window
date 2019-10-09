@@ -1,5 +1,0 @@
-E:\DA_WINFORM\Tour\Tour\obj\Debug\Tour.csprojAssemblyReference.cache
-E:\DA_WINFORM\Tour\Tour\obj\Debug\Tour.frmLogin.resources
-E:\DA_WINFORM\Tour\Tour\obj\Debug\Tour.Properties.Resources.resources
-E:\DA_WINFORM\Tour\Tour\obj\Debug\Tour.csproj.GenerateResource.cache
-E:\DA_WINFORM\Tour\Tour\obj\Debug\Tour.csproj.CoreCompileInputs.cache
