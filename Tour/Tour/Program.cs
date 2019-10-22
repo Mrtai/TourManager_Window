@@ -22,7 +22,7 @@ namespace Tour
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new frmLogin());
+            Application.Run(new frmMain());
         }
     }
 }

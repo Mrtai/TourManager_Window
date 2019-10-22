@@ -34,5 +34,10 @@ namespace Tour
             frmMain main = new frmMain();
             main.Show();
         }
+
+        private void login1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

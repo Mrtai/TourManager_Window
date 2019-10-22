@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.navBarGroup7 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -49,7 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup8 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup9 = new DevExpress.XtraNavBar.NavBarGroup();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -64,18 +65,9 @@
             this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelControl5
-            // 
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl5.Location = new System.Drawing.Point(2, 2);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(552, 67);
-            this.panelControl5.TabIndex = 0;
-            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.panelControl6);
-            this.panelControl3.Controls.Add(this.panelControl5);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(200, 98);
             this.panelControl3.Name = "panelControl3";
@@ -85,9 +77,9 @@
             // panelControl6
             // 
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl6.Location = new System.Drawing.Point(2, 69);
+            this.panelControl6.Location = new System.Drawing.Point(2, 2);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(552, 227);
+            this.panelControl6.Size = new System.Drawing.Size(552, 294);
             this.panelControl6.TabIndex = 1;
             // 
             // navBarGroup7
@@ -108,12 +100,6 @@
             this.navBarGroup4.Name = "navBarGroup4";
             this.navBarGroup4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.SmallImage")));
             // 
-            // navBarGroup3
-            // 
-            this.navBarGroup3.Caption = "Đối tác";
-            this.navBarGroup3.Name = "navBarGroup3";
-            this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
-            // 
             // navBarItem2
             // 
             this.navBarItem2.Caption = "Lịch trình";
@@ -129,14 +115,14 @@
             this.navBarGroup2.Caption = "Tour";
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroup2.Name = "navBarGroup2";
             this.navBarGroup2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.SmallImage")));
             // 
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Khách hàng";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.Name = "navBarGroup1";
             this.navBarGroup1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.SmallImage")));
             // 
@@ -147,14 +133,17 @@
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup2,
-            this.navBarGroup3,
             this.navBarGroup4,
             this.navBarGroup5,
             this.navBarGroup6,
-            this.navBarGroup7});
+            this.navBarGroup7,
+            this.navBarGroup3,
+            this.navBarGroup8,
+            this.navBarGroup9});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1,
-            this.navBarItem2});
+            this.navBarItem2,
+            this.navBarItem3});
             this.navBarControl1.Location = new System.Drawing.Point(2, 2);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 196;
@@ -239,6 +228,29 @@
             this.panelControl1.Size = new System.Drawing.Size(756, 98);
             this.panelControl1.TabIndex = 6;
             // 
+            // navBarGroup3
+            // 
+            this.navBarGroup3.Caption = "Nhân viên";
+            this.navBarGroup3.Name = "navBarGroup3";
+            this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Tour đặt";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
+            // navBarGroup8
+            // 
+            this.navBarGroup8.Caption = "Đặt tour";
+            this.navBarGroup8.Name = "navBarGroup8";
+            this.navBarGroup8.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup8.SmallImage")));
+            // 
+            // navBarGroup9
+            // 
+            this.navBarGroup9.Caption = "Thống kê";
+            this.navBarGroup9.Name = "navBarGroup9";
+            this.navBarGroup9.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup9.SmallImage")));
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,7 +261,6 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "frmMain";
             this.Text = "frmMain";
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
@@ -268,14 +279,11 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup7;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
-        private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
@@ -289,5 +297,9 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup8;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup9;
     }
 }

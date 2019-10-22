@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraEditors.v17.1" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JDragControl">
+      <HintPath>..\..\..\DA_TOUR\JControl\JDragControl.dll</HintPath>
+    </Reference>
     <Reference Include="JMaterialTextbox">
       <HintPath>..\..\..\DA_TOUR\JControl\JMaterialTextbox.dll</HintPath>
     </Reference>
@@ -98,6 +101,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Login\Login.csproj">
+      <Project>{F31A3A13-AD4D-4D86-952E-5AD3D0D97600}</Project>
+      <Name>Login</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
