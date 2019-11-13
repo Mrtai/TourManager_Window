@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d1f681382e0d4060a3a656cbe542477b" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_TOURModel.CHI_TIET_THAM_QUAN" Width="1.5" PointX="6.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.CHUONG_TRINH_TOUR" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.DANH_SACH_DICH_VU" Width="1.5" PointX="6.375" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.DIA_DIEM_DU_LICH" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.DICH_VU" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.HOA_DON" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.KHACH_HANG" Width="1.5" PointX="6.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.KHACH_SAN" Width="1.5" PointX="3.375" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.LICH_KHOI_HANH" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.LOAI_THANH_TOAN" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.LOAI_TOUR" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.TINH" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.TOUR" Width="1.5" PointX="3.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.TOUR_DAT" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
+        <AssociationConnector Association="DB_TOURModel.FK_CHI_TIET_CHI_TIET__DIA_DIEM" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_CHI_TIET_CHI_TIET__TOUR" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_CHUONG_T_DIEN_RA_TOUR" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_CHUONG_T_O1_KHACH_SA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_DANH_SAC_DANH_SACH_DICH_VU" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_DANH_SAC_DANH_SACH_TOUR" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_DIA_DIEM_THUOC_TINH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_HOA__ON_THANH_TOA_LOAI_THA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_HOA__ON_THANH_TOA_TOUR_DAT" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_TOUR_DAT_KHACH__AT_KHACH_HA" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_KHACH_SA_O_TINH" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_LICH_KHO_THUOC1_TOUR" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_TOUR_DAT__AT_LICH_KHO" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_TOURModel.FK_TOUR_THUOC_LOA_LOAI_TOU" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
