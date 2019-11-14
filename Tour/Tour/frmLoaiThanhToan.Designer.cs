@@ -1,6 +1,6 @@
 ﻿namespace Tour
 {
-    partial class frmKhachSan
+    partial class frmLoaiThanhToan
     {
         /// <summary>
         /// Required designer variable.
@@ -63,12 +63,12 @@
             this.jThinButton7.HoverBorder = System.Drawing.Color.Empty;
             this.jThinButton7.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.jThinButton7.LineThickness = 2;
-            this.jThinButton7.Location = new System.Drawing.Point(259, 212);
+            this.jThinButton7.Location = new System.Drawing.Point(241, 223);
             this.jThinButton7.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.jThinButton7.Name = "jThinButton7";
             this.jThinButton7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.jThinButton7.Size = new System.Drawing.Size(80, 35);
-            this.jThinButton7.TabIndex = 63;
+            this.jThinButton7.TabIndex = 73;
             // 
             // jThinButton8
             // 
@@ -84,11 +84,11 @@
             this.jThinButton8.HoverBorder = System.Drawing.Color.Empty;
             this.jThinButton8.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.jThinButton8.LineThickness = 2;
-            this.jThinButton8.Location = new System.Drawing.Point(35, 212);
+            this.jThinButton8.Location = new System.Drawing.Point(17, 223);
             this.jThinButton8.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.jThinButton8.Name = "jThinButton8";
             this.jThinButton8.Size = new System.Drawing.Size(80, 35);
-            this.jThinButton8.TabIndex = 61;
+            this.jThinButton8.TabIndex = 71;
             // 
             // jThinButton9
             // 
@@ -104,12 +104,12 @@
             this.jThinButton9.HoverBorder = System.Drawing.Color.Empty;
             this.jThinButton9.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.jThinButton9.LineThickness = 2;
-            this.jThinButton9.Location = new System.Drawing.Point(144, 212);
+            this.jThinButton9.Location = new System.Drawing.Point(126, 223);
             this.jThinButton9.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.jThinButton9.Name = "jThinButton9";
             this.jThinButton9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.jThinButton9.Size = new System.Drawing.Size(80, 35);
-            this.jThinButton9.TabIndex = 62;
+            this.jThinButton9.TabIndex = 72;
             // 
             // panel5
             // 
@@ -122,10 +122,10 @@
             this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(35, 21);
+            this.panel5.Location = new System.Drawing.Point(17, 32);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(298, 168);
-            this.panel5.TabIndex = 60;
+            this.panel5.TabIndex = 70;
             // 
             // jTextBox3
             // 
@@ -186,9 +186,9 @@
             this.label18.ForeColor = System.Drawing.Color.Black;
             this.label18.Location = new System.Drawing.Point(20, 126);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(83, 19);
+            this.label18.Size = new System.Drawing.Size(63, 19);
             this.label18.TabIndex = 81;
-            this.label18.Text = "Điện Thoại";
+            this.label18.Text = "Chi Tiết";
             // 
             // label20
             // 
@@ -208,9 +208,9 @@
             this.label22.ForeColor = System.Drawing.Color.Black;
             this.label22.Location = new System.Drawing.Point(22, 81);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 19);
+            this.label22.Size = new System.Drawing.Size(63, 19);
             this.label22.TabIndex = 79;
-            this.label22.Text = "Khách Sạn";
+            this.label22.Text = "Loại TT";
             // 
             // label23
             // 
@@ -218,11 +218,11 @@
             this.label23.BackColor = System.Drawing.Color.LightGray;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(45, 35);
+            this.label23.Location = new System.Drawing.Point(12, 35);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(58, 19);
+            this.label23.Size = new System.Drawing.Size(91, 19);
             this.label23.TabIndex = 78;
-            this.label23.Text = "Mã KS";
+            this.label23.Text = "Mã Loại TT";
             // 
             // panel6
             // 
@@ -231,10 +231,10 @@
             this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.button32);
             this.panel6.Controls.Add(this.dataGridView2);
-            this.panel6.Location = new System.Drawing.Point(376, 21);
+            this.panel6.Location = new System.Drawing.Point(358, 32);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(307, 226);
-            this.panel6.TabIndex = 59;
+            this.panel6.Size = new System.Drawing.Size(377, 226);
+            this.panel6.TabIndex = 69;
             // 
             // button2
             // 
@@ -244,9 +244,9 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(202, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 30);
+            this.button2.Size = new System.Drawing.Size(172, 30);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Điện Thoại";
+            this.button2.Text = "Chi Tiết";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -259,7 +259,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 30);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Khách Sạn";
+            this.button1.Text = "Loại TT";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button32
@@ -272,7 +272,7 @@
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(105, 30);
             this.button32.TabIndex = 4;
-            this.button32.Text = "Mã Tour";
+            this.button32.Text = "Mã Loại TT";
             this.button32.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
@@ -292,23 +292,21 @@
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(307, 197);
+            this.dataGridView2.Size = new System.Drawing.Size(377, 197);
             this.dataGridView2.TabIndex = 3;
             // 
-            // frmKhachSan
+            // frmLoaiThanhToan
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 274);
+            this.ClientSize = new System.Drawing.Size(752, 290);
             this.Controls.Add(this.jThinButton7);
             this.Controls.Add(this.jThinButton8);
             this.Controls.Add(this.jThinButton9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel6);
-            this.Name = "frmKhachSan";
-            this.Text = "frmKhachSan";
+            this.Name = "frmLoaiThanhToan";
+            this.Text = "frmLoaiThanhToan";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -335,8 +333,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.DataGridView dataGridView2;
-
-
 
     }
 }

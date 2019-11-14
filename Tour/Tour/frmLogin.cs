@@ -17,10 +17,6 @@ namespace Tour
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void jThinButton2_Click(object sender, EventArgs e)
         {

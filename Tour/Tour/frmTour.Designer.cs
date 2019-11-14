@@ -28,441 +28,511 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bttang = new System.Windows.Forms.Button();
-            this.txtma = new System.Windows.Forms.TextBox();
+            this.jThinButton3 = new JThinButton.JThinButton();
+            this.jThinButton2 = new JThinButton.JThinButton();
+            this.jThinButton1 = new JThinButton.JThinButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.jThinButton4 = new JThinButton.JThinButton();
+            this.jThinButton5 = new JThinButton.JThinButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.jTextBox6 = new JTextBox.JTextBox();
+            this.jTextBox5 = new JTextBox.JTextBox();
+            this.jTextBox4 = new JTextBox.JTextBox();
+            this.jTextBox3 = new JTextBox.JTextBox();
+            this.jTextBox2 = new JTextBox.JTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.jTextBox1 = new JTextBox.JTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblma = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbMien = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.datengayve = new System.Windows.Forms.DateTimePicker();
-            this.datengaydi = new System.Windows.Forms.DateTimePicker();
-            this.cbcve = new System.Windows.Forms.ComboBox();
-            this.cbcdi = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btmoi = new System.Windows.Forms.Button();
-            this.btxoa = new System.Windows.Forms.Button();
-            this.btsua = new System.Windows.Forms.Button();
-            this.btthem = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.MaKH = new System.Windows.Forms.Button();
-            this.gvds = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gvds)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // jThinButton3
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 73);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 32);
-            this.comboBox1.TabIndex = 51;
+            this.jThinButton3.BackColor = System.Drawing.Color.Transparent;
+            this.jThinButton3.BackgroundColor = System.Drawing.Color.Aqua;
+            this.jThinButton3.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.jThinButton3.BorderRadius = 5;
+            this.jThinButton3.ButtonText = "Sửa";
+            this.jThinButton3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton3.Font_Size = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton3.ForeColors = System.Drawing.Color.Red;
+            this.jThinButton3.HoverBackground = System.Drawing.Color.White;
+            this.jThinButton3.HoverBorder = System.Drawing.Color.Empty;
+            this.jThinButton3.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.jThinButton3.LineThickness = 2;
+            this.jThinButton3.Location = new System.Drawing.Point(467, 206);
+            this.jThinButton3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.jThinButton3.Name = "jThinButton3";
+            this.jThinButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.jThinButton3.Size = new System.Drawing.Size(80, 35);
+            this.jThinButton3.TabIndex = 64;
             // 
-            // bttang
+            // jThinButton2
             // 
-            this.bttang.ForeColor = System.Drawing.Color.Black;
-            this.bttang.Location = new System.Drawing.Point(327, 24);
-            this.bttang.Name = "bttang";
-            this.bttang.Size = new System.Drawing.Size(59, 26);
-            this.bttang.TabIndex = 50;
-            this.bttang.Text = "+";
-            this.bttang.UseVisualStyleBackColor = true;
+            this.jThinButton2.BackColor = System.Drawing.Color.Transparent;
+            this.jThinButton2.BackgroundColor = System.Drawing.Color.Aqua;
+            this.jThinButton2.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.jThinButton2.BorderRadius = 5;
+            this.jThinButton2.ButtonText = "Xóa";
+            this.jThinButton2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton2.Font_Size = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton2.ForeColors = System.Drawing.Color.Red;
+            this.jThinButton2.HoverBackground = System.Drawing.Color.White;
+            this.jThinButton2.HoverBorder = System.Drawing.Color.Empty;
+            this.jThinButton2.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.jThinButton2.LineThickness = 2;
+            this.jThinButton2.Location = new System.Drawing.Point(346, 206);
+            this.jThinButton2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.jThinButton2.Name = "jThinButton2";
+            this.jThinButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.jThinButton2.Size = new System.Drawing.Size(80, 35);
+            this.jThinButton2.TabIndex = 63;
             // 
-            // txtma
+            // jThinButton1
             // 
-            this.txtma.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtma.Location = new System.Drawing.Point(133, 24);
-            this.txtma.Name = "txtma";
-            this.txtma.Size = new System.Drawing.Size(188, 26);
-            this.txtma.TabIndex = 49;
+            this.jThinButton1.BackColor = System.Drawing.Color.Transparent;
+            this.jThinButton1.BackgroundColor = System.Drawing.Color.Aqua;
+            this.jThinButton1.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.jThinButton1.BorderRadius = 5;
+            this.jThinButton1.ButtonText = "Thêm";
+            this.jThinButton1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton1.Font_Size = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton1.ForeColors = System.Drawing.Color.Red;
+            this.jThinButton1.HoverBackground = System.Drawing.Color.White;
+            this.jThinButton1.HoverBorder = System.Drawing.Color.Empty;
+            this.jThinButton1.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.jThinButton1.LineThickness = 2;
+            this.jThinButton1.Location = new System.Drawing.Point(224, 206);
+            this.jThinButton1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.jThinButton1.Name = "jThinButton1";
+            this.jThinButton1.Size = new System.Drawing.Size(80, 35);
+            this.jThinButton1.TabIndex = 62;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(571, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 174);
+            this.panel2.TabIndex = 65;
+            // 
+            // jThinButton4
+            // 
+            this.jThinButton4.BackColor = System.Drawing.Color.Transparent;
+            this.jThinButton4.BackgroundColor = System.Drawing.Color.Aqua;
+            this.jThinButton4.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.jThinButton4.BorderRadius = 5;
+            this.jThinButton4.ButtonText = "Thêm DV";
+            this.jThinButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton4.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton4.ForeColors = System.Drawing.Color.Red;
+            this.jThinButton4.HoverBackground = System.Drawing.Color.White;
+            this.jThinButton4.HoverBorder = System.Drawing.Color.Empty;
+            this.jThinButton4.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.jThinButton4.LineThickness = 2;
+            this.jThinButton4.Location = new System.Drawing.Point(86, 206);
+            this.jThinButton4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.jThinButton4.Name = "jThinButton4";
+            this.jThinButton4.Size = new System.Drawing.Size(95, 35);
+            this.jThinButton4.TabIndex = 66;
+            // 
+            // jThinButton5
+            // 
+            this.jThinButton5.BackColor = System.Drawing.Color.Transparent;
+            this.jThinButton5.BackgroundColor = System.Drawing.Color.Aqua;
+            this.jThinButton5.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.jThinButton5.BorderRadius = 5;
+            this.jThinButton5.ButtonText = "Chương Trình";
+            this.jThinButton5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton5.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jThinButton5.ForeColors = System.Drawing.Color.Red;
+            this.jThinButton5.HoverBackground = System.Drawing.Color.White;
+            this.jThinButton5.HoverBorder = System.Drawing.Color.Empty;
+            this.jThinButton5.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.jThinButton5.LineThickness = 2;
+            this.jThinButton5.Location = new System.Drawing.Point(583, 206);
+            this.jThinButton5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.jThinButton5.Name = "jThinButton5";
+            this.jThinButton5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.jThinButton5.Size = new System.Drawing.Size(108, 35);
+            this.jThinButton5.TabIndex = 67;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.jTextBox6);
+            this.panel1.Controls.Add(this.jTextBox5);
+            this.panel1.Controls.Add(this.jTextBox4);
+            this.panel1.Controls.Add(this.jTextBox3);
+            this.panel1.Controls.Add(this.jTextBox2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.jTextBox1);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblma);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(26, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(507, 162);
+            this.panel1.TabIndex = 68;
+            // 
+            // jTextBox6
+            // 
+            this.jTextBox6.AutoSize = true;
+            this.jTextBox6.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox6.Hint = "";
+            this.jTextBox6.IsPassword = false;
+            this.jTextBox6.Length = 0;
+            this.jTextBox6.Location = new System.Drawing.Point(355, 48);
+            this.jTextBox6.Name = "jTextBox6";
+            this.jTextBox6.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox6.OnlyChar = false;
+            this.jTextBox6.OnlyNumber = false;
+            this.jTextBox6.Size = new System.Drawing.Size(142, 31);
+            this.jTextBox6.TabIndex = 82;
+            this.jTextBox6.TextValue = "";
+            // 
+            // jTextBox5
+            // 
+            this.jTextBox5.AutoSize = true;
+            this.jTextBox5.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox5.Hint = "";
+            this.jTextBox5.IsPassword = false;
+            this.jTextBox5.Length = 0;
+            this.jTextBox5.Location = new System.Drawing.Point(355, 6);
+            this.jTextBox5.Name = "jTextBox5";
+            this.jTextBox5.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox5.OnlyChar = false;
+            this.jTextBox5.OnlyNumber = false;
+            this.jTextBox5.Size = new System.Drawing.Size(142, 31);
+            this.jTextBox5.TabIndex = 81;
+            this.jTextBox5.TextValue = "";
+            // 
+            // jTextBox4
+            // 
+            this.jTextBox4.AutoSize = true;
+            this.jTextBox4.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox4.Hint = "";
+            this.jTextBox4.IsPassword = false;
+            this.jTextBox4.Length = 0;
+            this.jTextBox4.Location = new System.Drawing.Point(86, 125);
+            this.jTextBox4.Name = "jTextBox4";
+            this.jTextBox4.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox4.OnlyChar = false;
+            this.jTextBox4.OnlyNumber = false;
+            this.jTextBox4.Size = new System.Drawing.Size(170, 31);
+            this.jTextBox4.TabIndex = 80;
+            this.jTextBox4.TextValue = "";
+            // 
+            // jTextBox3
+            // 
+            this.jTextBox3.AutoSize = true;
+            this.jTextBox3.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox3.Hint = "";
+            this.jTextBox3.IsPassword = false;
+            this.jTextBox3.Length = 0;
+            this.jTextBox3.Location = new System.Drawing.Point(86, 85);
+            this.jTextBox3.Name = "jTextBox3";
+            this.jTextBox3.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox3.OnlyChar = false;
+            this.jTextBox3.OnlyNumber = false;
+            this.jTextBox3.Size = new System.Drawing.Size(170, 31);
+            this.jTextBox3.TabIndex = 79;
+            this.jTextBox3.TextValue = "";
+            // 
+            // jTextBox2
+            // 
+            this.jTextBox2.AutoSize = true;
+            this.jTextBox2.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox2.Hint = "";
+            this.jTextBox2.IsPassword = false;
+            this.jTextBox2.Length = 0;
+            this.jTextBox2.Location = new System.Drawing.Point(86, 48);
+            this.jTextBox2.Name = "jTextBox2";
+            this.jTextBox2.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox2.OnlyChar = false;
+            this.jTextBox2.OnlyNumber = false;
+            this.jTextBox2.Size = new System.Drawing.Size(170, 31);
+            this.jTextBox2.TabIndex = 78;
+            this.jTextBox2.TextValue = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(11, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 19);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Số Ngày";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(18, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 19);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Số Chỗ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(10, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 19);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Tên Tour";
+            // 
+            // jTextBox1
+            // 
+            this.jTextBox1.AutoSize = true;
+            this.jTextBox1.BorderColor = System.Drawing.Color.Black;
+            this.jTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.jTextBox1.Hint = "";
+            this.jTextBox1.IsPassword = false;
+            this.jTextBox1.Length = 0;
+            this.jTextBox1.Location = new System.Drawing.Point(86, 6);
+            this.jTextBox1.Name = "jTextBox1";
+            this.jTextBox1.OnFocus = System.Drawing.Color.DarkGray;
+            this.jTextBox1.OnlyChar = false;
+            this.jTextBox1.OnlyNumber = false;
+            this.jTextBox1.Size = new System.Drawing.Size(170, 31);
+            this.jTextBox1.TabIndex = 74;
+            this.jTextBox1.TextValue = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(316, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 19);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "Giá";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(276, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 19);
+            this.label1.TabIndex = 72;
+            this.label1.Text = "Giảm Giá";
             // 
             // lblma
             // 
             this.lblma.AutoSize = true;
             this.lblma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblma.ForeColor = System.Drawing.Color.Red;
-            this.lblma.Location = new System.Drawing.Point(112, 29);
+            this.lblma.Location = new System.Drawing.Point(106, 18);
             this.lblma.Name = "lblma";
             this.lblma.Size = new System.Drawing.Size(0, 24);
-            this.lblma.TabIndex = 48;
+            this.lblma.TabIndex = 71;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(29, 29);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 22);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "MaDC";
-            // 
-            // cbMien
-            // 
-            this.cbMien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMien.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMien.FormattingEnabled = true;
-            this.cbMien.Location = new System.Drawing.Point(557, 23);
-            this.cbMien.Name = "cbMien";
-            this.cbMien.Size = new System.Drawing.Size(248, 30);
-            this.cbMien.TabIndex = 46;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(449, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 22);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Khu Vực";
-            // 
-            // datengayve
-            // 
-            this.datengayve.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datengayve.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datengayve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengayve.Location = new System.Drawing.Point(557, 175);
-            this.datengayve.Name = "datengayve";
-            this.datengayve.Size = new System.Drawing.Size(248, 26);
-            this.datengayve.TabIndex = 44;
-            // 
-            // datengaydi
-            // 
-            this.datengaydi.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datengaydi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datengaydi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datengaydi.Location = new System.Drawing.Point(130, 182);
-            this.datengaydi.Name = "datengaydi";
-            this.datengaydi.Size = new System.Drawing.Size(256, 26);
-            this.datengaydi.TabIndex = 43;
-            // 
-            // cbcve
-            // 
-            this.cbcve.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcve.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcve.FormattingEnabled = true;
-            this.cbcve.Location = new System.Drawing.Point(557, 96);
-            this.cbcve.Name = "cbcve";
-            this.cbcve.Size = new System.Drawing.Size(248, 30);
-            this.cbcve.TabIndex = 42;
-            // 
-            // cbcdi
-            // 
-            this.cbcdi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbcdi.FormattingEnabled = true;
-            this.cbcdi.Location = new System.Drawing.Point(130, 126);
-            this.cbcdi.Name = "cbcdi";
-            this.cbcdi.Size = new System.Drawing.Size(256, 32);
-            this.cbcdi.TabIndex = 41;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(449, 178);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 22);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Ngày Về";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(456, 106);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 22);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Đến";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(35, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 22);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Ngày Đi";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(37, 136);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 22);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Đi";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(25, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 22);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "MaKH";
-            // 
-            // btmoi
-            // 
-            this.btmoi.BackColor = System.Drawing.Color.Yellow;
-            this.btmoi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmoi.ForeColor = System.Drawing.Color.Red;
-            this.btmoi.Location = new System.Drawing.Point(683, 269);
-            this.btmoi.Name = "btmoi";
-            this.btmoi.Size = new System.Drawing.Size(97, 37);
-            this.btmoi.TabIndex = 17;
-            this.btmoi.Text = "Mới";
-            this.btmoi.UseVisualStyleBackColor = false;
-            // 
-            // btxoa
-            // 
-            this.btxoa.BackColor = System.Drawing.Color.Yellow;
-            this.btxoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btxoa.ForeColor = System.Drawing.Color.Red;
-            this.btxoa.Location = new System.Drawing.Point(544, 269);
-            this.btxoa.Name = "btxoa";
-            this.btxoa.Size = new System.Drawing.Size(97, 37);
-            this.btxoa.TabIndex = 16;
-            this.btxoa.Text = "Xóa";
-            this.btxoa.UseVisualStyleBackColor = false;
-            // 
-            // btsua
-            // 
-            this.btsua.BackColor = System.Drawing.Color.Yellow;
-            this.btsua.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btsua.ForeColor = System.Drawing.Color.Red;
-            this.btsua.Location = new System.Drawing.Point(386, 269);
-            this.btsua.Name = "btsua";
-            this.btsua.Size = new System.Drawing.Size(112, 37);
-            this.btsua.TabIndex = 15;
-            this.btsua.Text = "Cập Nhật";
-            this.btsua.UseVisualStyleBackColor = false;
-            // 
-            // btthem
-            // 
-            this.btthem.BackColor = System.Drawing.Color.Yellow;
-            this.btthem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthem.ForeColor = System.Drawing.Color.Red;
-            this.btthem.Location = new System.Drawing.Point(237, 269);
-            this.btthem.Name = "btthem";
-            this.btthem.Size = new System.Drawing.Size(127, 37);
-            this.btthem.TabIndex = 14;
-            this.btthem.Text = "Đặt Tour";
-            this.btthem.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "MaDC";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(824, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(152, 29);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Ngày Về";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(690, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 29);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Ngày Đi";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(554, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(142, 29);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Chuyến Về";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(410, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 29);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Chuyến Đi";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(274, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Miền";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // MaKH
-            // 
-            this.MaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.MaKH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaKH.Location = new System.Drawing.Point(143, 0);
-            this.MaKH.Name = "MaKH";
-            this.MaKH.Size = new System.Drawing.Size(137, 29);
-            this.MaKH.TabIndex = 1;
-            this.MaKH.Text = "MaKH";
-            this.MaKH.UseVisualStyleBackColor = false;
-            // 
-            // gvds
-            // 
-            this.gvds.AllowUserToAddRows = false;
-            this.gvds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvds.BackgroundColor = System.Drawing.Color.White;
-            this.gvds.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gvds.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.gvds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvds.ColumnHeadersVisible = false;
-            this.gvds.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.gvds.Location = new System.Drawing.Point(3, 29);
-            this.gvds.Name = "gvds";
-            this.gvds.RowHeadersVisible = false;
-            this.gvds.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvds.Size = new System.Drawing.Size(973, 150);
-            this.gvds.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.bttang);
-            this.panel1.Controls.Add(this.txtma);
-            this.panel1.Controls.Add(this.lblma);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cbMien);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.datengayve);
-            this.panel1.Controls.Add(this.datengaydi);
-            this.panel1.Controls.Add(this.cbcve);
-            this.panel1.Controls.Add(this.cbcdi);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(97, 18);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(831, 231);
-            this.panel1.TabIndex = 18;
+            this.label3.Size = new System.Drawing.Size(62, 19);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Mã Tour";
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.button6);
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.MaKH);
-            this.panel3.Controls.Add(this.gvds);
-            this.panel3.Location = new System.Drawing.Point(21, 324);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button32);
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Location = new System.Drawing.Point(76, 257);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(979, 182);
-            this.panel3.TabIndex = 13;
+            this.panel3.Size = new System.Drawing.Size(614, 182);
+            this.panel3.TabIndex = 83;
+            // 
+            // button5
+            // 
+            this.button5.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(507, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 30);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Giảm Giá";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(405, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 30);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Giá";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button3.BackColor = System.Drawing.Color.Gainsboro;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(303, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 30);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Số Chổ";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(203, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Số Ngày";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(102, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Tên Tour";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button32
+            // 
+            this.button32.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button32.BackColor = System.Drawing.Color.Gainsboro;
+            this.button32.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button32.ForeColor = System.Drawing.Color.Black;
+            this.button32.Location = new System.Drawing.Point(0, 0);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(105, 30);
+            this.button32.TabIndex = 2;
+            this.button32.Text = "Mã Tour";
+            this.button32.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dataGridView1.Location = new System.Drawing.Point(0, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(689, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // frmTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 524);
-            this.Controls.Add(this.btmoi);
-            this.Controls.Add(this.btxoa);
-            this.Controls.Add(this.btsua);
-            this.Controls.Add(this.btthem);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(784, 451);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.jThinButton5);
+            this.Controls.Add(this.jThinButton4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.jThinButton3);
+            this.Controls.Add(this.jThinButton2);
+            this.Controls.Add(this.jThinButton1);
             this.Name = "frmTour";
             this.Text = "frmTour";
-            ((System.ComponentModel.ISupportInitialize)(this.gvds)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button bttang;
-        private System.Windows.Forms.TextBox txtma;
+        private JThinButton.JThinButton jThinButton3;
+        private JThinButton.JThinButton jThinButton2;
+        private JThinButton.JThinButton jThinButton1;
+        private System.Windows.Forms.Panel panel2;
+        private JThinButton.JThinButton jThinButton4;
+        private JThinButton.JThinButton jThinButton5;
+        private System.Windows.Forms.Panel panel1;
+        private JTextBox.JTextBox jTextBox6;
+        private JTextBox.JTextBox jTextBox5;
+        private JTextBox.JTextBox jTextBox4;
+        private JTextBox.JTextBox jTextBox3;
+        private JTextBox.JTextBox jTextBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private JTextBox.JTextBox jTextBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblma;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbMien;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker datengayve;
-        private System.Windows.Forms.DateTimePicker datengaydi;
-        private System.Windows.Forms.ComboBox cbcve;
-        private System.Windows.Forms.ComboBox cbcdi;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btmoi;
-        private System.Windows.Forms.Button btxoa;
-        private System.Windows.Forms.Button btsua;
-        private System.Windows.Forms.Button btthem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button MaKH;
-        private System.Windows.Forms.DataGridView gvds;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

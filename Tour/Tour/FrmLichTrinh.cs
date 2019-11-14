@@ -11,14 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace Tour
 {
-    public partial class frmMain : DevExpress.XtraEditors.XtraForm
+    public partial class FrmLichTrinh : DevExpress.XtraEditors.XtraForm
     {
-        public frmMain()
+        public FrmLichTrinh()
         {
             InitializeComponent();
         }
-
-    
-
     }
 }

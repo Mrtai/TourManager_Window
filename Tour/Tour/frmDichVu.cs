@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace Tour
 {
-    public partial class frmDichVu : DevExpress.XtraEditors.XtraForm
+    public partial class frmDichvu : DevExpress.XtraEditors.XtraForm
     {
-        public frmDichVu()
+        public frmDichvu()
         {
             InitializeComponent();
         }

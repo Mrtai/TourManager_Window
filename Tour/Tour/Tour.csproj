@@ -40,8 +40,14 @@
     <Reference Include="DevExpress.XtraEditors.v17.1" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FlatButton">
+      <HintPath>..\..\..\JControls\FlatButton.dll</HintPath>
+    </Reference>
     <Reference Include="JMaterialTextbox">
       <HintPath>..\..\..\DA_TOUR\JControl\JMaterialTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>..\..\..\JControls\JTextBox.dll</HintPath>
     </Reference>
     <Reference Include="JThinButton">
       <HintPath>..\..\..\DA_TOUR\JControl\JThinButton.dll</HintPath>
@@ -59,11 +65,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCCT.Designer.cs">
+      <DependentUpon>frmCCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiaDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiaDiem.Designer.cs">
+      <DependentUpon>frmDiaDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDichvu.Designer.cs">
+      <DependentUpon>frmDichvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhachSan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmKhachSan.Designer.cs">
       <DependentUpon>frmKhachSan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLichTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichTrinh.Designer.cs">
+      <DependentUpon>FrmLichTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiThanhToan.Designer.cs">
+      <DependentUpon>frmLoaiThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiTour.Designer.cs">
+      <DependentUpon>frmLoaiTour.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -83,10 +125,40 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTour.Designer.cs">
+      <DependentUpon>frmTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVe.Designer.cs">
+      <DependentUpon>frmVe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCCT.resx">
+      <DependentUpon>frmCCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiaDiem.resx">
+      <DependentUpon>frmDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDichvu.resx">
+      <DependentUpon>frmDichvu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhachSan.resx">
       <DependentUpon>frmKhachSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLichTrinh.resx">
+      <DependentUpon>FrmLichTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiThanhToan.resx">
+      <DependentUpon>frmLoaiThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiTour.resx">
+      <DependentUpon>frmLoaiTour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -96,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTour.resx">
+      <DependentUpon>frmTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVe.resx">
+      <DependentUpon>frmVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
