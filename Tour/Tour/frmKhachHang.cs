@@ -9,15 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace GUI
+namespace Tour
 {
-    public partial class frmMain : DevExpress.XtraEditors.XtraForm
+    public partial class frmKhachHang : DevExpress.XtraEditors.XtraForm
     {
-        public frmMain()
+        public frmKhachHang()
         {
             InitializeComponent();
         }
-
-
     }
 }
