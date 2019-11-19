@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class hoaDonDAL
+    public class hoaDonDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(HOA_DON pHD)

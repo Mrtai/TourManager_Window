@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class loaiThanhToanDAL
+    public class loaiThanhToanDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(LOAI_THANH_TOAN pTT)

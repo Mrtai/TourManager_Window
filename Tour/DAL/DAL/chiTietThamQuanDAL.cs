@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class chiTietThamQuanDAL
+    public class chiTietThamQuanDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(CHI_TIET_THAM_QUAN pCT)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class tourDatDAL
+    public class tourDatDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(TOUR_DAT pTD)
@@ -27,7 +27,6 @@ namespace DAL.DAL
                 k.MA_LICH = pTD.MA_LICH;
                 k.NGAY_DAT = pTD.NGAY_DAT;
                 k.TRANG_THAI = pTD.TRANG_THAI;
-                
             }
             result = context.SaveChanges();
             return result;

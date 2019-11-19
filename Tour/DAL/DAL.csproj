@@ -63,9 +63,14 @@
     <Compile Include="DAL\hoaDonDAL.cs" />
     <Compile Include="DAL\khachHangDAL.cs" />
     <Compile Include="DAL\khachSanDAL.cs" />
-    <Compile Include="DAL\lichKhoiHangDAL.cs" />
+    <Compile Include="DAL\lichKhoiHanhDAL.cs" />
     <Compile Include="DAL\loaiThanhToanDAL.cs" />
     <Compile Include="DAL\loaiTourDAL.cs" />
+    <Compile Include="DAL\manHinhDAL.cs" />
+    <Compile Include="DAL\nhanVienDAL.cs" />
+    <Compile Include="DAL\nhanVienNhomDAL.cs" />
+    <Compile Include="DAL\nhomDAL.cs" />
+    <Compile Include="DAL\phanQuyenDAL.cs" />
     <Compile Include="DAL\tinhDAL.cs" />
     <Compile Include="DAL\tourDAL.cs" />
     <Compile Include="DAL\tourDatDAL.cs" />
@@ -94,6 +99,21 @@
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LOAI_TOUR.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAN_HINH.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAN_VIEN.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAN_VIEN_NHOM.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHOM.cs">
+      <DependentUpon>TourModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHAN_QUYEN.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,7 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="TourModel.edmx.diagram">
       <DependentUpon>TourModel.edmx</DependentUpon>
     </None>

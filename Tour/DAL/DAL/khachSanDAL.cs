@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class khachSanDAL
+    public class khachSanDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int AddNewKhachSan(KHACH_SAN pKS)

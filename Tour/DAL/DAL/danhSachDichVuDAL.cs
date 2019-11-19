@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class danhSachDichVuDAL
+    public class danhSachDichVuDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(DANH_SACH_DICH_VU pDS)

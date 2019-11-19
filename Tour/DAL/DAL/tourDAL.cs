@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class tourDAL
+    public class tourDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(TOUR pT)

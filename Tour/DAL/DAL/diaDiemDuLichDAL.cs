@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class diaDiemDuLichDAL
+    public class diaDiemDuLichDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int Add(DIA_DIEM_DU_LICH pDD)

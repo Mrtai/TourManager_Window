@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class tinhDAL
+    public class tinhDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public List<TINH> GetListTinh()

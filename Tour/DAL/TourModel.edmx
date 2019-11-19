@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_TOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_TOURModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CHI_TIET_THAM_QUAN">
           <Key>
             <PropertyRef Name="MA_DIA_DIEM" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="MA_CHUONG_TRINH" />
           </Key>
-          <Property Name="MA_CHUONG_TRINH" Type="int" Nullable="false" />
+          <Property Name="MA_CHUONG_TRINH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MA_KHACH_SAN" Type="int" />
           <Property Name="MA_TOUR" Type="int" />
           <Property Name="TEN_CHUONG_TRINH" Type="varchar" MaxLength="100" />
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="MA_HD" />
           </Key>
-          <Property Name="MA_HD" Type="int" Nullable="false" />
+          <Property Name="MA_HD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MA_LOAI_TT" Type="int" />
           <Property Name="MA_TOUR_DAT" Type="int" Nullable="false" />
           <Property Name="TONG_TIEN" Type="float" />
@@ -103,6 +103,51 @@
           <Property Name="MA_LOAI" Type="int" Nullable="false" />
           <Property Name="TEN_LOAI" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="MAN_HINH">
+          <Key>
+            <PropertyRef Name="MA_MH" />
+          </Key>
+          <Property Name="MA_MH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_MAN_HINH" Type="nvarchar" MaxLength="50" />
+          <Property Name="TAG" Type="int" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+          </Key>
+          <Property Name="MA_NV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_NV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="nchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN_NHOM">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+            <PropertyRef Name="MA_NHOM" />
+          </Key>
+          <Property Name="MA_NV" Type="int" Nullable="false" />
+          <Property Name="MA_NHOM" Type="int" Nullable="false" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NHOM">
+          <Key>
+            <PropertyRef Name="MA_NHOM" />
+          </Key>
+          <Property Name="MA_NHOM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_NHOM" Type="nvarchar" MaxLength="50" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PHAN_QUYEN">
+          <Key>
+            <PropertyRef Name="MA_NHOM" />
+            <PropertyRef Name="MA_MH" />
+          </Key>
+          <Property Name="MA_NHOM" Type="int" Nullable="false" />
+          <Property Name="MA_MH" Type="int" Nullable="false" />
+          <Property Name="CO_QUYEN" Type="bit" />
+        </EntityType>
         <EntityType Name="TINH">
           <Key>
             <PropertyRef Name="MA_TINH" />
@@ -133,6 +178,7 @@
           <Property Name="DIEM_DON" Type="varchar" MaxLength="100" />
           <Property Name="NGAY_DAT" Type="datetime" />
           <Property Name="TRANG_THAI" Type="char" MaxLength="10" />
+          <Property Name="MA_NV" Type="int" />
         </EntityType>
         <Association Name="FK_CHI_TIET_CHI_TIET__DIA_DIEM">
           <End Role="DIA_DIEM_DU_LICH" Type="Self.DIA_DIEM_DU_LICH" Multiplicity="1" />
@@ -266,6 +312,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NHAN_VIEN_NHOM_NHAN_VIEN">
+          <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+          <End Role="NHAN_VIEN_NHOM" Type="Self.NHAN_VIEN_NHOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="MA_NV" />
+            </Principal>
+            <Dependent Role="NHAN_VIEN_NHOM">
+              <PropertyRef Name="MA_NV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHAN_VIEN_NHOM_NHOM">
+          <End Role="NHOM" Type="Self.NHOM" Multiplicity="1" />
+          <End Role="NHAN_VIEN_NHOM" Type="Self.NHAN_VIEN_NHOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Principal>
+            <Dependent Role="NHAN_VIEN_NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHAN_QUYEN_MAN_HINH">
+          <End Role="MAN_HINH" Type="Self.MAN_HINH" Multiplicity="1" />
+          <End Role="PHAN_QUYEN" Type="Self.PHAN_QUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAN_HINH">
+              <PropertyRef Name="MA_MH" />
+            </Principal>
+            <Dependent Role="PHAN_QUYEN">
+              <PropertyRef Name="MA_MH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHAN_QUYEN_NHOM">
+          <End Role="NHOM" Type="Self.NHOM" Multiplicity="1" />
+          <End Role="PHAN_QUYEN" Type="Self.PHAN_QUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Principal>
+            <Dependent Role="PHAN_QUYEN">
+              <PropertyRef Name="MA_NHOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TOUR_DAT__AT_LICH_KHO">
           <End Role="LICH_KHOI_HANH" Type="Self.LICH_KHOI_HANH" Multiplicity="0..1" />
           <End Role="TOUR_DAT" Type="Self.TOUR_DAT" Multiplicity="*" />
@@ -287,6 +381,18 @@
             </Principal>
             <Dependent Role="TOUR_DAT">
               <PropertyRef Name="MA_KHACH_HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TOUR_DAT_NHAN_VIEN">
+          <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="0..1" />
+          <End Role="TOUR_DAT" Type="Self.TOUR_DAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="MA_NV" />
+            </Principal>
+            <Dependent Role="TOUR_DAT">
+              <PropertyRef Name="MA_NV" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -314,6 +420,11 @@
           <EntitySet Name="LICH_KHOI_HANH" EntityType="Self.LICH_KHOI_HANH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAI_THANH_TOAN" EntityType="Self.LOAI_THANH_TOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAI_TOUR" EntityType="Self.LOAI_TOUR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MAN_HINH" EntityType="Self.MAN_HINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHAN_VIEN_NHOM" EntityType="Self.NHAN_VIEN_NHOM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHOM" EntityType="Self.NHOM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHAN_QUYEN" EntityType="Self.PHAN_QUYEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINH" EntityType="Self.TINH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR" EntityType="Self.TOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOUR_DAT" EntityType="Self.TOUR_DAT" Schema="dbo" store:Type="Tables" />
@@ -361,6 +472,22 @@
             <End Role="TOUR" EntitySet="TOUR" />
             <End Role="LICH_KHOI_HANH" EntitySet="LICH_KHOI_HANH" />
           </AssociationSet>
+          <AssociationSet Name="FK_NHAN_VIEN_NHOM_NHAN_VIEN" Association="Self.FK_NHAN_VIEN_NHOM_NHAN_VIEN">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="NHAN_VIEN_NHOM" EntitySet="NHAN_VIEN_NHOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHAN_VIEN_NHOM_NHOM" Association="Self.FK_NHAN_VIEN_NHOM_NHOM">
+            <End Role="NHOM" EntitySet="NHOM" />
+            <End Role="NHAN_VIEN_NHOM" EntitySet="NHAN_VIEN_NHOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHAN_QUYEN_MAN_HINH" Association="Self.FK_PHAN_QUYEN_MAN_HINH">
+            <End Role="MAN_HINH" EntitySet="MAN_HINH" />
+            <End Role="PHAN_QUYEN" EntitySet="PHAN_QUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHAN_QUYEN_NHOM" Association="Self.FK_PHAN_QUYEN_NHOM">
+            <End Role="NHOM" EntitySet="NHOM" />
+            <End Role="PHAN_QUYEN" EntitySet="PHAN_QUYEN" />
+          </AssociationSet>
           <AssociationSet Name="FK_TOUR_DAT__AT_LICH_KHO" Association="Self.FK_TOUR_DAT__AT_LICH_KHO">
             <End Role="LICH_KHOI_HANH" EntitySet="LICH_KHOI_HANH" />
             <End Role="TOUR_DAT" EntitySet="TOUR_DAT" />
@@ -369,13 +496,16 @@
             <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
             <End Role="TOUR_DAT" EntitySet="TOUR_DAT" />
           </AssociationSet>
+          <AssociationSet Name="FK_TOUR_DAT_NHAN_VIEN" Association="Self.FK_TOUR_DAT_NHAN_VIEN">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="TOUR_DAT" EntitySet="TOUR_DAT" />
+          </AssociationSet>
           <AssociationSet Name="FK_TOUR_THUOC_LOA_LOAI_TOU" Association="Self.FK_TOUR_THUOC_LOA_LOAI_TOU">
             <End Role="LOAI_TOUR" EntitySet="LOAI_TOUR" />
             <End Role="TOUR" EntitySet="TOUR" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_TOURModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -535,6 +665,8 @@
           <NavigationProperty Name="HOA_DON" Relationship="Self.FK_HOA__ON_THANH_TOA_TOUR_DAT" FromRole="TOUR_DAT" ToRole="HOA_DON" />
           <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_TOUR_DAT_KHACH__AT_KHACH_HA" FromRole="TOUR_DAT" ToRole="KHACH_HANG" />
           <NavigationProperty Name="LICH_KHOI_HANH" Relationship="Self.FK_TOUR_DAT__AT_LICH_KHO" FromRole="TOUR_DAT" ToRole="LICH_KHOI_HANH" />
+          <Property Name="MA_NV" Type="Int32" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="DB_TOURModel.FK_TOUR_DAT_NHAN_VIEN" FromRole="TOUR_DAT" ToRole="NHAN_VIEN" />
         </EntityType>
         <Association Name="FK_CHI_TIET_CHI_TIET__DIA_DIEM">
           <End Role="DIA_DIEM_DU_LICH" Type="Self.DIA_DIEM_DU_LICH" Multiplicity="1" />
@@ -775,7 +907,146 @@
             <End Role="LOAI_TOUR" EntitySet="LOAI_TOUR" />
             <End Role="TOUR" EntitySet="TOURs" />
           </AssociationSet>
+          <EntitySet Name="MAN_HINH" EntityType="DB_TOURModel.MAN_HINH" />
+          <EntitySet Name="NHAN_VIEN" EntityType="DB_TOURModel.NHAN_VIEN" />
+          <EntitySet Name="NHAN_VIEN_NHOM" EntityType="DB_TOURModel.NHAN_VIEN_NHOM" />
+          <EntitySet Name="NHOMs" EntityType="DB_TOURModel.NHOM" />
+          <EntitySet Name="PHAN_QUYEN" EntityType="DB_TOURModel.PHAN_QUYEN" />
+          <AssociationSet Name="FK_PHAN_QUYEN_MAN_HINH" Association="DB_TOURModel.FK_PHAN_QUYEN_MAN_HINH">
+            <End Role="MAN_HINH" EntitySet="MAN_HINH" />
+            <End Role="PHAN_QUYEN" EntitySet="PHAN_QUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHAN_VIEN_NHOM_NHAN_VIEN" Association="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHAN_VIEN">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="NHAN_VIEN_NHOM" EntitySet="NHAN_VIEN_NHOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TOUR_DAT_NHAN_VIEN" Association="DB_TOURModel.FK_TOUR_DAT_NHAN_VIEN">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="TOUR_DAT" EntitySet="TOUR_DAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHAN_VIEN_NHOM_NHOM" Association="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHOM">
+            <End Role="NHOM" EntitySet="NHOMs" />
+            <End Role="NHAN_VIEN_NHOM" EntitySet="NHAN_VIEN_NHOM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHAN_QUYEN_NHOM" Association="DB_TOURModel.FK_PHAN_QUYEN_NHOM">
+            <End Role="NHOM" EntitySet="NHOMs" />
+            <End Role="PHAN_QUYEN" EntitySet="PHAN_QUYEN" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MAN_HINH">
+          <Key>
+            <PropertyRef Name="MA_MH" />
+          </Key>
+          <Property Name="MA_MH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_MAN_HINH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TAG" Type="Int32" />
+          <NavigationProperty Name="PHAN_QUYEN" Relationship="DB_TOURModel.FK_PHAN_QUYEN_MAN_HINH" FromRole="MAN_HINH" ToRole="PHAN_QUYEN" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+          </Key>
+          <Property Name="MA_NV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_NV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PASSWORD" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="NHAN_VIEN_NHOM" Relationship="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHAN_VIEN" FromRole="NHAN_VIEN" ToRole="NHAN_VIEN_NHOM" />
+          <NavigationProperty Name="TOUR_DAT" Relationship="DB_TOURModel.FK_TOUR_DAT_NHAN_VIEN" FromRole="NHAN_VIEN" ToRole="TOUR_DAT" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN_NHOM">
+          <Key>
+            <PropertyRef Name="MA_NV" />
+            <PropertyRef Name="MA_NHOM" />
+          </Key>
+          <Property Name="MA_NV" Type="Int32" Nullable="false" />
+          <Property Name="MA_NHOM" Type="Int32" Nullable="false" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHAN_VIEN" FromRole="NHAN_VIEN_NHOM" ToRole="NHAN_VIEN" />
+          <NavigationProperty Name="NHOM" Relationship="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHOM" FromRole="NHAN_VIEN_NHOM" ToRole="NHOM" />
+        </EntityType>
+        <EntityType Name="NHOM">
+          <Key>
+            <PropertyRef Name="MA_NHOM" />
+          </Key>
+          <Property Name="MA_NHOM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_NHOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHAN_VIEN_NHOM" Relationship="DB_TOURModel.FK_NHAN_VIEN_NHOM_NHOM" FromRole="NHOM" ToRole="NHAN_VIEN_NHOM" />
+          <NavigationProperty Name="PHAN_QUYEN" Relationship="DB_TOURModel.FK_PHAN_QUYEN_NHOM" FromRole="NHOM" ToRole="PHAN_QUYEN" />
+        </EntityType>
+        <EntityType Name="PHAN_QUYEN">
+          <Key>
+            <PropertyRef Name="MA_NHOM" />
+            <PropertyRef Name="MA_MH" />
+          </Key>
+          <Property Name="MA_NHOM" Type="Int32" Nullable="false" />
+          <Property Name="MA_MH" Type="Int32" Nullable="false" />
+          <Property Name="CO_QUYEN" Type="Boolean" />
+          <NavigationProperty Name="MAN_HINH" Relationship="DB_TOURModel.FK_PHAN_QUYEN_MAN_HINH" FromRole="PHAN_QUYEN" ToRole="MAN_HINH" />
+          <NavigationProperty Name="NHOM" Relationship="DB_TOURModel.FK_PHAN_QUYEN_NHOM" FromRole="PHAN_QUYEN" ToRole="NHOM" />
+        </EntityType>
+        <Association Name="FK_PHAN_QUYEN_MAN_HINH">
+          <End Type="DB_TOURModel.MAN_HINH" Role="MAN_HINH" Multiplicity="1" />
+          <End Type="DB_TOURModel.PHAN_QUYEN" Role="PHAN_QUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAN_HINH">
+              <PropertyRef Name="MA_MH" />
+            </Principal>
+            <Dependent Role="PHAN_QUYEN">
+              <PropertyRef Name="MA_MH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHAN_VIEN_NHOM_NHAN_VIEN">
+          <End Type="DB_TOURModel.NHAN_VIEN" Role="NHAN_VIEN" Multiplicity="1" />
+          <End Type="DB_TOURModel.NHAN_VIEN_NHOM" Role="NHAN_VIEN_NHOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="MA_NV" />
+            </Principal>
+            <Dependent Role="NHAN_VIEN_NHOM">
+              <PropertyRef Name="MA_NV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TOUR_DAT_NHAN_VIEN">
+          <End Type="DB_TOURModel.NHAN_VIEN" Role="NHAN_VIEN" Multiplicity="0..1" />
+          <End Type="DB_TOURModel.TOUR_DAT" Role="TOUR_DAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="MA_NV" />
+            </Principal>
+            <Dependent Role="TOUR_DAT">
+              <PropertyRef Name="MA_NV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHAN_VIEN_NHOM_NHOM">
+          <End Type="DB_TOURModel.NHOM" Role="NHOM" Multiplicity="1" />
+          <End Type="DB_TOURModel.NHAN_VIEN_NHOM" Role="NHAN_VIEN_NHOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Principal>
+            <Dependent Role="NHAN_VIEN_NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHAN_QUYEN_NHOM">
+          <End Type="DB_TOURModel.NHOM" Role="NHOM" Multiplicity="1" />
+          <End Type="DB_TOURModel.PHAN_QUYEN" Role="PHAN_QUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHOM">
+              <PropertyRef Name="MA_NHOM" />
+            </Principal>
+            <Dependent Role="PHAN_QUYEN">
+              <PropertyRef Name="MA_NHOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -914,12 +1185,61 @@
           <EntitySetMapping Name="TOUR_DAT">
             <EntityTypeMapping TypeName="DB_TOURModel.TOUR_DAT">
               <MappingFragment StoreEntitySet="TOUR_DAT">
+                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
                 <ScalarProperty Name="MA_TOUR_DAT" ColumnName="MA_TOUR_DAT" />
                 <ScalarProperty Name="MA_KHACH_HANG" ColumnName="MA_KHACH_HANG" />
                 <ScalarProperty Name="MA_LICH" ColumnName="MA_LICH" />
                 <ScalarProperty Name="DIEM_DON" ColumnName="DIEM_DON" />
                 <ScalarProperty Name="NGAY_DAT" ColumnName="NGAY_DAT" />
                 <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAN_HINH">
+            <EntityTypeMapping TypeName="DB_TOURModel.MAN_HINH">
+              <MappingFragment StoreEntitySet="MAN_HINH">
+                <ScalarProperty Name="TAG" ColumnName="TAG" />
+                <ScalarProperty Name="TEN_MAN_HINH" ColumnName="TEN_MAN_HINH" />
+                <ScalarProperty Name="MA_MH" ColumnName="MA_MH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHAN_VIEN">
+            <EntityTypeMapping TypeName="DB_TOURModel.NHAN_VIEN">
+              <MappingFragment StoreEntitySet="NHAN_VIEN">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="TEN_NV" ColumnName="TEN_NV" />
+                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHAN_VIEN_NHOM">
+            <EntityTypeMapping TypeName="DB_TOURModel.NHAN_VIEN_NHOM">
+              <MappingFragment StoreEntitySet="NHAN_VIEN_NHOM">
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="MA_NHOM" ColumnName="MA_NHOM" />
+                <ScalarProperty Name="MA_NV" ColumnName="MA_NV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHOMs">
+            <EntityTypeMapping TypeName="DB_TOURModel.NHOM">
+              <MappingFragment StoreEntitySet="NHOM">
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="TEN_NHOM" ColumnName="TEN_NHOM" />
+                <ScalarProperty Name="MA_NHOM" ColumnName="MA_NHOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHAN_QUYEN">
+            <EntityTypeMapping TypeName="DB_TOURModel.PHAN_QUYEN">
+              <MappingFragment StoreEntitySet="PHAN_QUYEN">
+                <ScalarProperty Name="CO_QUYEN" ColumnName="CO_QUYEN" />
+                <ScalarProperty Name="MA_MH" ColumnName="MA_MH" />
+                <ScalarProperty Name="MA_NHOM" ColumnName="MA_NHOM" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

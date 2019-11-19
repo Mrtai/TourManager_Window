@@ -25,9 +25,11 @@ namespace DAL
         public string DIEM_DON { get; set; }
         public Nullable<System.DateTime> NGAY_DAT { get; set; }
         public string TRANG_THAI { get; set; }
+        public Nullable<int> MA_NV { get; set; }
     
         public virtual ICollection<HOA_DON> HOA_DON { get; set; }
         public virtual KHACH_HANG KHACH_HANG { get; set; }
         public virtual LICH_KHOI_HANH LICH_KHOI_HANH { get; set; }
+        public virtual NHAN_VIEN NHAN_VIEN { get; set; }
     }
 }

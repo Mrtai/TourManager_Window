@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAL
 {
-    class dichvuDAL
+    public class dichvuDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
         public int AddNewDichVu(DICH_VU pDV)

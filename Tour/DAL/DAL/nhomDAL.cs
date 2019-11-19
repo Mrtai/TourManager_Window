@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 
 namespace DAL.DAL
 {
-    public class loaiTourDAL
+    class nhomDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
-        public int Add(LOAI_TOUR pT)
+        public int Add(NHOM pT)
         {
             int result = 0;
-            context.LOAI_TOUR.Add(pT);
+            context.NHOMs.Add(pT);
             result = context.SaveChanges();
             return result;
         }
-        public int Update(LOAI_TOUR pT)
+        public int Update(NHOM pT)
         {
             int result = 0;
-            LOAI_TOUR k = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pT.MA_LOAI);
+            NHOM k = context.NHOMs.FirstOrDefault(m => m.MA_NHOM == pT.MA_NHOM);
             if (k != null)
             {
-                k.TEN_LOAI = pT.TEN_LOAI;
+                k.TEN_NHOM = pT.TEN_NHOM;
+                k.GHI_CHU = pT.GHI_CHU;
             }
             result = context.SaveChanges();
             return result;
@@ -32,22 +32,22 @@ namespace DAL.DAL
         public int Delete(int pMaT)
         {
             int result = 0;
-            LOAI_TOUR k = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pMaT);
-            context.LOAI_TOUR.Remove(k);
+            NHOM k = context.NHOMs.FirstOrDefault(m => m.MA_NHOM == pMaT);
+            context.NHOMs.Remove(k);
             result = context.SaveChanges();
             return result;
         }
-        public List<LOAI_TOUR> GetList()
+        public List<NHOM> GetList()
         {
-            List<LOAI_TOUR> list = new List<LOAI_TOUR>();
-            list = context.LOAI_TOUR.ToList();
+            List<NHOM> list = new List<NHOM>();
+            list = context.NHOMs.ToList();
             return list;
         }
 
-        public LOAI_TOUR GetDVByMa(int pMaT)
+        public NHOM GetDVByMa(int pMaT)
         {
-            LOAI_TOUR result = new LOAI_TOUR();
-            result = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pMaT);
+            NHOM result = new NHOM();
+            result = context.NHOMs.FirstOrDefault(m => m.MA_NHOM == pMaT);
             return result;
         }
     }

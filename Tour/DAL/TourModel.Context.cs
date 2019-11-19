@@ -39,5 +39,10 @@ namespace DAL
         public DbSet<TINH> TINHs { get; set; }
         public DbSet<TOUR> TOURs { get; set; }
         public DbSet<TOUR_DAT> TOUR_DAT { get; set; }
+        public DbSet<MAN_HINH> MAN_HINH { get; set; }
+        public DbSet<NHAN_VIEN> NHAN_VIEN { get; set; }
+        public DbSet<NHAN_VIEN_NHOM> NHAN_VIEN_NHOM { get; set; }
+        public DbSet<NHOM> NHOMs { get; set; }
+        public DbSet<PHAN_QUYEN> PHAN_QUYEN { get; set; }
     }
 }

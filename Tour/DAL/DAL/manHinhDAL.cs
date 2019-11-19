@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 
 namespace DAL.DAL
 {
-    public class loaiTourDAL
+    class manHinhDAL
     {
         private DB_TOUREntities context = new DB_TOUREntities();
-        public int Add(LOAI_TOUR pT)
+        public int Add(MAN_HINH pT)
         {
             int result = 0;
-            context.LOAI_TOUR.Add(pT);
+            context.MAN_HINH.Add(pT);
             result = context.SaveChanges();
             return result;
         }
-        public int Update(LOAI_TOUR pT)
+        public int Update(MAN_HINH pT)
         {
             int result = 0;
-            LOAI_TOUR k = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pT.MA_LOAI);
+            MAN_HINH k = context.MAN_HINH.FirstOrDefault(m => m.MA_MH == pT.MA_MH);
             if (k != null)
             {
-                k.TEN_LOAI = pT.TEN_LOAI;
+                k.TEN_MAN_HINH = pT.TEN_MAN_HINH;
+                k.TAG = pT.TAG;
             }
             result = context.SaveChanges();
             return result;
@@ -32,22 +32,22 @@ namespace DAL.DAL
         public int Delete(int pMaT)
         {
             int result = 0;
-            LOAI_TOUR k = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pMaT);
-            context.LOAI_TOUR.Remove(k);
+            MAN_HINH k = context.MAN_HINH.FirstOrDefault(m => m.MA_MH == pMaT);
+            context.MAN_HINH.Remove(k);
             result = context.SaveChanges();
             return result;
         }
-        public List<LOAI_TOUR> GetList()
+        public List<MAN_HINH> GetList()
         {
-            List<LOAI_TOUR> list = new List<LOAI_TOUR>();
-            list = context.LOAI_TOUR.ToList();
+            List<MAN_HINH> list = new List<MAN_HINH>();
+            list = context.MAN_HINH.ToList();
             return list;
         }
 
-        public LOAI_TOUR GetDVByMa(int pMaT)
+        public MAN_HINH GetDVByMa(int pMaT)
         {
-            LOAI_TOUR result = new LOAI_TOUR();
-            result = context.LOAI_TOUR.FirstOrDefault(m => m.MA_LOAI == pMaT);
+            MAN_HINH result = new MAN_HINH();
+            result = context.MAN_HINH.FirstOrDefault(m => m.MA_MH == pMaT);
             return result;
         }
     }

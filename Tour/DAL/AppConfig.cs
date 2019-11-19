@@ -7,7 +7,7 @@ using System.Configuration;
 
 namespace DAL
 {
-    class AppConfig
+    public class AppConfig
     {
         Configuration config;
 
