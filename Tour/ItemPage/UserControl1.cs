@@ -12,9 +12,9 @@ namespace ItemPage
 {
     public partial class UserControl1: UserControl
     {
-        private Form frmDetail;
-        private Form frmDat;
-        //public delegate EventHandler 
+        public event EventHandler DatButtonClick;
+        public event EventHandler DetailButtonClick;
+
         public string labelName
         {
             get { return lb_name.Text; }
@@ -30,29 +30,21 @@ namespace ItemPage
             get { return img.ImageLocation; }
             set { img.ImageLocation = value; }
         }
-        public Form formDetail
-        {
-            get { return frmDetail; }
-            set { frmDetail = value; }
-        }
-        public Form formDat
-        {
-            set { frmDat = value; }
-            get { return frmDat; }
-        }
         public UserControl1()
         {
             InitializeComponent();
+            btn_dat.Click += DatButtonClick;
+            btn_detail.Click += DetailButtonClick;
         }
 
         private void btn_detail_Click(object sender, EventArgs e)
         {
-            frmDetail.Show();
+            DetailButtonClick?.Invoke(btn_detail, e);
         }
 
         private void btn_dat_Click(object sender, EventArgs e)
         {
-            frmDat.Show();
+            DatButtonClick?.Invoke(btn_dat, e);
         }
     }
 }

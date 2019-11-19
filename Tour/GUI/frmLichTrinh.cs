@@ -12,13 +12,13 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using DevExpress.XtraLayout.Helpers;
 using DevExpress.XtraLayout;
-using DAL.DAL;
+using DAL_TOUR;
 
 namespace GUI
 {
     public partial class frmLichTrinh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private lichKhoiHanhDAL lichKhoiHanhService = new lichKhoiHanhDAL();
+        dichvuDAL nhanVienService = new dichvuDAL();
         public frmLichTrinh()
         {
             InitializeComponent();
@@ -30,8 +30,18 @@ namespace GUI
 
         private void frmLichTrinh_Load(object sender, EventArgs e)
         {
-            var listLT = lichKhoiHanhService.GetList();
+            var list = nhanVienService.GetListDV();
+            dataGridView1.DataSource = list;
+        }
 
+        private void userControl11_DatButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("dat", "thông báo");
+        }
+
+        private void userControl11_DetailButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Detail", "thông báo");
         }
     }
         

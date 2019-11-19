@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DAL">
-      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    <Reference Include="DAL_TOUR">
+      <HintPath>..\DAL_TOUR\bin\Debug\DAL_TOUR.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
     <Reference Include="DevExpress.Data.v17.1" />
@@ -48,8 +48,8 @@
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\DAL_TOUR\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="JDragControl">
       <HintPath>..\..\..\DA_TOUR\JControl\JDragControl.dll</HintPath>
@@ -98,12 +98,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemImage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ItemImage.Designer.cs">
-      <DependentUpon>ItemImage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDat.resx">
@@ -117,9 +111,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ItemImage.resx">
-      <DependentUpon>ItemImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

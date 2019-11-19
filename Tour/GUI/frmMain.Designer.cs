@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barSubItemNavigation = new DevExpress.XtraBars.BarSubItem();
             this.employeesBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.customersBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btn_dangxuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -62,17 +68,12 @@
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
-            this.btn_dangxuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabbedView
@@ -145,6 +146,41 @@
             this.ribbonGalleryBarItem1.Id = 46;
             this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
             this.ribbonGalleryBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ribbonGalleryBarItem1_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.ActAsDropDown = true;
+            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem1.Caption = "btn_user";
+            this.barButtonItem1.DropDownControl = this.popupMenu1;
+            this.barButtonItem1.Id = 51;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.ItemLinks.Add(this.btn_dangxuat);
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl;
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.Caption = "Log out";
+            this.btn_dangxuat.Id = 54;
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.Caption = "Log out";
+            this.btn_logout.Id = 52;
+            this.btn_logout.Name = "btn_logout";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Đăng xuất";
+            this.barButtonItem3.Id = 53;
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // ribbonPage
             // 
@@ -341,41 +377,6 @@
             this.panelControl1.Size = new System.Drawing.Size(929, 452);
             this.panelControl1.TabIndex = 4;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.Caption = "btn_user";
-            this.barButtonItem1.DropDownControl = this.popupMenu1;
-            this.barButtonItem1.Id = 51;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Caption = "Log out";
-            this.btn_logout.Id = 52;
-            this.btn_logout.Name = "btn_logout";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Đăng xuất";
-            this.barButtonItem3.Id = 53;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.ItemLinks.Add(this.btn_dangxuat);
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl;
-            // 
-            // btn_dangxuat
-            // 
-            this.btn_dangxuat.Caption = "Log out";
-            this.btn_dangxuat.Id = 54;
-            this.btn_dangxuat.Name = "btn_dangxuat";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,10 +392,10 @@
             this.StatusBar = this.ribbonStatusBar;
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,9 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.body = new System.Windows.Forms.Panel();
             this.userControl11 = new ItemPage.UserControl1();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.body.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -73,7 +75,7 @@
             // 
             // body
             // 
-            this.body.Controls.Add(this.userControl11);
+            this.body.Controls.Add(this.dataGridView1);
             this.body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.body.Location = new System.Drawing.Point(0, 118);
             this.body.Name = "body";
@@ -82,15 +84,21 @@
             // 
             // userControl11
             // 
-            this.userControl11.formDat = null;
-            this.userControl11.formDetail = null;
             this.userControl11.imgURL = "";
             this.userControl11.labelGia = "Giá";
             this.userControl11.labelName = "Name";
-            this.userControl11.Location = new System.Drawing.Point(12, 18);
+            this.userControl11.Location = new System.Drawing.Point(0, 0);
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(255, 224);
             this.userControl11.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // frmLichTrinh
             // 
@@ -106,6 +114,7 @@
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.body.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,5 +126,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private ItemPage.UserControl1 userControl11;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

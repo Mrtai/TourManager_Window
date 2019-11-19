@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="DB_TOURModel.DIA_DIEM_DU_LICH" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TOURModel.DICH_VU" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TOURModel.HOA_DON" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_TOURModel.KHACH_HANG" Width="1.5" PointX="6.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_TOURModel.KHACH_HANG" Width="1.5" PointX="8" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TOURModel.KHACH_SAN" Width="1.5" PointX="3.375" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TOURModel.LICH_KHOI_HANH" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DB_TOURModel.LOAI_THANH_TOAN" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
