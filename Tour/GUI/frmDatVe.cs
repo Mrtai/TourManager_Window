@@ -15,20 +15,13 @@ using DevExpress.XtraLayout.Helpers;
 
 namespace GUI
 {
-    public partial class frmNV : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmDatVe : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmNV()
+        public frmDatVe()
         {
             InitializeComponent();
-
-           
         }
 
-        private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-            frmMain main = new frmMain();
-            main.Show();
-        }
+    
     }
 }

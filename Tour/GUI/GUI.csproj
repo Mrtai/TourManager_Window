@@ -95,6 +95,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCH.Designer.cs">
+      <DependentUpon>frmCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCTTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCTTour.Designer.cs">
+      <DependentUpon>frmCTTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatVe.Designer.cs">
+      <DependentUpon>frmDatVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDD.Designer.cs">
+      <DependentUpon>frmDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDV.Designer.cs">
+      <DependentUpon>frmDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKH.Designer.cs">
+      <DependentUpon>frmKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKS.Designer.cs">
+      <DependentUpon>frmKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiTour.Designer.cs">
+      <DependentUpon>frmLoaiTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiTT.Designer.cs">
+      <DependentUpon>frmLoaiTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLTrinh.Designer.cs">
+      <DependentUpon>frmLTrinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +167,12 @@
     <Compile Include="frmNV.Designer.cs">
       <DependentUpon>frmNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTour.Designer.cs">
+      <DependentUpon>frmTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +181,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDatVe.resx">
+      <DependentUpon>frmDatVe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
