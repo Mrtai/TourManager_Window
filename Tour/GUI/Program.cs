@@ -21,7 +21,7 @@ namespace GUI
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new frmLichTrinh());
+            Application.Run(new frmMain());
         }
     }
 }
