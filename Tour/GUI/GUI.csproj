@@ -51,11 +51,32 @@
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="FlatButton">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\FlatButton.dll</HintPath>
+    </Reference>
     <Reference Include="JDragControl">
-      <HintPath>..\..\..\DA_TOUR\JControl\JDragControl.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JDragControl.dll</HintPath>
+    </Reference>
+    <Reference Include="JGradient Panel">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JGradient Panel.dll</HintPath>
+    </Reference>
+    <Reference Include="JImageButton">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="JMaterialTextbox">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JMaterialTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="JMetroTextBox">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JMetroTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox2">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JTextBox2.dll</HintPath>
     </Reference>
     <Reference Include="JThinButton">
-      <HintPath>..\..\..\DA_TOUR\JControl\JThinButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive\Documents\Visual Studio 2012\Projects\DoanhThu\JControls\JThinButton.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
@@ -74,29 +95,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmDat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDat.Designer.cs">
-      <DependentUpon>frmDat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDetail.Designer.cs">
-      <DependentUpon>frmDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLichTrinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLichTrinh.Designer.cs">
-      <DependentUpon>frmLichTrinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNV.Designer.cs">
+      <DependentUpon>frmNV.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemImage.cs">
       <SubType>UserControl</SubType>
@@ -106,17 +115,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmDat.resx">
-      <DependentUpon>frmDat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDetail.resx">
-      <DependentUpon>frmDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLichTrinh.resx">
-      <DependentUpon>frmLichTrinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNV.resx">
+      <DependentUpon>frmNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemImage.resx">
       <DependentUpon>ItemImage.cs</DependentUpon>
@@ -150,6 +153,9 @@
       <Project>{E91808CC-CE65-4054-8B38-19359BE98AE1}</Project>
       <Name>ItemPage</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
