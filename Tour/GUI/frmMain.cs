@@ -16,6 +16,7 @@ namespace GUI
         public frmMain()
         {
             InitializeComponent();
+
         }
         //void navBarControl_ActiveGroupChanged(object sender, DevExpress.XtraNavBar.NavBarGroupEventArgs e)
         //{
@@ -29,7 +30,16 @@ namespace GUI
 
         private void navBarItemNV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            paneload.Controls.Clear();
+            frmNV frmnv = new frmNV();
+            frmnv.Dock = DockStyle.Fill;
+            frmnv.TopLevel = false;
+            frmnv.TopMost = true;
+            frmnv.MaximizeBox = true;
+            frmnv.MinimizeBox = false;
+            frmnv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmnv);
+            frmnv.Show();
         }
 
         private void navBarItemCH_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

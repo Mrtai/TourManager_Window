@@ -22,5 +22,10 @@ namespace GUI
             InitializeComponent();
 
         }
+
+        private void frmDV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
