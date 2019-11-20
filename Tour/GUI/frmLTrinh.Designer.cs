@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLTrinh));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
             this.jImageButton1 = new JImageButton.JImageButton();
             this.datengaysinh = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
@@ -50,7 +50,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,14 +86,36 @@
             this.panel5.Size = new System.Drawing.Size(670, 428);
             this.panel5.TabIndex = 62;
             // 
+            // jMaterialTextbox1
+            // 
+            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
+            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.HintText = null;
+            this.jMaterialTextbox1.IsPassword = false;
+            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.jMaterialTextbox1.LineThickness = 3;
+            this.jMaterialTextbox1.Location = new System.Drawing.Point(376, 171);
+            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jMaterialTextbox1.MaxLength = 32767;
+            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
+            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.ReadOnly = false;
+            this.jMaterialTextbox1.Size = new System.Drawing.Size(256, 28);
+            this.jMaterialTextbox1.TabIndex = 160;
+            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.jMaterialTextbox1.TextName = "";
+            // 
             // jImageButton1
             // 
             this.jImageButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.jImageButton1.BackColor = System.Drawing.SystemColors.Highlight;
             this.jImageButton1.CausesValidation = false;
             this.jImageButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.jImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("jImageButton1.ErrorImage")));
-            this.jImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("jImageButton1.Image")));
+            this.jImageButton1.ErrorImage = null;
+            this.jImageButton1.Image = null;
             this.jImageButton1.ImageHover = null;
             this.jImageButton1.InitialImage = null;
             this.jImageButton1.Location = new System.Drawing.Point(38, 126);
@@ -277,28 +298,6 @@
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
             // 
-            // jMaterialTextbox1
-            // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = null;
-            this.jMaterialTextbox1.IsPassword = false;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 3;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(376, 171);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.ReadOnly = false;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(256, 28);
-            this.jMaterialTextbox1.TabIndex = 160;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "";
-            // 
             // frmLTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +306,7 @@
             this.ClientSize = new System.Drawing.Size(790, 595);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.mainRibbonControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmLTrinh";
             this.Ribbon = this.mainRibbonControl;
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_dat = new JThinButton.JThinButton();
+            this.btn_detail = new JThinButton.JThinButton();
             this.lb_gia = new System.Windows.Forms.Label();
             this.lb_name = new System.Windows.Forms.Label();
             this.img = new System.Windows.Forms.PictureBox();
-            this.btn_detail = new JThinButton.JThinButton();
-            this.btn_dat = new JThinButton.JThinButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 88);
             this.panel1.TabIndex = 3;
+            // 
+            // btn_dat
+            // 
+            this.btn_dat.BackColor = System.Drawing.Color.Transparent;
+            this.btn_dat.BackgroundColor = System.Drawing.Color.White;
+            this.btn_dat.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btn_dat.BorderRadius = 5;
+            this.btn_dat.ButtonText = "Đặt";
+            this.btn_dat.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dat.Font_Size = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dat.ForeColors = System.Drawing.SystemColors.Highlight;
+            this.btn_dat.HoverBackground = System.Drawing.Color.White;
+            this.btn_dat.HoverBorder = System.Drawing.Color.Empty;
+            this.btn_dat.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.btn_dat.LineThickness = 2;
+            this.btn_dat.Location = new System.Drawing.Point(159, 54);
+            this.btn_dat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_dat.Name = "btn_dat";
+            this.btn_dat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_dat.Size = new System.Drawing.Size(67, 30);
+            this.btn_dat.TabIndex = 3;
+            this.btn_dat.Click += new System.EventHandler(this.btn_dat_Click);
+            // 
+            // btn_detail
+            // 
+            this.btn_detail.BackColor = System.Drawing.Color.Transparent;
+            this.btn_detail.BackgroundColor = System.Drawing.Color.White;
+            this.btn_detail.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btn_detail.BorderRadius = 5;
+            this.btn_detail.ButtonText = "Chi tiết";
+            this.btn_detail.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detail.Font_Size = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detail.ForeColors = System.Drawing.SystemColors.Highlight;
+            this.btn_detail.HoverBackground = System.Drawing.Color.White;
+            this.btn_detail.HoverBorder = System.Drawing.Color.Empty;
+            this.btn_detail.HoverFontColor = System.Drawing.SystemColors.Highlight;
+            this.btn_detail.LineThickness = 2;
+            this.btn_detail.Location = new System.Drawing.Point(15, 55);
+            this.btn_detail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_detail.Name = "btn_detail";
+            this.btn_detail.Size = new System.Drawing.Size(71, 30);
+            this.btn_detail.TabIndex = 2;
+            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
             // 
             // lb_gia
             // 
@@ -78,45 +121,6 @@
             this.img.Size = new System.Drawing.Size(255, 136);
             this.img.TabIndex = 2;
             this.img.TabStop = false;
-            // 
-            // btn_detail
-            // 
-            this.btn_detail.BackColor = System.Drawing.Color.Transparent;
-            this.btn_detail.BackgroundColor = System.Drawing.Color.White;
-            this.btn_detail.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btn_detail.BorderRadius = 5;
-            this.btn_detail.ButtonText = "Chi tiết";
-            this.btn_detail.Font_Size = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_detail.ForeColors = System.Drawing.SystemColors.Highlight;
-            this.btn_detail.HoverBackground = System.Drawing.Color.White;
-            this.btn_detail.HoverBorder = System.Drawing.Color.Empty;
-            this.btn_detail.HoverFontColor = System.Drawing.SystemColors.Highlight;
-            this.btn_detail.LineThickness = 2;
-            this.btn_detail.Location = new System.Drawing.Point(15, 55);
-            this.btn_detail.Name = "btn_detail";
-            this.btn_detail.Size = new System.Drawing.Size(71, 30);
-            this.btn_detail.TabIndex = 2;
-            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
-            // 
-            // btn_dat
-            // 
-            this.btn_dat.BackColor = System.Drawing.Color.Transparent;
-            this.btn_dat.BackgroundColor = System.Drawing.Color.White;
-            this.btn_dat.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btn_dat.BorderRadius = 5;
-            this.btn_dat.ButtonText = "Đặt";
-            this.btn_dat.Font_Size = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dat.ForeColors = System.Drawing.SystemColors.Highlight;
-            this.btn_dat.HoverBackground = System.Drawing.Color.White;
-            this.btn_dat.HoverBorder = System.Drawing.Color.Empty;
-            this.btn_dat.HoverFontColor = System.Drawing.SystemColors.Highlight;
-            this.btn_dat.LineThickness = 2;
-            this.btn_dat.Location = new System.Drawing.Point(159, 54);
-            this.btn_dat.Name = "btn_dat";
-            this.btn_dat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_dat.Size = new System.Drawing.Size(67, 30);
-            this.btn_dat.TabIndex = 3;
-            this.btn_dat.Click += new System.EventHandler(this.btn_dat_Click);
             // 
             // UserControl1
             // 
