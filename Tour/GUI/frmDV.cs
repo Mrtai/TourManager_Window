@@ -12,11 +12,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
+using DAL_TOUR;
 
 namespace GUI
 {
     public partial class frmDV : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        dichvuDAL dichvu = new dichvuDAL();
         public frmDV()
         {
             InitializeComponent();
@@ -25,7 +27,8 @@ namespace GUI
 
         private void frmDV_Load(object sender, EventArgs e)
         {
-
+            var List = dichvu.GetListDV();
+            dgv_DV.DataSource = List;
         }
     }
 }

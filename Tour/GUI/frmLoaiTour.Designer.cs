@@ -28,15 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiTour));
-            this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.jImageButton1 = new JImageButton.JImageButton();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
@@ -48,111 +39,16 @@
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
-            this.dataLayoutControl1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dgv_LTour = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTour)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataLayoutControl1
-            // 
-            this.dataLayoutControl1.AllowCustomization = false;
-            this.dataLayoutControl1.Controls.Add(this.panel5);
-            this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 143);
-            this.dataLayoutControl1.Name = "dataLayoutControl1";
-            this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(790, 452);
-            this.dataLayoutControl1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightGray;
-            this.panel5.Controls.Add(this.jMaterialTextbox2);
-            this.panel5.Controls.Add(this.jMaterialTextbox1);
-            this.panel5.Controls.Add(this.jImageButton1);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(108, 12);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(670, 428);
-            this.panel5.TabIndex = 66;
-            // 
-            // jImageButton1
-            // 
-            this.jImageButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.jImageButton1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.jImageButton1.CausesValidation = false;
-            this.jImageButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.jImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("jImageButton1.ErrorImage")));
-            this.jImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("jImageButton1.Image")));
-            this.jImageButton1.ImageHover = null;
-            this.jImageButton1.InitialImage = null;
-            this.jImageButton1.Location = new System.Drawing.Point(46, 129);
-            this.jImageButton1.Name = "jImageButton1";
-            this.jImageButton1.Size = new System.Drawing.Size(169, 171);
-            this.jImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.jImageButton1.TabIndex = 149;
-            this.jImageButton1.Zoom = 4;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.LightGray;
-            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(235, 205);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(128, 22);
-            this.label18.TabIndex = 146;
-            this.label18.Text = "Tên Loại Tour";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(388, 154);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(0, 19);
-            this.label20.TabIndex = 145;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.LightGray;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(239, 154);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(124, 22);
-            this.label23.TabIndex = 144;
-            this.label23.Text = "Mã Loại Tour";
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(790, 452);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.panel5;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(770, 432);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
             // 
             // mainRibbonControl
             // 
@@ -174,7 +70,7 @@
             this.mainRibbonPage});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(790, 143);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1054, 143);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiSave
@@ -253,27 +149,18 @@
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
             // 
-            // jMaterialTextbox1
+            // panel1
             // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = null;
-            this.jMaterialTextbox1.IsPassword = false;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 3;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(380, 148);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.ReadOnly = false;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(217, 28);
-            this.jMaterialTextbox1.TabIndex = 153;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "";
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.jMaterialTextbox2);
+            this.panel1.Controls.Add(this.jMaterialTextbox1);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 143);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(360, 452);
+            this.panel1.TabIndex = 2;
             // 
             // jMaterialTextbox2
             // 
@@ -285,35 +172,89 @@
             this.jMaterialTextbox2.IsPassword = false;
             this.jMaterialTextbox2.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.jMaterialTextbox2.LineThickness = 3;
-            this.jMaterialTextbox2.Location = new System.Drawing.Point(380, 199);
+            this.jMaterialTextbox2.Location = new System.Drawing.Point(187, 238);
             this.jMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jMaterialTextbox2.MaxLength = 32767;
             this.jMaterialTextbox2.Name = "jMaterialTextbox2";
             this.jMaterialTextbox2.OnFocusedColor = System.Drawing.Color.Black;
             this.jMaterialTextbox2.OnFocusedTextColor = System.Drawing.Color.Black;
             this.jMaterialTextbox2.ReadOnly = false;
-            this.jMaterialTextbox2.Size = new System.Drawing.Size(217, 28);
-            this.jMaterialTextbox2.TabIndex = 154;
+            this.jMaterialTextbox2.Size = new System.Drawing.Size(131, 28);
+            this.jMaterialTextbox2.TabIndex = 164;
             this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.jMaterialTextbox2.TextName = "";
+            // 
+            // jMaterialTextbox1
+            // 
+            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
+            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.HintText = null;
+            this.jMaterialTextbox1.IsPassword = false;
+            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.jMaterialTextbox1.LineThickness = 3;
+            this.jMaterialTextbox1.Location = new System.Drawing.Point(187, 187);
+            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jMaterialTextbox1.MaxLength = 32767;
+            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
+            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox1.ReadOnly = false;
+            this.jMaterialTextbox1.Size = new System.Drawing.Size(131, 28);
+            this.jMaterialTextbox1.TabIndex = 163;
+            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.jMaterialTextbox1.TextName = "";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.LightGray;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(42, 244);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(128, 22);
+            this.label18.TabIndex = 162;
+            this.label18.Text = "Tên Loại Tour";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.LightGray;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(46, 193);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(124, 22);
+            this.label23.TabIndex = 160;
+            this.label23.Text = "Mã Loại Tour";
+            // 
+            // dgv_LTour
+            // 
+            this.dgv_LTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_LTour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_LTour.Location = new System.Drawing.Point(360, 143);
+            this.dgv_LTour.Name = "dgv_LTour";
+            this.dgv_LTour.Size = new System.Drawing.Size(694, 452);
+            this.dgv_LTour.TabIndex = 3;
             // 
             // frmLoaiTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(790, 595);
-            this.Controls.Add(this.dataLayoutControl1);
+            this.ClientSize = new System.Drawing.Size(1054, 595);
+            this.Controls.Add(this.dgv_LTour);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmLoaiTour";
             this.Ribbon = this.mainRibbonControl;
-            ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
-            this.dataLayoutControl1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            this.Load += new System.EventHandler(this.frmLoaiTour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,8 +262,6 @@
 
         #endregion
 
-        private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup mainRibbonPageGroup;
@@ -332,15 +271,13 @@
         private DevExpress.XtraBars.BarButtonItem bbiReset;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiClose;
-        private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private JImageButton.JImageButton jImageButton1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label23;
         private DevExpress.XtraBars.BarButtonItem bbiAdd;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgv_LTour;
         private JMaterialTextbox.JMaterialTextbox jMaterialTextbox2;
         private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label23;
     }
 }

@@ -12,14 +12,22 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
+using DAL_TOUR;
 
 namespace GUI
 {
     public partial class frmDatVe : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        tourDatDAL tourdat = new tourDatDAL();
         public frmDatVe()
         {
             InitializeComponent();
+        }
+
+        private void frmDatVe_Load(object sender, EventArgs e)
+        {
+            var List = tourdat.GetList();
+            dgv_DVe.DataSource = List;
         }
 
     

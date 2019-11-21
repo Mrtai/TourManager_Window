@@ -12,16 +12,23 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
-
+using DAL_TOUR;
 namespace GUI
 {
     public partial class frmLoaiTT : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        loaiThanhToanDAL loaitt = new loaiThanhToanDAL();
         public frmLoaiTT()
         {
             InitializeComponent();
 
 
+        }
+
+        private void frmLoaiTT_Load(object sender, EventArgs e)
+        {
+            var List = loaitt.GetList();
+            dgv_LTT.DataSource = List;
         }
     }
 }

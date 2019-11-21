@@ -39,12 +39,10 @@ namespace ItemPage
 
         private void btn_detail_Click(object sender, EventArgs e)
         {
-            DetailButtonClick?.Invoke(btn_detail, e);
         }
 
         private void btn_dat_Click(object sender, EventArgs e)
         {
-            DatButtonClick?.Invoke(btn_dat, e);
         }
     }
 }

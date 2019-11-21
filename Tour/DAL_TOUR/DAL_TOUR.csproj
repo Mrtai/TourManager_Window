@@ -52,6 +52,7 @@
     <Compile Include="CHI_TIET_THAM_QUAN.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="chuongTrinhTourDAL.cs" />
     <Compile Include="CHUONG_TRINH_TOUR.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>

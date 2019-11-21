@@ -12,16 +12,23 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
-
+using DAL_TOUR;
 namespace GUI
 {
     public partial class frmCTTour : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        chuongTrinhTourDAL chuongtrinhtour = new chuongTrinhTourDAL();
         public frmCTTour()
         {
             InitializeComponent();
 
 
+        }
+
+        private void frmCTTour_Load(object sender, EventArgs e)
+        {
+            var List = chuongtrinhtour.GetList();
+            dgv_CTT.DataSource = List;
         }
     }
 }
