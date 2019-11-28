@@ -29,7 +29,7 @@ namespace GUI
         public void load()
         {
             var List = loaitour.GetList();
-            dgv_LTour.DataSource = List;
+            gridControlLoai.DataSource = List;
         }
         private void frmLoaiTour_Load(object sender, EventArgs e)
         {

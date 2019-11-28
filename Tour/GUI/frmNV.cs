@@ -14,59 +14,104 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using DAL_TOUR;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace GUI
 {
     public partial class frmNV : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        NHAN_VIEN nhan_vien = new NHAN_VIEN();
+        
         NhanVienDAL nhanvien = new NhanVienDAL();
+        
         public frmNV()
         {
             InitializeComponent();
-
-           
+            
+        }
+        private void frmNV_Load(object sender, EventArgs e)
+        {
+            
+            load();
         }
         public void load()
         {
             var List = nhanvien.GetList();
-            dgv_NV.DataSource = List;
+            dgv_nv.DataSource = List;
         }
-        private void frmNV_Load(object sender, EventArgs e)
-        {
-            load();
-        }
+        
 
         private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            NHAN_VIEN nhan_vien = new NHAN_VIEN();
             nhan_vien.TEN_NV = txtTenNV.TextName;
             nhan_vien.DIA_CHI = txtDiaChi.TextName;
             nhan_vien.EMAIL = txtEmail.TextName;
             nhan_vien.USERNAME = txtUser.TextName;
+            byte[] pass = Encoding.ASCII.GetBytes(txtPass.TextName);
+            nhan_vien.PASSWORD = pass;
             nhanvien.Add(nhan_vien);
             load();
+            ResetText();
         }
 
 
 
         private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            NHAN_VIEN nhan_vien = new NHAN_VIEN();
             nhan_vien.TEN_NV = txtTenNV.TextName;
             nhan_vien.DIA_CHI = txtDiaChi.TextName;
             nhan_vien.EMAIL = txtEmail.TextName;
             nhan_vien.USERNAME = txtUser.TextName;
             nhanvien.Update(nhan_vien);
+            byte[] pass = Encoding.ASCII.GetBytes(txtPass.TextName);
             load();
+            ResetText();
         }
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            nhan_vien.TEN_NV = txtTenNV.TextName;
-            nhan_vien.DIA_CHI = txtDiaChi.TextName;
-            nhan_vien.EMAIL = txtEmail.TextName;
-            nhan_vien.USERNAME = txtUser.TextName;
-            nhanvien.Delete(nhan_vien.MA_NV);
-            load();
+            if(txtMaNV.TextName == "")
+            {
+                MessageBox.Show("Bạn hãy chọn nhân viên để xóa !", "Thông báo");
+            }
+            else
+            {
+                nhanvien.Delete(Int32.Parse(txtMaNV.TextName));
+                load();
+            }
+           
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int position = gridView1.FocusedRowHandle;
+            try
+            {
+                txtMaNV.TextName = gridView1.GetRowCellValue(position, "MA_NV").ToString();
+                txtTenNV.TextName = gridView1.GetRowCellValue(position, "TEN_NV").ToString();
+                txtDiaChi.TextName = gridView1.GetRowCellValue(position, "DIA_CHI").ToString();
+                txtEmail.TextName = gridView1.GetRowCellValue(position, "EMAIL").ToString();
+                txtUser.TextName = gridView1.GetRowCellValue(position, "USERNAME").ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi load data", "Thông báo");
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ResetText();
+        }
+        private void ResetText()
+        {
+            txtMaNV.TextName = "";
+            txtTenNV.TextName = "";
+            txtDiaChi.TextName = "";
+            txtEmail.TextName = "";
+            txtUser.TextName = "";
+            txtPass.TextName = "";
         }
     }
 }

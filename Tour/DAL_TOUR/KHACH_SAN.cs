@@ -20,7 +20,7 @@ namespace DAL_TOUR
         }
     
         public int MA_KHACH_SAN { get; set; }
-        public Nullable<int> MA_TINH { get; set; }
+        public int MA_TINH { get; set; }
         public string TEN_KHACH_SAN { get; set; }
     
         public virtual ICollection<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDV));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
@@ -45,10 +46,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblmadv = new System.Windows.Forms.Label();
-            this.dgv_DV = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gridControlDV = new DevExpress.XtraGrid.GridControl();
+            this.dgv_dv = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MA_DV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TEN_DV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DV)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dv)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -61,9 +71,10 @@
             this.bbiReset,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -131,6 +142,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -260,14 +272,81 @@
             this.lblmadv.Size = new System.Drawing.Size(0, 17);
             this.lblmadv.TabIndex = 157;
             // 
-            // dgv_DV
+            // panel2
             // 
-            this.dgv_DV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DV.Location = new System.Drawing.Point(360, 143);
-            this.dgv_DV.Name = "dgv_DV";
-            this.dgv_DV.Size = new System.Drawing.Size(694, 452);
-            this.dgv_DV.TabIndex = 7;
+            this.panel2.Controls.Add(this.gridControlDV);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(360, 143);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(694, 452);
+            this.panel2.TabIndex = 9;
+            // 
+            // gridControlDV
+            // 
+            this.gridControlDV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDV.Location = new System.Drawing.Point(0, 0);
+            this.gridControlDV.MainView = this.dgv_dv;
+            this.gridControlDV.MenuManager = this.mainRibbonControl;
+            this.gridControlDV.Name = "gridControlDV";
+            this.gridControlDV.Size = new System.Drawing.Size(694, 452);
+            this.gridControlDV.TabIndex = 0;
+            this.gridControlDV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgv_dv});
+            // 
+            // dgv_dv
+            // 
+            this.dgv_dv.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MA_DV,
+            this.TEN_DV,
+            this.GIA});
+            this.dgv_dv.GridControl = this.gridControlDV;
+            this.dgv_dv.Name = "dgv_dv";
+            this.dgv_dv.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.dgv_dv_FocusedRowChanged);
+            // 
+            // MA_DV
+            // 
+            this.MA_DV.Caption = "Mã dịch vụ";
+            this.MA_DV.FieldName = "MA_DICH_VU";
+            this.MA_DV.Name = "MA_DV";
+            this.MA_DV.OptionsColumn.AllowEdit = false;
+            this.MA_DV.Visible = true;
+            this.MA_DV.VisibleIndex = 0;
+            // 
+            // TEN_DV
+            // 
+            this.TEN_DV.Caption = "Tên dịch vụ";
+            this.TEN_DV.FieldName = "TEN_DICH_VU";
+            this.TEN_DV.Name = "TEN_DV";
+            this.TEN_DV.OptionsColumn.AllowEdit = false;
+            this.TEN_DV.Visible = true;
+            this.TEN_DV.VisibleIndex = 1;
+            // 
+            // GIA
+            // 
+            this.GIA.Caption = "Giá";
+            this.GIA.FieldName = "GIA";
+            this.GIA.Name = "GIA";
+            this.GIA.OptionsColumn.AllowEdit = false;
+            this.GIA.Visible = true;
+            this.GIA.VisibleIndex = 2;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã dịch vụ";
+            this.gridColumn1.FieldName = "MA_DV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // frmDV
             // 
@@ -275,16 +354,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_DV);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmDV";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.frmDV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DV)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,6 +391,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblmadv;
         private JMaterialTextbox.JMaterialTextbox txtMaDV;
-        private System.Windows.Forms.DataGridView dgv_DV;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraGrid.GridControl gridControlDV;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgv_dv;
+        private DevExpress.XtraGrid.Columns.GridColumn MA_DV;
+        private DevExpress.XtraGrid.Columns.GridColumn TEN_DV;
+        private DevExpress.XtraGrid.Columns.GridColumn GIA;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

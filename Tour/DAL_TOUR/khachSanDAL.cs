@@ -24,8 +24,9 @@ namespace DAL_TOUR
             {
                 k.TEN_KHACH_SAN = pKS.TEN_KHACH_SAN;
                 k.MA_TINH = pKS.MA_TINH;
+                result = context.SaveChanges();
+                return result;
             }
-            result = context.SaveChanges();
             return result;
         }
 

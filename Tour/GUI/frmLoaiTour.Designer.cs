@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiTour));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
@@ -42,10 +43,17 @@
             this.txtMa = new JMaterialTextbox.JMaterialTextbox();
             this.label18 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dgv_LTour = new System.Windows.Forms.DataGridView();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gridControlLoai = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.maloai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tenloai = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTour)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -58,9 +66,10 @@
             this.bbiReset,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -128,6 +137,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -213,14 +223,58 @@
             this.label23.TabIndex = 160;
             this.label23.Text = "Mã Loại Tour";
             // 
-            // dgv_LTour
+            // barButtonItem1
             // 
-            this.dgv_LTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_LTour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_LTour.Location = new System.Drawing.Point(360, 143);
-            this.dgv_LTour.Name = "dgv_LTour";
-            this.dgv_LTour.Size = new System.Drawing.Size(694, 452);
-            this.dgv_LTour.TabIndex = 3;
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gridControlLoai);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(360, 143);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(694, 452);
+            this.panel2.TabIndex = 5;
+            // 
+            // gridControlLoai
+            // 
+            this.gridControlLoai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlLoai.Location = new System.Drawing.Point(0, 0);
+            this.gridControlLoai.MainView = this.gridView1;
+            this.gridControlLoai.MenuManager = this.mainRibbonControl;
+            this.gridControlLoai.Name = "gridControlLoai";
+            this.gridControlLoai.Size = new System.Drawing.Size(694, 452);
+            this.gridControlLoai.TabIndex = 0;
+            this.gridControlLoai.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.maloai,
+            this.tenloai});
+            this.gridView1.GridControl = this.gridControlLoai;
+            this.gridView1.Name = "gridView1";
+            // 
+            // maloai
+            // 
+            this.maloai.Caption = "Mã loại";
+            this.maloai.FieldName = "MA_LOAI";
+            this.maloai.Name = "maloai";
+            this.maloai.Visible = true;
+            this.maloai.VisibleIndex = 0;
+            // 
+            // tenloai
+            // 
+            this.tenloai.Caption = "Tên loại";
+            this.tenloai.FieldName = "TEN_LOAI";
+            this.tenloai.Name = "tenloai";
+            this.tenloai.Visible = true;
+            this.tenloai.VisibleIndex = 1;
             // 
             // frmLoaiTour
             // 
@@ -228,7 +282,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_LTour);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmLoaiTour";
@@ -237,7 +291,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTour)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLoai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,10 +311,15 @@
         private DevExpress.XtraBars.BarButtonItem bbiAdd;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgv_LTour;
         private JMaterialTextbox.JMaterialTextbox txtTen;
         private JMaterialTextbox.JMaterialTextbox txtMa;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label23;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraGrid.GridControl gridControlLoai;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn maloai;
+        private DevExpress.XtraGrid.Columns.GridColumn tenloai;
     }
 }

@@ -28,24 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDD));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgv_DD = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgv_DD = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.madd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tendd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.matinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtMaTinh = new JMaterialTextbox.JMaterialTextbox();
+            this.cb_tinh = new System.Windows.Forms.ComboBox();
             this.txtDD = new JMaterialTextbox.JMaterialTextbox();
             this.txtMa = new JMaterialTextbox.JMaterialTextbox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,9 +66,10 @@
             this.mainRibbonControl.ExpandCollapseItem,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -91,6 +102,15 @@
             this.bbiEdit.Name = "bbiEdit";
             this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -105,13 +125,14 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgv_DD);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 143);
@@ -119,19 +140,65 @@
             this.panel1.Size = new System.Drawing.Size(1054, 452);
             this.panel1.TabIndex = 2;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgv_DD);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(360, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(694, 452);
+            this.panel3.TabIndex = 1;
+            // 
             // dgv_DD
             // 
-            this.dgv_DD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_DD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DD.Location = new System.Drawing.Point(360, 0);
+            this.dgv_DD.Location = new System.Drawing.Point(0, 0);
+            this.dgv_DD.MainView = this.gridView1;
+            this.dgv_DD.MenuManager = this.mainRibbonControl;
             this.dgv_DD.Name = "dgv_DD";
             this.dgv_DD.Size = new System.Drawing.Size(694, 452);
-            this.dgv_DD.TabIndex = 1;
+            this.dgv_DD.TabIndex = 0;
+            this.dgv_DD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.madd,
+            this.tendd,
+            this.matinh});
+            this.gridView1.GridControl = this.dgv_DD;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
+            // madd
+            // 
+            this.madd.Caption = "Mã địa điểm";
+            this.madd.FieldName = "MA_DIA_DIEM";
+            this.madd.Name = "madd";
+            this.madd.Visible = true;
+            this.madd.VisibleIndex = 0;
+            // 
+            // tendd
+            // 
+            this.tendd.Caption = "Tên địa điểm";
+            this.tendd.FieldName = "TEN_DIA_DIEM";
+            this.tendd.Name = "tendd";
+            this.tendd.Visible = true;
+            this.tendd.VisibleIndex = 1;
+            // 
+            // matinh
+            // 
+            this.matinh.Caption = "Mã tỉnh";
+            this.matinh.FieldName = "MA_TINH";
+            this.matinh.Name = "matinh";
+            this.matinh.Visible = true;
+            this.matinh.VisibleIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Controls.Add(this.txtMaTinh);
+            this.panel2.Controls.Add(this.cb_tinh);
             this.panel2.Controls.Add(this.txtDD);
             this.panel2.Controls.Add(this.txtMa);
             this.panel2.Controls.Add(this.label26);
@@ -143,27 +210,13 @@
             this.panel2.Size = new System.Drawing.Size(360, 452);
             this.panel2.TabIndex = 0;
             // 
-            // txtMaTinh
+            // cb_tinh
             // 
-            this.txtMaTinh.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaTinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTinh.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTinh.ForeColors = System.Drawing.Color.Black;
-            this.txtMaTinh.HintText = null;
-            this.txtMaTinh.IsPassword = false;
-            this.txtMaTinh.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaTinh.LineThickness = 3;
-            this.txtMaTinh.Location = new System.Drawing.Point(171, 273);
-            this.txtMaTinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaTinh.MaxLength = 32767;
-            this.txtMaTinh.Name = "txtMaTinh";
-            this.txtMaTinh.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtMaTinh.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtMaTinh.ReadOnly = false;
-            this.txtMaTinh.Size = new System.Drawing.Size(166, 28);
-            this.txtMaTinh.TabIndex = 153;
-            this.txtMaTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaTinh.TextName = "";
+            this.cb_tinh.FormattingEnabled = true;
+            this.cb_tinh.Location = new System.Drawing.Point(155, 281);
+            this.cb_tinh.Name = "cb_tinh";
+            this.cb_tinh.Size = new System.Drawing.Size(166, 21);
+            this.cb_tinh.TabIndex = 153;
             // 
             // txtDD
             // 
@@ -175,7 +228,7 @@
             this.txtDD.IsPassword = false;
             this.txtDD.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDD.LineThickness = 3;
-            this.txtDD.Location = new System.Drawing.Point(171, 226);
+            this.txtDD.Location = new System.Drawing.Point(155, 226);
             this.txtDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDD.MaxLength = 32767;
             this.txtDD.Name = "txtDD";
@@ -197,7 +250,7 @@
             this.txtMa.IsPassword = false;
             this.txtMa.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMa.LineThickness = 3;
-            this.txtMa.Location = new System.Drawing.Point(171, 177);
+            this.txtMa.Location = new System.Drawing.Point(155, 177);
             this.txtMa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMa.MaxLength = 32767;
             this.txtMa.Name = "txtMa";
@@ -214,7 +267,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(52, 230);
+            this.label26.Location = new System.Drawing.Point(24, 230);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(93, 24);
             this.label26.TabIndex = 150;
@@ -225,11 +278,11 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(52, 277);
+            this.label27.Location = new System.Drawing.Point(24, 274);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(85, 24);
+            this.label27.Size = new System.Drawing.Size(50, 24);
             this.label27.TabIndex = 149;
-            this.label27.Text = "Mã Tỉnh";
+            this.label27.Text = "Tỉnh";
             // 
             // label28
             // 
@@ -242,6 +295,14 @@
             this.label28.TabIndex = 148;
             this.label28.Text = "Mã Địa Điểm";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Reset\r\n";
+            this.barButtonItem2.Id = 12;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // frmDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,12 +311,15 @@
             this.ClientSize = new System.Drawing.Size(1054, 595);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmDD";
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.frmDD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -274,12 +338,19 @@
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgv_DD;
-        private JMaterialTextbox.JMaterialTextbox txtMaTinh;
         private JMaterialTextbox.JMaterialTextbox txtDD;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         public JMaterialTextbox.JMaterialTextbox txtMa;
+        private System.Windows.Forms.Panel panel3;
+        private DevExpress.XtraGrid.GridControl dgv_DD;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn madd;
+        private DevExpress.XtraGrid.Columns.GridColumn tendd;
+        private DevExpress.XtraGrid.Columns.GridColumn matinh;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private System.Windows.Forms.ComboBox cb_tinh;
     }
 }

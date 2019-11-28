@@ -121,6 +121,34 @@ namespace GUI
 
         }
 
-  
+        private void navBarItemDD_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmDD frmdv = new frmDD();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
+
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmKS frmdv = new frmKS();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
     }
 }
