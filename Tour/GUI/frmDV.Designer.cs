@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiReset = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.jMaterialTextbox3 = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.txtMaDV = new JMaterialTextbox.JMaterialTextbox();
+            this.txtGia = new JMaterialTextbox.JMaterialTextbox();
+            this.txt_TenDV = new JMaterialTextbox.JMaterialTextbox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +56,10 @@
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
-            this.bbiSave,
             this.bbiSaveAndClose,
             this.bbiSaveAndNew,
             this.bbiReset,
             this.bbiDelete,
-            this.bbiClose,
             this.bbiAdd,
             this.bbiEdit});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
@@ -75,13 +71,6 @@
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonControl.Size = new System.Drawing.Size(1054, 143);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // bbiSave
-            // 
-            this.bbiSave.Caption = "Save";
-            this.bbiSave.Id = 2;
-            this.bbiSave.ImageOptions.ImageUri.Uri = "Save";
-            this.bbiSave.Name = "bbiSave";
             // 
             // bbiSaveAndClose
             // 
@@ -110,13 +99,7 @@
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
-            // 
-            // bbiClose
-            // 
-            this.bbiClose.Caption = "Close";
-            this.bbiClose.Id = 7;
-            this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
-            this.bbiClose.Name = "bbiClose";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
             // bbiAdd
             // 
@@ -124,6 +107,7 @@
             this.bbiAdd.Id = 10;
             this.bbiAdd.ImageOptions.ImageUri.Uri = "Add;Size32x32;Office2013";
             this.bbiAdd.Name = "bbiAdd";
+            this.bbiAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAdd_ItemClick);
             // 
             // bbiEdit
             // 
@@ -131,6 +115,7 @@
             this.bbiEdit.Id = 11;
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit;Size32x32";
             this.bbiEdit.Name = "bbiEdit";
+            this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -146,8 +131,6 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiSave);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -155,9 +138,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.jMaterialTextbox3);
-            this.panel1.Controls.Add(this.jMaterialTextbox2);
-            this.panel1.Controls.Add(this.jMaterialTextbox1);
+            this.panel1.Controls.Add(this.txtMaDV);
+            this.panel1.Controls.Add(this.txtGia);
+            this.panel1.Controls.Add(this.txt_TenDV);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
@@ -168,71 +151,71 @@
             this.panel1.Size = new System.Drawing.Size(360, 452);
             this.panel1.TabIndex = 2;
             // 
-            // jMaterialTextbox3
+            // txtMaDV
             // 
-            this.jMaterialTextbox3.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox3.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox3.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox3.HintText = null;
-            this.jMaterialTextbox3.IsPassword = false;
-            this.jMaterialTextbox3.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox3.LineThickness = 3;
-            this.jMaterialTextbox3.Location = new System.Drawing.Point(170, 264);
-            this.jMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox3.MaxLength = 32767;
-            this.jMaterialTextbox3.Name = "jMaterialTextbox3";
-            this.jMaterialTextbox3.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox3.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox3.ReadOnly = false;
-            this.jMaterialTextbox3.Size = new System.Drawing.Size(146, 28);
-            this.jMaterialTextbox3.TabIndex = 163;
-            this.jMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox3.TextName = "";
+            this.txtMaDV.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaDV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDV.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDV.ForeColors = System.Drawing.Color.Black;
+            this.txtMaDV.HintText = null;
+            this.txtMaDV.IsPassword = false;
+            this.txtMaDV.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMaDV.LineThickness = 3;
+            this.txtMaDV.Location = new System.Drawing.Point(170, 167);
+            this.txtMaDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaDV.MaxLength = 32767;
+            this.txtMaDV.Name = "txtMaDV";
+            this.txtMaDV.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtMaDV.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtMaDV.ReadOnly = true;
+            this.txtMaDV.Size = new System.Drawing.Size(146, 28);
+            this.txtMaDV.TabIndex = 164;
+            this.txtMaDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaDV.TextName = "";
             // 
-            // jMaterialTextbox2
+            // txtGia
             // 
-            this.jMaterialTextbox2.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox2.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox2.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.HintText = null;
-            this.jMaterialTextbox2.IsPassword = false;
-            this.jMaterialTextbox2.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox2.LineThickness = 3;
-            this.jMaterialTextbox2.Location = new System.Drawing.Point(170, 214);
-            this.jMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox2.MaxLength = 32767;
-            this.jMaterialTextbox2.Name = "jMaterialTextbox2";
-            this.jMaterialTextbox2.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.ReadOnly = false;
-            this.jMaterialTextbox2.Size = new System.Drawing.Size(146, 28);
-            this.jMaterialTextbox2.TabIndex = 162;
-            this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox2.TextName = "";
+            this.txtGia.BackColor = System.Drawing.Color.Transparent;
+            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.ForeColors = System.Drawing.Color.Black;
+            this.txtGia.HintText = null;
+            this.txtGia.IsPassword = false;
+            this.txtGia.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtGia.LineThickness = 3;
+            this.txtGia.Location = new System.Drawing.Point(170, 264);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGia.MaxLength = 32767;
+            this.txtGia.Name = "txtGia";
+            this.txtGia.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtGia.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtGia.ReadOnly = false;
+            this.txtGia.Size = new System.Drawing.Size(146, 28);
+            this.txtGia.TabIndex = 163;
+            this.txtGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtGia.TextName = "";
             // 
-            // jMaterialTextbox1
+            // txt_TenDV
             // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = null;
-            this.jMaterialTextbox1.IsPassword = false;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 3;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(170, 167);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.ReadOnly = false;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(146, 28);
-            this.jMaterialTextbox1.TabIndex = 161;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "";
+            this.txt_TenDV.BackColor = System.Drawing.Color.Transparent;
+            this.txt_TenDV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenDV.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenDV.ForeColors = System.Drawing.Color.Black;
+            this.txt_TenDV.HintText = null;
+            this.txt_TenDV.IsPassword = false;
+            this.txt_TenDV.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_TenDV.LineThickness = 3;
+            this.txt_TenDV.Location = new System.Drawing.Point(170, 214);
+            this.txt_TenDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TenDV.MaxLength = 32767;
+            this.txt_TenDV.Name = "txt_TenDV";
+            this.txt_TenDV.OnFocusedColor = System.Drawing.Color.Black;
+            this.txt_TenDV.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txt_TenDV.ReadOnly = false;
+            this.txt_TenDV.Size = new System.Drawing.Size(146, 28);
+            this.txt_TenDV.TabIndex = 162;
+            this.txt_TenDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_TenDV.TextName = "";
             // 
             // label8
             // 
@@ -284,7 +267,7 @@
             this.dgv_DV.Location = new System.Drawing.Point(360, 143);
             this.dgv_DV.Name = "dgv_DV";
             this.dgv_DV.Size = new System.Drawing.Size(694, 452);
-            this.dgv_DV.TabIndex = 3;
+            this.dgv_DV.TabIndex = 7;
             // 
             // frmDV
             // 
@@ -312,22 +295,20 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
         private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup mainRibbonPageGroup;
-        private DevExpress.XtraBars.BarButtonItem bbiSave;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAndClose;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAndNew;
         private DevExpress.XtraBars.BarButtonItem bbiReset;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
-        private DevExpress.XtraBars.BarButtonItem bbiClose;
         private DevExpress.XtraBars.BarButtonItem bbiAdd;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private System.Windows.Forms.Panel panel1;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox3;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox2;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
+        private JMaterialTextbox.JMaterialTextbox txtGia;
+        private JMaterialTextbox.JMaterialTextbox txt_TenDV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblmadv;
+        private JMaterialTextbox.JMaterialTextbox txtMaDV;
         private System.Windows.Forms.DataGridView dgv_DV;
     }
 }

@@ -18,6 +18,7 @@ namespace GUI
 {
     public partial class frmLTrinh : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        LICH_KHOI_HANH lich_kh = new LICH_KHOI_HANH();
         lichKhoiHanhDAL lichtrinh = new lichKhoiHanhDAL();
         public frmLTrinh()
         {
@@ -25,11 +26,35 @@ namespace GUI
 
 
         }
-
-        private void frmLTrinh_Load(object sender, EventArgs e)
+        public void load()
         {
             var List = lichtrinh.GetList();
             dgv_LTrinh.DataSource = List;
+        }
+        private void frmLTrinh_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lich_kh.TEN_LICH = txtTen.TextName;
+            lichtrinh.Add(lich_kh);
+            load();
+        }
+
+        private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lich_kh.TEN_LICH = txtTen.TextName;
+            lichtrinh.Update(lich_kh);
+            load();
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lich_kh.TEN_LICH = txtTen.TextName;
+            lichtrinh.Delete(lich_kh.MA_LICH);
+            load();
         }
     }
 }

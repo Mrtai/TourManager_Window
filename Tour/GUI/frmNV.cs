@@ -13,11 +13,13 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using DAL_TOUR;
+using System.Data.SqlClient;
 
 namespace GUI
 {
     public partial class frmNV : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        NHAN_VIEN nhan_vien = new NHAN_VIEN();
         NhanVienDAL nhanvien = new NhanVienDAL();
         public frmNV()
         {
@@ -25,23 +27,46 @@ namespace GUI
 
            
         }
-
-        private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            this.Close();
-            frmMain main = new frmMain();
-            main.Show();
-        }
-
-        private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-          
-        }
-
-        private void frmNV_Load(object sender, EventArgs e)
+        public void load()
         {
             var List = nhanvien.GetList();
             dgv_NV.DataSource = List;
+        }
+        private void frmNV_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            nhan_vien.TEN_NV = txtTenNV.TextName;
+            nhan_vien.DIA_CHI = txtDiaChi.TextName;
+            nhan_vien.EMAIL = txtEmail.TextName;
+            nhan_vien.USERNAME = txtUser.TextName;
+            nhanvien.Add(nhan_vien);
+            load();
+        }
+
+
+
+        private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            nhan_vien.TEN_NV = txtTenNV.TextName;
+            nhan_vien.DIA_CHI = txtDiaChi.TextName;
+            nhan_vien.EMAIL = txtEmail.TextName;
+            nhan_vien.USERNAME = txtUser.TextName;
+            nhanvien.Update(nhan_vien);
+            load();
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            nhan_vien.TEN_NV = txtTenNV.TextName;
+            nhan_vien.DIA_CHI = txtDiaChi.TextName;
+            nhan_vien.EMAIL = txtEmail.TextName;
+            nhan_vien.USERNAME = txtUser.TextName;
+            nhanvien.Delete(nhan_vien.MA_NV);
+            load();
         }
     }
 }

@@ -18,18 +18,44 @@ namespace GUI
 {
     public partial class frmKS : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        khachHangDAL khachsan = new khachHangDAL();
+        KHACH_SAN khach_san = new KHACH_SAN();
+        khachSanDAL khachsan = new khachSanDAL();
         public frmKS()
         {
             InitializeComponent();
 
 
         }
-
+        public void load()
+        {
+            var List = khachsan.GetListKS();
+            dgv_KS.DataSource = List; 
+        }
         private void frmKS_Load(object sender, EventArgs e)
         {
-            var List = khachsan.GetList();
-            dgv_KS.DataSource = List;
+            load();
+        }
+
+        private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            khach_san.TEN_KHACH_SAN = txtTen.TextName;
+            khachsan.AddNewKhachSan(khach_san);
+            load();
+
+        }
+
+        private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            khach_san.TEN_KHACH_SAN = txtTen.TextName;
+            khachsan.UpdateKS(khach_san);
+            load();
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            khach_san.TEN_KHACH_SAN = txtTen.TextName;
+            khachsan.DeleteKS(khach_san.MA_KHACH_SAN);
+            load();
         }
     }
 }

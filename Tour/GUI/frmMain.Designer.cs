@@ -38,11 +38,9 @@
             this.customersBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-
             this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_dangxuat = new DevExpress.XtraBars.BarButtonItem();
-
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -173,34 +171,6 @@
             this.btn_dangxuat.Id = 54;
             this.btn_dangxuat.Name = "btn_dangxuat";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.ActAsDropDown = true;
-            this.barButtonItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem1.Caption = "btn_user";
-            this.barButtonItem1.Id = 51;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
-          
-            // 
-            // btn_dangxuat
-            // 
-            this.btn_dangxuat.Caption = "Log out";
-            this.btn_dangxuat.Id = 54;
-            this.btn_dangxuat.Name = "btn_dangxuat";
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Caption = "Log out";
-            this.btn_logout.Id = 52;
-            this.btn_logout.Name = "btn_logout";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Đăng xuất";
-            this.barButtonItem3.Id = 53;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -215,11 +185,18 @@
             this.ribbonPageGroup.Name = "ribbonPageGroup";
             this.ribbonPageGroup.ShowCaptionButton = false;
             this.ribbonPageGroup.Text = "Appearance";
-            //  
+            // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 651);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = null;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1094, 20);
+            // 
             // officeNavigationBar
             // 
             this.officeNavigationBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.officeNavigationBar.Location = new System.Drawing.Point(0, 595);
+            this.officeNavigationBar.Location = new System.Drawing.Point(0, 606);
             this.officeNavigationBar.Name = "officeNavigationBar";
             this.officeNavigationBar.NavigationClient = this.navBarControl;
             this.officeNavigationBar.Size = new System.Drawing.Size(1094, 45);
@@ -228,7 +205,7 @@
             // 
             // navBarControl
             // 
-            this.navBarControl.ActiveGroup = this.navBarGroup3;
+            this.navBarControl.ActiveGroup = this.navBarGroup1;
             this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.employeesNavBarGroup,
@@ -256,14 +233,13 @@
             this.navBarControl.Name = "navBarControl";
             this.navBarControl.OptionsNavPane.ExpandedWidth = 165;
             this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl.Size = new System.Drawing.Size(165, 452);
+            this.navBarControl.Size = new System.Drawing.Size(165, 463);
             this.navBarControl.TabIndex = 0;
             this.navBarControl.Text = "navBarControl";
             // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Báo cáo";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
@@ -333,6 +309,7 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Tour";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemTour),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemLTrinh),
@@ -393,7 +370,7 @@
             this.paneload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneload.Location = new System.Drawing.Point(165, 143);
             this.paneload.Name = "paneload";
-            this.paneload.Size = new System.Drawing.Size(929, 452);
+            this.paneload.Size = new System.Drawing.Size(929, 463);
             this.paneload.TabIndex = 4;
             // 
             // frmMain

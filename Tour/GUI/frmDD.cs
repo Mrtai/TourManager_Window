@@ -19,17 +19,42 @@ namespace GUI
     public partial class frmDD : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         diaDiemDuLichDAL diadiem = new diaDiemDuLichDAL();
+        DIA_DIEM_DU_LICH dia_diem = new DIA_DIEM_DU_LICH();
         public frmDD()
         {
             InitializeComponent();
 
 
         }
-
-        private void frmDD_Load(object sender, EventArgs e)
+        public void load()
         {
             var List = diadiem.GetListDD();
             dgv_DD.DataSource = List;
+        }
+        private void frmDD_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dia_diem.TEN_DIA_DIEM = txtDD.TextName;
+            diadiem.Add(dia_diem);
+            load();
+        }
+
+        private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dia_diem.TEN_DIA_DIEM = txtDD.TextName;
+            diadiem.Update(dia_diem);
+            load();
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dia_diem.TEN_DIA_DIEM = txtDD.TextName;
+            diadiem.Delete(dia_diem.MA_DIA_DIEM);
+            load();
         }
 
     }

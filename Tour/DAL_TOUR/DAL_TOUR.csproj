@@ -57,46 +57,46 @@
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DanhSachDichVuDAL.cs" />
-    <Compile Include="diaDiemDuLichDAL.cs" />
-    <Compile Include="dichvuDAL.cs" />
-    <Compile Include="hoaDonDAL.cs" />
-    <Compile Include="khachHangDAL.cs" />
-    <Compile Include="khachSanDAL.cs" />
-    <Compile Include="lichKhoiHanhDAL.cs" />
-    <Compile Include="loaiThanhToanDAL.cs" />
-    <Compile Include="loaiTourDAL.cs" />
-    <Compile Include="manHinhDAL.cs" />
-    <Compile Include="NhanVienDAL.cs" />
     <Compile Include="DANH_SACH_DICH_VU.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="diaDiemDuLichDAL.cs" />
     <Compile Include="DIA_DIEM_DU_LICH.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="dichvuDAL.cs" />
     <Compile Include="DICH_VU.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="hoaDonDAL.cs" />
     <Compile Include="HOA_DON.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="khachHangDAL.cs" />
+    <Compile Include="khachSanDAL.cs" />
     <Compile Include="KHACH_HANG.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="KHACH_SAN.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="lichKhoiHanhDAL.cs" />
     <Compile Include="LICH_KHOI_HANH.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="loaiThanhToanDAL.cs" />
+    <Compile Include="loaiTourDAL.cs" />
     <Compile Include="LOAI_THANH_TOAN.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LOAI_TOUR.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="manHinhDAL.cs" />
     <Compile Include="MAN_HINH.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienDAL.cs" />
     <Compile Include="nhanVienNhomDAL.cs" />
     <Compile Include="NHAN_VIEN.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
@@ -142,29 +142,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="TourModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TourModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
+    <None Include="TourModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+      <LastGenOutput>TourModel.Context.cs</LastGenOutput>
+    </None>
     <None Include="TourModel.edmx.diagram">
       <DependentUpon>TourModel.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TourModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TourModel.Context.cs</LastGenOutput>
-      <DependentUpon>TourModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="TourModel.tt">
+    <None Include="TourModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TourModel.edmx</DependentUpon>
       <LastGenOutput>TourModel.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -18,6 +18,7 @@ namespace GUI
 {
     public partial class frmLoaiTour : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        LOAI_TOUR loai_tour = new LOAI_TOUR();
         loaiTourDAL loaitour = new loaiTourDAL();
         public frmLoaiTour()
         {
@@ -25,11 +26,36 @@ namespace GUI
 
 
         }
-
-        private void frmLoaiTour_Load(object sender, EventArgs e)
+        public void load()
         {
             var List = loaitour.GetList();
             dgv_LTour.DataSource = List;
         }
+        private void frmLoaiTour_Load(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loai_tour.TEN_LOAI = txtTen.TextName;
+            loaitour.Add(loai_tour);
+            load();
+        }
+
+        private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loai_tour.TEN_LOAI = txtTen.TextName;
+            loaitour.Update(loai_tour);
+            load();
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            loai_tour.TEN_LOAI = txtTen.TextName;
+            loaitour.Delete(loai_tour.MA_LOAI);
+            load();
+        }
+
     }
 }
