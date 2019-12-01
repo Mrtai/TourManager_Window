@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCTTour));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -35,28 +36,29 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgv_CTT = new System.Windows.Forms.DataGridView();
-            this.MA_CHUONG_TRINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.cb_ks = new System.Windows.Forms.ComboBox();
+            this.cb_tour = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtChiTiet = new JMaterialTextbox.JMaterialTextbox();
             this.txtTen = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.txtMaCT = new JMaterialTextbox.JMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.gc_CCT = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CTT)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_CCT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -69,9 +71,10 @@
             this.mainRibbonControl.ExpandCollapseItem,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 15;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -119,13 +122,14 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgv_CTT);
+            this.panel1.Controls.Add(this.gc_CCT);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 143);
@@ -133,45 +137,19 @@
             this.panel1.Size = new System.Drawing.Size(1054, 452);
             this.panel1.TabIndex = 2;
             // 
-            // dgv_CTT
-            // 
-            this.dgv_CTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_CTT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MA_CHUONG_TRINH,
-            this.Tour});
-            this.dgv_CTT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_CTT.Location = new System.Drawing.Point(369, 0);
-            this.dgv_CTT.Name = "dgv_CTT";
-            this.dgv_CTT.Size = new System.Drawing.Size(685, 452);
-            this.dgv_CTT.TabIndex = 1;
-            // 
-            // MA_CHUONG_TRINH
-            // 
-            this.MA_CHUONG_TRINH.DataPropertyName = "MA_CHUONG_TRINH";
-            this.MA_CHUONG_TRINH.HeaderText = "Mã Chương Trình";
-            this.MA_CHUONG_TRINH.Name = "MA_CHUONG_TRINH";
-            this.MA_CHUONG_TRINH.Width = 200;
-            // 
-            // Tour
-            // 
-            this.Tour.DataPropertyName = "TOUR";
-            this.Tour.HeaderText = "Column1";
-            this.Tour.Name = "Tour";
-            this.Tour.Visible = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
             this.panel2.Controls.Add(this.dtpNgay);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cb_ks);
+            this.panel2.Controls.Add(this.cb_tour);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtChiTiet);
             this.panel2.Controls.Add(this.txtTen);
-            this.panel2.Controls.Add(this.jMaterialTextbox1);
+            this.panel2.Controls.Add(this.txtMaCT);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label22);
@@ -182,23 +160,32 @@
             this.panel2.Size = new System.Drawing.Size(369, 452);
             this.panel2.TabIndex = 0;
             // 
-            // comboBox2
+            // dtpNgay
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(189, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 27);
-            this.comboBox2.TabIndex = 185;
+            this.dtpNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgay.Location = new System.Drawing.Point(189, 274);
+            this.dtpNgay.Name = "dtpNgay";
+            this.dtpNgay.Size = new System.Drawing.Size(147, 26);
+            this.dtpNgay.TabIndex = 186;
             // 
-            // comboBox1
+            // cb_ks
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(189, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 27);
-            this.comboBox1.TabIndex = 184;
+            this.cb_ks.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ks.FormattingEnabled = true;
+            this.cb_ks.Location = new System.Drawing.Point(189, 188);
+            this.cb_ks.Name = "cb_ks";
+            this.cb_ks.Size = new System.Drawing.Size(147, 27);
+            this.cb_ks.TabIndex = 185;
+            // 
+            // cb_tour
+            // 
+            this.cb_tour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_tour.FormattingEnabled = true;
+            this.cb_tour.Location = new System.Drawing.Point(189, 150);
+            this.cb_tour.Name = "cb_tour";
+            this.cb_tour.Size = new System.Drawing.Size(147, 27);
+            this.cb_tour.TabIndex = 184;
             // 
             // label4
             // 
@@ -288,27 +275,27 @@
             this.txtTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTen.TextName = "";
             // 
-            // jMaterialTextbox1
+            // txtMaCT
             // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = null;
-            this.jMaterialTextbox1.IsPassword = false;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 3;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(189, 110);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.ReadOnly = true;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(147, 23);
-            this.jMaterialTextbox1.TabIndex = 176;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "";
+            this.txtMaCT.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaCT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCT.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCT.ForeColors = System.Drawing.Color.Black;
+            this.txtMaCT.HintText = null;
+            this.txtMaCT.IsPassword = false;
+            this.txtMaCT.LineBackColor = System.Drawing.Color.Black;
+            this.txtMaCT.LineThickness = 3;
+            this.txtMaCT.Location = new System.Drawing.Point(189, 110);
+            this.txtMaCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaCT.MaxLength = 32767;
+            this.txtMaCT.Name = "txtMaCT";
+            this.txtMaCT.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtMaCT.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtMaCT.ReadOnly = true;
+            this.txtMaCT.Size = new System.Drawing.Size(147, 23);
+            this.txtMaCT.TabIndex = 176;
+            this.txtMaCT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaCT.TextName = "";
             // 
             // label1
             // 
@@ -358,13 +345,31 @@
             this.label23.TabIndex = 172;
             this.label23.Text = "Mã Chương Trình";
             // 
-            // dtpNgay
+            // barButtonItem1
             // 
-            this.dtpNgay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgay.Location = new System.Drawing.Point(189, 274);
-            this.dtpNgay.Name = "dtpNgay";
-            this.dtpNgay.Size = new System.Drawing.Size(147, 26);
-            this.dtpNgay.TabIndex = 186;
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 14;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // gc_CCT
+            // 
+            this.gc_CCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_CCT.Location = new System.Drawing.Point(369, 0);
+            this.gc_CCT.MainView = this.gridView1;
+            this.gc_CCT.MenuManager = this.mainRibbonControl;
+            this.gc_CCT.Name = "gc_CCT";
+            this.gc_CCT.Size = new System.Drawing.Size(685, 452);
+            this.gc_CCT.TabIndex = 1;
+            this.gc_CCT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_CCT;
+            this.gridView1.Name = "gridView1";
             // 
             // frmCTTour
             // 
@@ -384,9 +389,10 @@
             this.Load += new System.EventHandler(this.frmCTTour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CTT)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_CCT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,22 +408,22 @@
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_ks;
+        private System.Windows.Forms.ComboBox cb_tour;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private JMaterialTextbox.JMaterialTextbox txtChiTiet;
         private JMaterialTextbox.JMaterialTextbox txtTen;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
+        private JMaterialTextbox.JMaterialTextbox txtMaCT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dgv_CTT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_CHUONG_TRINH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tour;
         private System.Windows.Forms.DateTimePicker dtpNgay;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.GridControl gc_CCT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

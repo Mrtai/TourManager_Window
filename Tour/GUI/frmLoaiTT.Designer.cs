@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiTT));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
@@ -35,6 +36,7 @@
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,10 +46,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dgv_LTT = new System.Windows.Forms.DataGridView();
+            this.gc_LTT = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_LTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -60,9 +64,10 @@
             this.bbiReset,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -116,6 +121,15 @@
             this.bbiEdit.Name = "bbiEdit";
             this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -130,6 +144,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -251,14 +266,22 @@
             this.label23.TabIndex = 168;
             this.label23.Text = "Mã Loại TT";
             // 
-            // dgv_LTT
+            // gc_LTT
             // 
-            this.dgv_LTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_LTT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_LTT.Location = new System.Drawing.Point(360, 143);
-            this.dgv_LTT.Name = "dgv_LTT";
-            this.dgv_LTT.Size = new System.Drawing.Size(694, 452);
-            this.dgv_LTT.TabIndex = 3;
+            this.gc_LTT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_LTT.Location = new System.Drawing.Point(360, 143);
+            this.gc_LTT.MainView = this.gridView1;
+            this.gc_LTT.MenuManager = this.mainRibbonControl;
+            this.gc_LTT.Name = "gc_LTT";
+            this.gc_LTT.Size = new System.Drawing.Size(694, 452);
+            this.gc_LTT.TabIndex = 5;
+            this.gc_LTT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_LTT;
+            this.gridView1.Name = "gridView1";
             // 
             // frmLoaiTT
             // 
@@ -266,7 +289,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_LTT);
+            this.Controls.Add(this.gc_LTT);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmLoaiTT";
@@ -275,7 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_LTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_LTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +323,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dgv_LTT;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.GridControl gc_LTT;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

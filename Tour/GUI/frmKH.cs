@@ -28,7 +28,7 @@ namespace GUI
         public void load()
         {
             var List = khachhang.GetList();
-            dgv_KH.DataSource = List;
+            gc_kh.DataSource = List;
         }
 
 
@@ -39,32 +39,120 @@ namespace GUI
 
         private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            khach_hang.TEN = txtTen.TextName;
-            khach_hang.DIEN_THOAI = txtSDT.TextName;
-            khach_hang.DIA_CHI = txtDC.TextName;
-            khach_hang.EMAIL = txtEmail.TextName;
-            khachhang.Add(khach_hang);
-            load();
-        }
+            if (txtTen.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo");
+                txtTen.Focus();
+            }
+            else
+            {
+                khach_hang.TEN = txtTen.TextName;
+                khach_hang.DIEN_THOAI = txtSDT.TextName;
+                khach_hang.DIA_CHI = txtDC.TextName;
+                khach_hang.EMAIL = txtEmail.TextName;
+                khach_hang.NGAY_SINH = dtp_NgayS.Value;
+                if (khachhang.Add(khach_hang) == 1)
+                {
+                    MessageBox.Show("Thêm thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công", "Thông báo");
+                }
 
+            }
+        }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int position = gridView1.FocusedRowHandle;
+            txtMaKH.TextName = gridView1.GetRowCellValue(position, "MA_KHACH_HANG").ToString();
+            txtTen.TextName = gridView1.GetRowCellValue(position, "TEN").ToString();
+            txtSDT.TextName = gridView1.GetRowCellValue(position, "DIEN_THOAI").ToString();
+            txtDC.TextName = gridView1.GetRowCellValue(position, "DIA_CHI").ToString();
+            txtEmail.TextName = gridView1.GetRowCellValue(position, "EMAIL").ToString();
+        }
         private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            khach_hang.TEN = txtTen.TextName;
-            khach_hang.DIEN_THOAI = txtSDT.TextName;
-            khach_hang.DIA_CHI = txtDC.TextName;
-            khach_hang.EMAIL = txtEmail.TextName;
-            khachhang.Update(khach_hang);
-            load();
+            if (txtMaKH.TextName == "")
+            {
+                MessageBox.Show("Bạn phải chọn khách hàng !", "Thông báo");
+                return;
+            }
+            if (txtTen.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên khách hàng", "Thông báo");
+                txtTen.Focus();
+            }
+            if (txtSDT.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập số điện thoại", "Thông báo");
+                txtSDT.Focus();
+            }
+            if (txtDC.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo");
+                txtDC.Focus();
+            }
+            if (txtEmail.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập email", "Thông báo");
+                txtEmail.Focus();
+            }
+            else
+            {
+                khach_hang.TEN = txtTen.TextName;
+                khach_hang.DIEN_THOAI = txtSDT.TextName;
+                khach_hang.DIA_CHI = txtDC.TextName;
+                khach_hang.EMAIL = txtEmail.TextName;
+                if (khachhang.Update(khach_hang) == 1)
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công", "Thông báo");
+                }
+
+            }
         }
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            khach_hang.TEN = txtTen.TextName;
-            khach_hang.DIEN_THOAI = txtSDT.TextName;
-            khach_hang.DIA_CHI = txtDC.TextName;
-            khach_hang.EMAIL = txtEmail.TextName;
-            khachhang.Delete(khach_hang.MA_KHACH_HANG);
-            load();
+            if (txtMaKH.TextName == "")
+            {
+                MessageBox.Show("Bạn phải chọn khách hàng !", "Thông báo");
+                return;
+            }
+            else
+            {
+                if (khachhang.Delete(Int32.Parse(txtMaKH.TextName)) == 1)
+                {
+                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công", "Thông báo");
+                }
+
+            }
+        }
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            resetTextbox();
+        }
+        private void resetTextbox()
+        {
+            txtMaKH.TextName = "";
+            txtTen.TextName = "";
+            txtSDT.TextName = "";
+            txtDC.TextName = "";
+            txtEmail.TextName = "";
         }
     }
 }

@@ -38,24 +38,97 @@ namespace GUI
 
         private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            loai_tour.TEN_LOAI = txtTen.TextName;
-            loaitour.Add(loai_tour);
-            load();
+            if (txtTen.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên loại tuor", "Thông báo");
+                txtTen.Focus();
+            }
+            else
+            {
+                loai_tour.TEN_LOAI = txtTen.TextName;
+
+                if (loaitour.Add(loai_tour) == 1)
+                {
+                    MessageBox.Show("Thêm thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công", "Thông báo");
+                }
+
+            }
         }
 
         private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            loai_tour.TEN_LOAI = txtTen.TextName;
-            loaitour.Update(loai_tour);
-            load();
+            if (txtMa.TextName == "")
+            {
+                MessageBox.Show("Bạn phải chọn loại tuor !", "Thông báo");
+                return;
+            }
+            if (txtTen.TextName == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên loại tuor", "Thông báo");
+                txtTen.Focus();
+            }
+
+            else
+            {
+                loai_tour.TEN_LOAI = txtTen.TextName;
+                if (loaitour.Update(loai_tour) == 1)
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công", "Thông báo");
+                }
+
+            }
+
         }
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            loai_tour.TEN_LOAI = txtTen.TextName;
-            loaitour.Delete(loai_tour.MA_LOAI);
-            load();
+            if (txtMa.TextName == "")
+            {
+                MessageBox.Show("Bạn phải chọn loại tuor !", "Thông báo");
+                return;
+            }
+            else
+            {
+                if (loaitour.Delete(Int32.Parse(txtMa.TextName)) == 1)
+                {
+                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công", "Thông báo");
+                }
+            }
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            resetTextbox();
+        }
+        private void resetTextbox()
+        {
+            txtMa.TextName = "";
+            txtTen.TextName = "";
+        }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int position = gridView1.FocusedRowHandle;
+            txtMa.TextName = gridView1.GetRowCellValue(position, "MA_LOAI").ToString();
+            txtTen.TextName = gridView1.GetRowCellValue(position, "TEN_LOAI").ToString();
+
+        }
     }
 }

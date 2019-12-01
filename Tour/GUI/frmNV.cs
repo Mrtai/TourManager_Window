@@ -102,9 +102,9 @@ namespace GUI
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ResetText();
+            resetTextbox();
         }
-        private void ResetText()
+        private void resetTextbox()
         {
             txtMaNV.TextName = "";
             txtTenNV.TextName = "";

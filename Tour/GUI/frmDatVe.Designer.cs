@@ -22,20 +22,22 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatVe));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_NV = new System.Windows.Forms.ComboBox();
+            this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
+            this.cb_LT = new System.Windows.Forms.ComboBox();
+            this.cb_KH = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,10 +48,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dgv_DVe = new System.Windows.Forms.DataGridView();
+            this.gc_DVe = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_DVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -59,9 +63,10 @@
             this.mainRibbonControl.ExpandCollapseItem,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -94,6 +99,15 @@
             this.bbiEdit.Name = "bbiEdit";
             this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -108,6 +122,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -118,10 +133,10 @@
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cb_NV);
+            this.panel1.Controls.Add(this.dtp_Ngay);
+            this.panel1.Controls.Add(this.cb_LT);
+            this.panel1.Controls.Add(this.cb_KH);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
@@ -174,40 +189,40 @@
             this.label6.TabIndex = 231;
             this.label6.Text = "Mã Nhân Viên";
             // 
-            // comboBox3
+            // cb_NV
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(148, 202);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(157, 27);
-            this.comboBox3.TabIndex = 230;
+            this.cb_NV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_NV.FormattingEnabled = true;
+            this.cb_NV.Location = new System.Drawing.Point(148, 202);
+            this.cb_NV.Name = "cb_NV";
+            this.cb_NV.Size = new System.Drawing.Size(157, 27);
+            this.cb_NV.TabIndex = 230;
             // 
-            // dateTimePicker1
+            // dtp_Ngay
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(148, 290);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 26);
-            this.dateTimePicker1.TabIndex = 229;
+            this.dtp_Ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_Ngay.Location = new System.Drawing.Point(148, 290);
+            this.dtp_Ngay.Name = "dtp_Ngay";
+            this.dtp_Ngay.Size = new System.Drawing.Size(157, 26);
+            this.dtp_Ngay.TabIndex = 229;
             // 
-            // comboBox2
+            // cb_LT
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(148, 158);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(157, 27);
-            this.comboBox2.TabIndex = 228;
+            this.cb_LT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_LT.FormattingEnabled = true;
+            this.cb_LT.Location = new System.Drawing.Point(148, 158);
+            this.cb_LT.Name = "cb_LT";
+            this.cb_LT.Size = new System.Drawing.Size(157, 27);
+            this.cb_LT.TabIndex = 228;
             // 
-            // comboBox1
+            // cb_KH
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(148, 120);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 27);
-            this.comboBox1.TabIndex = 227;
+            this.cb_KH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_KH.FormattingEnabled = true;
+            this.cb_KH.Location = new System.Drawing.Point(148, 120);
+            this.cb_KH.Name = "cb_KH";
+            this.cb_KH.Size = new System.Drawing.Size(157, 27);
+            this.cb_KH.TabIndex = 227;
             // 
             // label4
             // 
@@ -345,14 +360,22 @@
             this.label23.TabIndex = 217;
             this.label23.Text = "Mã Tour Đặt";
             // 
-            // dgv_DVe
+            // gc_DVe
             // 
-            this.dgv_DVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DVe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DVe.Location = new System.Drawing.Point(360, 143);
-            this.dgv_DVe.Name = "dgv_DVe";
-            this.dgv_DVe.Size = new System.Drawing.Size(694, 452);
-            this.dgv_DVe.TabIndex = 3;
+            this.gc_DVe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_DVe.Location = new System.Drawing.Point(360, 143);
+            this.gc_DVe.MainView = this.gridView1;
+            this.gc_DVe.MenuManager = this.mainRibbonControl;
+            this.gc_DVe.Name = "gc_DVe";
+            this.gc_DVe.Size = new System.Drawing.Size(694, 452);
+            this.gc_DVe.TabIndex = 5;
+            this.gc_DVe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_DVe;
+            this.gridView1.Name = "gridView1";
             // 
             // frmDatVe
             // 
@@ -360,7 +383,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_DVe);
+            this.Controls.Add(this.gc_DVe);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmDatVe";
@@ -369,7 +392,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_DVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,10 +408,10 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_NV;
+        private System.Windows.Forms.DateTimePicker dtp_Ngay;
+        private System.Windows.Forms.ComboBox cb_LT;
+        private System.Windows.Forms.ComboBox cb_KH;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -398,6 +422,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dgv_DVe;
+        private DevExpress.XtraGrid.GridControl gc_DVe;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
