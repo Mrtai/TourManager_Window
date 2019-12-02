@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -56,6 +57,7 @@
     <Compile Include="CHUONG_TRINH_TOUR.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Config.cs" />
     <Compile Include="DanhSachDichVuDAL.cs" />
     <Compile Include="DANH_SACH_DICH_VU.cs">
       <DependentUpon>TourModel.tt</DependentUpon>

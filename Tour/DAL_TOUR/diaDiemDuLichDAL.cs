@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class diaDiemDuLichDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public diaDiemDuLichDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(DIA_DIEM_DU_LICH pDD)
         {
             int result = 0;

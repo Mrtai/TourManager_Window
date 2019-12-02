@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class tourDatDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context ;
+        public tourDatDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(TOUR_DAT pTD)
         {
             int result = 0;

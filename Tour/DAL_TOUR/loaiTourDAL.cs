@@ -9,7 +9,12 @@ namespace DAL_TOUR
 {
     public class loaiTourDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public loaiTourDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(LOAI_TOUR pT)
         {
             int result = 0;

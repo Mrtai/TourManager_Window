@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class khachHangDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public khachHangDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(KHACH_HANG pKH)
         {
             int result = 0;

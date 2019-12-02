@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     class DanhSachDichVuDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context ;
+        public DanhSachDichVuDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(DANH_SACH_DICH_VU pDS)
         {
             int result = 0;

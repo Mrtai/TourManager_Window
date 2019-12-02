@@ -150,5 +150,10 @@ namespace GUI
             paneload.Controls.Add(frmdv);
             frmdv.Show();
         }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.DangNhap.Close();
+        }
     }
 }

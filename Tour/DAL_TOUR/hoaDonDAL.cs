@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class hoaDonDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public hoaDonDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(HOA_DON pHD)
         {
             int result = 0;

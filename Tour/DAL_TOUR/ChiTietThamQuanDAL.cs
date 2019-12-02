@@ -8,7 +8,13 @@ namespace DAL_TOUR
 {
     class ChiTietThamQuanDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public ChiTietThamQuanDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+
+        }
         public int Add(CHI_TIET_THAM_QUAN pCT)
         {
             int result = 0;

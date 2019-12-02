@@ -15,9 +15,54 @@ namespace DAL_TOUR
     
     public partial class DB_TOUREntities : DbContext
     {
-        public DB_TOUREntities()
-            : base("name=DB_TOUREntities")
+
+        public DB_TOUREntities(string connectionString) : base("name=DB_TOUREntities")
         {
+            //data source = MR_TAI1\SQLEXPRESS; initial catalog = DB_TOUR; user id = sa; password = sa2012; MultipleActiveResultSets = True; App = EntityFramework
+            string[] parts = connectionString.Split(';');
+            string dataSourcestr = "";
+            string database = "";
+            string user = "";
+            string password = "";
+            bool c = false;
+            for (int i = 0; i < parts.Length; i++)
+            {
+                string part = parts[i].Trim();
+                if (part.StartsWith("provider connection string="))
+                {
+                    dataSourcestr = part.Replace("provider connection string=", "");
+                }
+                if (part.StartsWith("data source="))
+                {
+                    dataSourcestr = part.Replace("data source=", "");
+                    c = true;
+                }
+                if (part.StartsWith("initial catalog="))
+                {
+                    database = part.Replace("initial catalog=", "");
+                }
+                if (part.StartsWith("user id="))
+                {
+                    user = part.Replace("user id=", "");
+                }
+                if (part.StartsWith("password="))
+                {
+                    password = part.Replace("password=", "");
+                }
+
+            }
+            string datasource = "";
+            if (c)
+            {
+                datasource = dataSourcestr;
+            }
+            else
+            {
+                string[] partpass = dataSourcestr.Split('=');
+                datasource = partpass[1].Trim();
+            }
+            string dbconnect = "data source ="+datasource+"; initial catalog ="+database+"; user id ="+user+"; password ="+password+"; MultipleActiveResultSets = True; App = EntityFramework";
+            this.Database.Connection.ConnectionString = dbconnect;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

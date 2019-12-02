@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     class phanQuyenDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context ;
+        public phanQuyenDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(PHAN_QUYEN pT)
         {
             int result = 0;

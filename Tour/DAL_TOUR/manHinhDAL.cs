@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     class manHinhDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public manHinhDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(MAN_HINH pT)
         {
             int result = 0;

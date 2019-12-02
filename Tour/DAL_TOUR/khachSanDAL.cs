@@ -8,7 +8,13 @@ namespace DAL_TOUR
 {
     public class khachSanDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+
+        public khachSanDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int AddNewKhachSan(KHACH_SAN pKS)
         {
             int result = 0;

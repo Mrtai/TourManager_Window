@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class chuongTrinhTourDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public chuongTrinhTourDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(CHUONG_TRINH_TOUR pCTT)
         {
             int result = 0;

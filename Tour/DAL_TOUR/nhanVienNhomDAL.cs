@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     class nhanVienNhomDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public nhanVienNhomDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(NHAN_VIEN_NHOM pT)
         {
             int result = 0;

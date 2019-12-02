@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     class nhomDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context;
+        public nhomDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(NHOM pT)
         {
             int result = 0;

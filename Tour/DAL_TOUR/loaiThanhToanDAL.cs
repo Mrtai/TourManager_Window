@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class loaiThanhToanDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context ;
+        public loaiThanhToanDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public int Add(LOAI_THANH_TOAN pTT)
         {
             int result = 0;

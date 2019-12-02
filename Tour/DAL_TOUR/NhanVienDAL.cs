@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.EntityClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,31 @@ namespace DAL_TOUR
 {
     public class NhanVienDAL
     {
-        DB_TOUREntities context = new DB_TOUREntities();
+        DB_TOUREntities context;
+        public NhanVienDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+            
+        }
+
         public int Add(NHAN_VIEN pT)
         {
             int result = 0;
             context.NHAN_VIEN.Add(pT);
             result = context.SaveChanges();
             return result;
+        }
+        public bool Login(string username,byte[] pass)
+        {
+            if(context.NHAN_VIEN.Any(m => m.USERNAME.ToUpper() == username.ToUpper() && m.PASSWORD == pass))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public int Update(NHAN_VIEN pT)
         {

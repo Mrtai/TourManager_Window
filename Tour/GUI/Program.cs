@@ -13,6 +13,8 @@ namespace GUI
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        public static frmLogin DangNhap = null;
+        public static frmMain frmMain = null;
         [STAThread]
         static void Main()
         {
@@ -21,7 +23,8 @@ namespace GUI
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new frmMain());
+            DangNhap = new frmLogin();
+            Application.Run(DangNhap);
         }
     }
 }

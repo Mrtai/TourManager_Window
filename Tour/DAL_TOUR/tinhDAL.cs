@@ -8,7 +8,12 @@ namespace DAL_TOUR
 {
     public class tinhDAL
     {
-        private DB_TOUREntities context = new DB_TOUREntities();
+        private DB_TOUREntities context ;
+        public tinhDAL()
+        {
+            string c = Config.GetConnectionString();
+            context = new DB_TOUREntities(c);
+        }
         public List<TINH> GetListTinh()
         {
             List<TINH> list = new List<TINH>();
