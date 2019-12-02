@@ -48,34 +48,34 @@
     <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework">
-      <HintPath>..\DAL_TOUR\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="FlatButton">
-      <HintPath>..\DAL_TOUR\bin\Debug\FlatButton.dll</HintPath>
+      <HintPath>..\JControls\FlatButton.dll</HintPath>
     </Reference>
     <Reference Include="JDragControl">
-      <HintPath>..\DAL_TOUR\bin\Debug\JDragControl.dll</HintPath>
+      <HintPath>..\JControls\JDragControl.dll</HintPath>
     </Reference>
     <Reference Include="JGradient Panel">
-      <HintPath>..\DAL_TOUR\bin\Debug\JGradient Panel.dll</HintPath>
+      <HintPath>..\JControls\JGradient Panel.dll</HintPath>
     </Reference>
     <Reference Include="JImageButton">
-      <HintPath>..\DAL_TOUR\bin\Debug\JImageButton.dll</HintPath>
+      <HintPath>..\JControls\JImageButton.dll</HintPath>
     </Reference>
     <Reference Include="JMaterialTextbox">
-      <HintPath>..\DAL_TOUR\bin\Debug\JMaterialTextbox.dll</HintPath>
+      <HintPath>..\JControls\JMaterialTextbox.dll</HintPath>
     </Reference>
     <Reference Include="JMetroTextBox">
       <HintPath>..\..\..\JControls\JMetroTextBox.dll</HintPath>
     </Reference>
     <Reference Include="JTextBox">
-      <HintPath>..\DAL_TOUR\bin\Debug\JTextBox.dll</HintPath>
+      <HintPath>..\JControls\JTextBox.dll</HintPath>
     </Reference>
     <Reference Include="JTextBox2">
-      <HintPath>..\DAL_TOUR\bin\Debug\JTextBox2.dll</HintPath>
+      <HintPath>..\JControls\JTextBox2.dll</HintPath>
     </Reference>
     <Reference Include="JThinButton">
-      <HintPath>..\DAL_TOUR\bin\Debug\JThinButton.dll</HintPath>
+      <HintPath>..\JControls\JThinButton.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />

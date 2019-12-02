@@ -36,6 +36,7 @@
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.txtMa = new JMaterialTextbox.JMaterialTextbox();
             this.label18 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControlLoai = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -122,6 +122,15 @@
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit;Size32x32;Office2013";
             this.bbiEdit.Name = "bbiEdit";
             this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -222,14 +231,6 @@
             this.label23.Size = new System.Drawing.Size(124, 22);
             this.label23.TabIndex = 160;
             this.label23.Text = "Mã Loại Tour";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Reset";
-            this.barButtonItem1.Id = 12;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // panel2
             // 

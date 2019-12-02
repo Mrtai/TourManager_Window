@@ -35,7 +35,7 @@ namespace GUI
             cb_tinh.ValueMember = "MA_TINH";
             cb_tinh.DisplayMember = "TEN_TINH";
             var List = diadiem.GetListDD();
-            dgv_DD.DataSource = List;
+            gc_DD.DataSource = List;
             
             
 

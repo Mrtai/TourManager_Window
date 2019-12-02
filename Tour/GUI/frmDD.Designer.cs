@@ -36,13 +36,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgv_DD = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.madd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tendd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.matinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cb_tinh = new System.Windows.Forms.ComboBox();
             this.txtDD = new JMaterialTextbox.JMaterialTextbox();
@@ -50,13 +44,19 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gc_DD = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.madd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tendd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.matinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_DD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -130,70 +130,13 @@
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
             // 
-            // panel1
+            // barButtonItem2
             // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 143);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1054, 452);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dgv_DD);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(360, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(694, 452);
-            this.panel3.TabIndex = 1;
-            // 
-            // dgv_DD
-            // 
-            this.dgv_DD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DD.Location = new System.Drawing.Point(0, 0);
-            this.dgv_DD.MainView = this.gridView1;
-            this.dgv_DD.MenuManager = this.mainRibbonControl;
-            this.dgv_DD.Name = "dgv_DD";
-            this.dgv_DD.Size = new System.Drawing.Size(694, 452);
-            this.dgv_DD.TabIndex = 0;
-            this.dgv_DD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.madd,
-            this.tendd,
-            this.matinh});
-            this.gridView1.GridControl = this.dgv_DD;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
-            // 
-            // madd
-            // 
-            this.madd.Caption = "Mã địa điểm";
-            this.madd.FieldName = "MA_DIA_DIEM";
-            this.madd.Name = "madd";
-            this.madd.Visible = true;
-            this.madd.VisibleIndex = 0;
-            // 
-            // tendd
-            // 
-            this.tendd.Caption = "Tên địa điểm";
-            this.tendd.FieldName = "TEN_DIA_DIEM";
-            this.tendd.Name = "tendd";
-            this.tendd.Visible = true;
-            this.tendd.VisibleIndex = 1;
-            // 
-            // matinh
-            // 
-            this.matinh.Caption = "Mã tỉnh";
-            this.matinh.FieldName = "MA_TINH";
-            this.matinh.Name = "matinh";
-            this.matinh.Visible = true;
-            this.matinh.VisibleIndex = 2;
+            this.barButtonItem2.Caption = "Reset\r\n";
+            this.barButtonItem2.Id = 12;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // panel2
             // 
@@ -295,13 +238,70 @@
             this.label28.TabIndex = 148;
             this.label28.Text = "Mã Địa Điểm";
             // 
-            // barButtonItem2
+            // panel3
             // 
-            this.barButtonItem2.Caption = "Reset\r\n";
-            this.barButtonItem2.Id = 12;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.panel3.Controls.Add(this.gc_DD);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(360, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(694, 452);
+            this.panel3.TabIndex = 1;
+            // 
+            // gc_DD
+            // 
+            this.gc_DD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_DD.Location = new System.Drawing.Point(0, 0);
+            this.gc_DD.MainView = this.gridView1;
+            this.gc_DD.MenuManager = this.mainRibbonControl;
+            this.gc_DD.Name = "gc_DD";
+            this.gc_DD.Size = new System.Drawing.Size(694, 452);
+            this.gc_DD.TabIndex = 0;
+            this.gc_DD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.madd,
+            this.tendd,
+            this.matinh});
+            this.gridView1.GridControl = this.gc_DD;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
+            // madd
+            // 
+            this.madd.Caption = "Mã địa điểm";
+            this.madd.FieldName = "MA_DIA_DIEM";
+            this.madd.Name = "madd";
+            this.madd.Visible = true;
+            this.madd.VisibleIndex = 0;
+            // 
+            // tendd
+            // 
+            this.tendd.Caption = "Tên địa điểm";
+            this.tendd.FieldName = "TEN_DIA_DIEM";
+            this.tendd.Name = "tendd";
+            this.tendd.Visible = true;
+            this.tendd.VisibleIndex = 1;
+            // 
+            // matinh
+            // 
+            this.matinh.Caption = "Mã tỉnh";
+            this.matinh.FieldName = "MA_TINH";
+            this.matinh.Name = "matinh";
+            this.matinh.Visible = true;
+            this.matinh.VisibleIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 143);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1054, 452);
+            this.panel1.TabIndex = 2;
             // 
             // frmDD
             // 
@@ -316,12 +316,12 @@
             this.Ribbon = this.mainRibbonControl;
             this.Load += new System.EventHandler(this.frmDD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gc_DD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,21 +336,21 @@
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DevExpress.XtraBars.BarButtonItem bbiAdd;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
-        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cb_tinh;
         private JMaterialTextbox.JMaterialTextbox txtDD;
+        public JMaterialTextbox.JMaterialTextbox txtMa;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        public JMaterialTextbox.JMaterialTextbox txtMa;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraGrid.GridControl dgv_DD;
+        private DevExpress.XtraGrid.GridControl gc_DD;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn madd;
         private DevExpress.XtraGrid.Columns.GridColumn tendd;
         private DevExpress.XtraGrid.Columns.GridColumn matinh;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private System.Windows.Forms.ComboBox cb_tinh;
+        private System.Windows.Forms.Panel panel1;
     }
 }

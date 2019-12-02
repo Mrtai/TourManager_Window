@@ -22,6 +22,7 @@
 
                private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKH));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndNew = new DevExpress.XtraBars.BarButtonItem();
@@ -37,18 +38,21 @@
             this.txtEmail = new JMaterialTextbox.JMaterialTextbox();
             this.txtDC = new JMaterialTextbox.JMaterialTextbox();
             this.txtTen = new JMaterialTextbox.JMaterialTextbox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_NgayS = new System.Windows.Forms.DateTimePicker();
             this.txtSDT = new JMaterialTextbox.JMaterialTextbox();
-            this.txtMaKH = new JMaterialTextbox.JMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblma = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgv_KH = new System.Windows.Forms.DataGridView();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.gc_kh = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtMaKH = new JMaterialTextbox.JMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_KH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_kh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -61,9 +65,10 @@
             this.bbiReset,
             this.bbiDelete,
             this.bbiAdd,
-            this.bbiEdit});
+            this.bbiEdit,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 12;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -131,6 +136,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -143,7 +149,7 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtDC);
             this.panel1.Controls.Add(this.txtTen);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtp_NgayS);
             this.panel1.Controls.Add(this.txtSDT);
             this.panel1.Controls.Add(this.txtMaKH);
             this.panel1.Controls.Add(this.label6);
@@ -245,13 +251,13 @@
             this.txtTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTen.TextName = "";
             // 
-            // dateTimePicker1
+            // dtp_NgayS
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 179);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(149, 26);
-            this.dateTimePicker1.TabIndex = 204;
+            this.dtp_NgayS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_NgayS.Location = new System.Drawing.Point(164, 179);
+            this.dtp_NgayS.Name = "dtp_NgayS";
+            this.dtp_NgayS.Size = new System.Drawing.Size(149, 26);
+            this.dtp_NgayS.TabIndex = 204;
             // 
             // txtSDT
             // 
@@ -274,28 +280,6 @@
             this.txtSDT.TabIndex = 202;
             this.txtSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSDT.TextName = "";
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.ForeColors = System.Drawing.Color.Black;
-            this.txtMaKH.HintText = null;
-            this.txtMaKH.IsPassword = false;
-            this.txtMaKH.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaKH.LineThickness = 3;
-            this.txtMaKH.Location = new System.Drawing.Point(164, 29);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaKH.MaxLength = 32767;
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtMaKH.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtMaKH.ReadOnly = false;
-            this.txtMaKH.Size = new System.Drawing.Size(149, 28);
-            this.txtMaKH.TabIndex = 201;
-            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaKH.TextName = "";
             // 
             // label6
             // 
@@ -351,14 +335,53 @@
             this.label3.TabIndex = 196;
             this.label3.Text = "Mã Khách Hàng";
             // 
-            // dgv_KH
+            // barButtonItem1
             // 
-            this.dgv_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_KH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_KH.Location = new System.Drawing.Point(360, 143);
-            this.dgv_KH.Name = "dgv_KH";
-            this.dgv_KH.Size = new System.Drawing.Size(694, 452);
-            this.dgv_KH.TabIndex = 3;
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // gc_kh
+            // 
+            this.gc_kh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_kh.Location = new System.Drawing.Point(360, 143);
+            this.gc_kh.MainView = this.gridView1;
+            this.gc_kh.MenuManager = this.mainRibbonControl;
+            this.gc_kh.Name = "gc_kh";
+            this.gc_kh.Size = new System.Drawing.Size(694, 452);
+            this.gc_kh.TabIndex = 5;
+            this.gc_kh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_kh;
+            this.gridView1.Name = "gridView1";
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.ForeColors = System.Drawing.Color.Black;
+            this.txtMaKH.HintText = null;
+            this.txtMaKH.IsPassword = false;
+            this.txtMaKH.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMaKH.LineThickness = 3;
+            this.txtMaKH.Location = new System.Drawing.Point(164, 29);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaKH.MaxLength = 32767;
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtMaKH.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtMaKH.ReadOnly = false;
+            this.txtMaKH.Size = new System.Drawing.Size(149, 28);
+            this.txtMaKH.TabIndex = 201;
+            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaKH.TextName = "";
             // 
             // frmKH
             // 
@@ -366,7 +389,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_KH);
+            this.Controls.Add(this.gc_kh);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmKH";
@@ -375,7 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_KH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_kh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,10 +414,8 @@
         private DevExpress.XtraBars.BarButtonItem bbiAdd;
         private DevExpress.XtraBars.BarButtonItem bbiEdit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgv_KH;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_NgayS;
         private JMaterialTextbox.JMaterialTextbox txtSDT;
-        private JMaterialTextbox.JMaterialTextbox txtMaKH;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -404,5 +426,9 @@
         private System.Windows.Forms.Label label1;
         private JMaterialTextbox.JMaterialTextbox txtEmail;
         private JMaterialTextbox.JMaterialTextbox txtDC;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.GridControl gc_kh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private JMaterialTextbox.JMaterialTextbox txtMaKH;
     }
 }

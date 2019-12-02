@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTour));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiReset = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,7 +42,7 @@
             this.txtGia = new JMaterialTextbox.JMaterialTextbox();
             this.txtSoCho = new JMaterialTextbox.JMaterialTextbox();
             this.txtSoNgay = new JMaterialTextbox.JMaterialTextbox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_loait = new System.Windows.Forms.ComboBox();
             this.txtTen = new JMaterialTextbox.JMaterialTextbox();
             this.txtMaTour = new JMaterialTextbox.JMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,10 +53,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblma = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgv_Tour = new System.Windows.Forms.DataGridView();
+            this.gc_tour = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Tour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_tour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -65,9 +69,10 @@
             this.bbiAdd,
             this.bbiEdit,
             this.bbiReset,
-            this.bbiDelete});
+            this.bbiDelete,
+            this.barButtonItem1});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 10;
+            this.mainRibbonControl.MaxItemId = 11;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -107,6 +112,15 @@
             this.bbiDelete.Name = "bbiDelete";
             this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -121,6 +135,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiAdd);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiEdit);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Tasks";
@@ -132,7 +147,7 @@
             this.panel1.Controls.Add(this.txtGia);
             this.panel1.Controls.Add(this.txtSoCho);
             this.panel1.Controls.Add(this.txtSoNgay);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cb_loait);
             this.panel1.Controls.Add(this.txtTen);
             this.panel1.Controls.Add(this.txtMaTour);
             this.panel1.Controls.Add(this.label6);
@@ -237,14 +252,14 @@
             this.txtSoNgay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSoNgay.TextName = "";
             // 
-            // comboBox1
+            // cb_loait
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 123);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 27);
-            this.comboBox1.TabIndex = 200;
+            this.cb_loait.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_loait.FormattingEnabled = true;
+            this.cb_loait.Location = new System.Drawing.Point(149, 123);
+            this.cb_loait.Name = "cb_loait";
+            this.cb_loait.Size = new System.Drawing.Size(170, 27);
+            this.cb_loait.TabIndex = 200;
             // 
             // txtTen
             // 
@@ -377,14 +392,22 @@
             this.label3.TabIndex = 190;
             this.label3.Text = "Mã Tour";
             // 
-            // dgv_Tour
+            // gc_tour
             // 
-            this.dgv_Tour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Tour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Tour.Location = new System.Drawing.Point(360, 143);
-            this.dgv_Tour.Name = "dgv_Tour";
-            this.dgv_Tour.Size = new System.Drawing.Size(694, 452);
-            this.dgv_Tour.TabIndex = 3;
+            this.gc_tour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_tour.Location = new System.Drawing.Point(360, 143);
+            this.gc_tour.MainView = this.gridView1;
+            this.gc_tour.MenuManager = this.mainRibbonControl;
+            this.gc_tour.Name = "gc_tour";
+            this.gc_tour.Size = new System.Drawing.Size(694, 452);
+            this.gc_tour.TabIndex = 5;
+            this.gc_tour.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gc_tour;
+            this.gridView1.Name = "gridView1";
             // 
             // frmTour
             // 
@@ -392,7 +415,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1054, 595);
-            this.Controls.Add(this.dgv_Tour);
+            this.Controls.Add(this.gc_tour);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "frmTour";
@@ -401,7 +424,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Tour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gc_tour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,12 +441,11 @@
         private DevExpress.XtraBars.BarButtonItem bbiReset;
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgv_Tour;
         private JMaterialTextbox.JMaterialTextbox txtGiamGia;
         private JMaterialTextbox.JMaterialTextbox txtGia;
         private JMaterialTextbox.JMaterialTextbox txtSoCho;
         private JMaterialTextbox.JMaterialTextbox txtSoNgay;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_loait;
         private JMaterialTextbox.JMaterialTextbox txtTen;
         private JMaterialTextbox.JMaterialTextbox txtMaTour;
         private System.Windows.Forms.Label label6;
@@ -433,5 +456,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblma;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.GridControl gc_tour;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
