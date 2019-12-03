@@ -78,7 +78,7 @@
             this.txt_pass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_pass.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_pass.ForeColors = System.Drawing.Color.Black;
-            this.txt_pass.HintText = "Password";
+            this.txt_pass.HintText = "";
             this.txt_pass.IsPassword = true;
             this.txt_pass.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_pass.LineThickness = 2;
@@ -92,7 +92,7 @@
             this.txt_pass.Size = new System.Drawing.Size(244, 23);
             this.txt_pass.TabIndex = 5;
             this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_pass.TextName = "Password";
+            this.txt_pass.TextName = "123456";
             // 
             // txt_username
             // 
@@ -100,7 +100,7 @@
             this.txt_username.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_username.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txt_username.ForeColors = System.Drawing.Color.Black;
-            this.txt_username.HintText = "Username";
+            this.txt_username.HintText = "";
             this.txt_username.IsPassword = false;
             this.txt_username.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txt_username.LineThickness = 2;
@@ -114,7 +114,7 @@
             this.txt_username.Size = new System.Drawing.Size(244, 23);
             this.txt_username.TabIndex = 4;
             this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_username.TextName = "Username";
+            this.txt_username.TextName = "Admin";
             // 
             // btn_exit
             // 

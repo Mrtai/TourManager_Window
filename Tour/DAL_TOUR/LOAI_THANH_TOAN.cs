@@ -16,13 +16,13 @@ namespace DAL_TOUR
     {
         public LOAI_THANH_TOAN()
         {
-            this.HOA_DON = new HashSet<HOA_DON>();
+            this.TOUR_DAT = new HashSet<TOUR_DAT>();
         }
     
         public int MA_LOAI_TT { get; set; }
         public string TEN_LOAI_TT { get; set; }
         public string CHI_TIET { get; set; }
     
-        public virtual ICollection<HOA_DON> HOA_DON { get; set; }
+        public virtual ICollection<TOUR_DAT> TOUR_DAT { get; set; }
     }
 }

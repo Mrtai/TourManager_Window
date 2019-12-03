@@ -49,10 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietThamQuanDAL.cs" />
-    <Compile Include="CHI_TIET_THAM_QUAN.cs">
-      <DependentUpon>TourModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="chuongTrinhTourDAL.cs" />
     <Compile Include="CHUONG_TRINH_TOUR.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
@@ -68,10 +64,6 @@
     </Compile>
     <Compile Include="dichvuDAL.cs" />
     <Compile Include="DICH_VU.cs">
-      <DependentUpon>TourModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="hoaDonDAL.cs" />
-    <Compile Include="HOA_DON.cs">
       <DependentUpon>TourModel.tt</DependentUpon>
     </Compile>
     <Compile Include="khachHangDAL.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL_TOUR
 {
-    class nhomDAL
+    public class nhomDAL
     {
         private DB_TOUREntities context;
         public nhomDAL()

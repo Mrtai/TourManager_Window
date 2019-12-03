@@ -14,6 +14,9 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using DAL_TOUR;
 using System.Data.SqlClient;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
+
 namespace GUI
 {
     public partial class frmTour : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -50,6 +53,14 @@ namespace GUI
             }
             else
             {
+                if(nameimg.Text != "")
+                {
+                    string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
+                    string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    System.IO.File.Copy(openFileDialog1.FileName, path + "\\Image\\" + filename);
+                    tour.IMAGE = filename;
+                }
+                //tour.IMAGE = 
                 tour.TEN_TOUR = txtTen.TextName;
                 tour.GIA = double.Parse(txtGia.TextName);
                 tour.MA_LOAI = Int32.Parse(cb_loait.SelectedValue.ToString());
@@ -60,7 +71,7 @@ namespace GUI
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo");
                     load();
-                    resetTextbox();
+                    //resetTextbox();
                 }
                 else
                 {
@@ -104,22 +115,31 @@ namespace GUI
             }
             else
             {
-                tour.TEN_TOUR = txtTen.TextName;
-                tour.GIA = double.Parse(txtGia.TextName);
-                tour.MA_LOAI = Int32.Parse(cb_loait.SelectedValue.ToString());
-                tour.SO_NGAY = Int32.Parse(txtSoNgay.TextName);
-                tour.SO_CHO = Int32.Parse(txtSoCho.TextName);
-                tour.DISCOUNT = double.Parse(txtGiamGia.TextName);
+                TOUR t = tourdal.GetDVByMa(Int32.Parse(txtMaTour.TextName));
+                if (nameimg.Text != "")
+                {
+                    string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
+                    string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    System.IO.File.Copy(openFileDialog1.FileName, path + "\\Image\\" + filename);
+                    t.IMAGE = filename;
+                }
+                t.TEN_TOUR = txtTen.TextName;
+                t.GIA = double.Parse(txtGia.TextName);
+                t.MA_LOAI = Int32.Parse(cb_loait.SelectedValue.ToString());
+                t.SO_NGAY = Int32.Parse(txtSoNgay.TextName);
+                t.SO_CHO = Int32.Parse(txtSoCho.TextName);
+                t.DISCOUNT = double.Parse(txtGiamGia.TextName);
                 if (tourdal.Update(tour) == 1)
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo");
                     load();
-                    resetTextbox();
+                    //resetTextbox();
                 }
                 else
                 {
                     MessageBox.Show("Sửa không thành công", "Thông báo");
                 }
+            }
         }
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -134,7 +154,7 @@ namespace GUI
                 {
                     MessageBox.Show("Xóa thành công", "Thông báo");
                     load();
-                    resetTextbox();
+                    //resetTextbox();
                 }
                 else
                 {
@@ -144,18 +164,10 @@ namespace GUI
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-       {
-            resetTextbox();
-        }
-        private void resetTextbox()
         {
-            txtMaTour.TextName = "";
-            txtTen.TextName = "";
-            txtGiamGia.TextName = "";
-            txtSoNgay.TextName = "";
-            txtSoCho.TextName = "";
-            txtGia.TextName = "";
+            resetTexbox();
         }
+
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             int position = gridView1.FocusedRowHandle;
@@ -166,6 +178,75 @@ namespace GUI
             txtSoCho.TextName = gridView1.GetRowCellValue(position, "SO_CHO").ToString();
             txtGia.TextName = gridView1.GetRowCellValue(position, "GIA").ToString();
             txtGiamGia.TextName = gridView1.GetRowCellValue(position, "DISCOUNT").ToString();
+            int id = Int32.Parse(txtMaTour.TextName);
+            //Bitmap img = 
+            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+            Image img;
+            if (tourdal.GetDVByMa(id).IMAGE != null)
+            {
+                 img = Image.FromFile(path + "\\Image\\" + tourdal.GetDVByMa(id).IMAGE);
+               
+            }
+            else
+            {
+                 img = Image.FromFile(path + "\\Image\\Dubai_Kesari_Tours.jpg");
+            }
+            pictureBox1.Image = img;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            bbiAdd.Enabled = false;
+
+            //pictureBox1.Image = CopyDataToBitmap(tourdal.GetDVByMa(id).IMAGE);
         }
+        private void resetTexbox()
+        {
+            txtGia.TextName = "";
+            txtGiamGia.TextName = "";
+            txtMaTour.TextName = "";
+            txtSoCho.TextName = "";
+            txtSoNgay.TextName = "";
+            txtTen.TextName = "";
+            bbiAdd.Enabled = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //To where your opendialog box get starting location. My initial directory location is desktop.
+            openFileDialog1.InitialDirectory = "C://Desktop";
+            //Your opendialog box title name.
+            openFileDialog1.Title = "Select image to be upload.";
+            //which type image format you want to upload in database. just add them.
+            openFileDialog1.Filter = "Image Only(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            //FilterIndex property represents the index of the filter currently selected in the file dialog box.
+            openFileDialog1.FilterIndex = 1;
+            try
+            {
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (openFileDialog1.CheckFileExists)
+                    {
+                        string path = System.IO.Path.GetFullPath(openFileDialog1.FileName);
+                        nameimg.Text = path;
+                        pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Upload image.");
+                }
+            }
+            catch (Exception ex)
+            {
+                //it will give if file is already exits..
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
     }
+
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL_TOUR
 {
-    class phanQuyenDAL
+    public class phanQuyenDAL
     {
         private DB_TOUREntities context ;
         public phanQuyenDAL()
@@ -47,6 +47,12 @@ namespace DAL_TOUR
             list = context.PHAN_QUYEN.ToList();
             return list;
         }
+        public List<PHAN_QUYEN> GetListBuNhom(int manhom)
+        {
+            List<PHAN_QUYEN> pq = context.PHAN_QUYEN.Where(m => m.MA_NHOM == manhom).ToList();
+            return pq;
+        }
+        
 
         public PHAN_QUYEN GetDVByMa(int pMaNhom, int pMaMH)
         {

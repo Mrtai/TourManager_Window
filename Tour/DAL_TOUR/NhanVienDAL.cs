@@ -72,5 +72,12 @@ namespace DAL_TOUR
             result = context.NHAN_VIEN.FirstOrDefault(m => m.MA_NV == pMaT);
             return result;
         }
+
+        public NHAN_VIEN GetDVByUsername(String username)
+        {
+            NHAN_VIEN result = new NHAN_VIEN();
+            result = context.NHAN_VIEN.FirstOrDefault(m => m.USERNAME.ToUpper() == username.ToUpper());
+            return result;
+        }
     }
 }

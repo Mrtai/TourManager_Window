@@ -16,6 +16,7 @@ namespace DAL_TOUR
     {
         public int MA_CHUONG_TRINH { get; set; }
         public Nullable<int> MA_KHACH_SAN { get; set; }
+        public Nullable<int> MA_DIA_DIEM { get; set; }
         public Nullable<int> MA_TOUR { get; set; }
         public string TEN_CHUONG_TRINH { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
@@ -23,5 +24,6 @@ namespace DAL_TOUR
     
         public virtual TOUR TOUR { get; set; }
         public virtual KHACH_SAN KHACH_SAN { get; set; }
+        public virtual DIA_DIEM_DU_LICH DIA_DIEM_DU_LICH { get; set; }
     }
 }

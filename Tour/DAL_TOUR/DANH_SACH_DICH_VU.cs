@@ -15,11 +15,11 @@ namespace DAL_TOUR
     public partial class DANH_SACH_DICH_VU
     {
         public int MA_DICH_VU { get; set; }
-        public int MA_TOUR { get; set; }
+        public int MA_TOUR_DAT { get; set; }
         public Nullable<int> SO_LUONG { get; set; }
         public Nullable<double> THANH_TIEN { get; set; }
     
         public virtual DICH_VU DICH_VU { get; set; }
-        public virtual TOUR TOUR { get; set; }
+        public virtual TOUR_DAT TOUR_DAT { get; set; }
     }
 }

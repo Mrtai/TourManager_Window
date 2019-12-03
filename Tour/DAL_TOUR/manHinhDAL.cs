@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL_TOUR
 {
-    class manHinhDAL
+    public class manHinhDAL
     {
         private DB_TOUREntities context;
         public manHinhDAL()

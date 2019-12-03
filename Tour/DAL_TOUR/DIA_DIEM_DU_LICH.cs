@@ -16,14 +16,14 @@ namespace DAL_TOUR
     {
         public DIA_DIEM_DU_LICH()
         {
-            this.CHI_TIET_THAM_QUAN = new HashSet<CHI_TIET_THAM_QUAN>();
+            this.CHUONG_TRINH_TOUR = new HashSet<CHUONG_TRINH_TOUR>();
         }
     
         public int MA_DIA_DIEM { get; set; }
         public Nullable<int> MA_TINH { get; set; }
         public string TEN_DIA_DIEM { get; set; }
     
-        public virtual ICollection<CHI_TIET_THAM_QUAN> CHI_TIET_THAM_QUAN { get; set; }
         public virtual TINH TINH { get; set; }
+        public virtual ICollection<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
     }
 }

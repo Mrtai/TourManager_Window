@@ -8,11 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DAL_TOUR;
+using DevExpress.XtraNavBar;
 
 namespace GUI
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public string username { get; set; }
         public frmMain()
         {
             InitializeComponent();
@@ -154,6 +157,78 @@ namespace GUI
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.DangNhap.Close();
+        }
+        private bool find(int tag, List<PHAN_QUYEN> list)
+        {
+            foreach(PHAN_QUYEN i in list)
+            {
+                if(i.MA_MH == tag && i.CO_QUYEN.GetValueOrDefault())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            NhanVienDAL nhanVienDAL = new NhanVienDAL();
+            NHAN_VIEN nv = nhanVienDAL.GetDVByUsername(this.username);
+            nhanVienNhomDAL nhanVienNhomDAL = new nhanVienNhomDAL();
+            NHAN_VIEN_NHOM nvn = nhanVienNhomDAL.GetDVByMaNV(nv.MA_NV);
+            phanQuyenDAL phanQuyenDAL = new phanQuyenDAL();
+            List<PHAN_QUYEN> pq = phanQuyenDAL.GetListBuNhom(nvn.MA_NHOM);
+            foreach(NavBarGroup nav in navBarControl.Groups)
+            {
+                if(nav is NavBarGroup)
+                {
+                    nav.Visible = find(Int32.Parse(nav.Tag.ToString()), pq);
+                }
+            }
+        }
+
+        private void navBarItem3_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmLoaiTour frmdv = new frmLoaiTour();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
+
+        private void navBarItemDV_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmDatVe frmdv = new frmDatVe();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
+
+        private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmDatVe frmdv = new frmDatVe();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
         }
     }
 }

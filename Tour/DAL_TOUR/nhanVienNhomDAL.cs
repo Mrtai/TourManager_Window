@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL_TOUR
 {
-    class nhanVienNhomDAL
+    public class nhanVienNhomDAL
     {
         private DB_TOUREntities context;
         public nhanVienNhomDAL()
@@ -52,6 +52,12 @@ namespace DAL_TOUR
         {
             NHAN_VIEN_NHOM result = new NHAN_VIEN_NHOM();
             result = context.NHAN_VIEN_NHOM.FirstOrDefault(m => m.MA_NHOM == pMaNhom && m.MA_NV == pMaNV);
+            return result;
+        }
+        public NHAN_VIEN_NHOM GetDVByMaNV( int pMaNV)
+        {
+            NHAN_VIEN_NHOM result = new NHAN_VIEN_NHOM();
+            result = context.NHAN_VIEN_NHOM.FirstOrDefault(m => m.MA_NV == pMaNV);
             return result;
         }
     }

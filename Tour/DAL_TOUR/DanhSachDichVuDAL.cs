@@ -24,7 +24,7 @@ namespace DAL_TOUR
         public int Update(DANH_SACH_DICH_VU pDS)
         {
             int result = 0;
-            DANH_SACH_DICH_VU k = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pDS.MA_DICH_VU && m.MA_TOUR == pDS.MA_TOUR);
+            DANH_SACH_DICH_VU k = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pDS.MA_DICH_VU && m.MA_TOUR_DAT == pDS.MA_TOUR_DAT);
             if (k != null)
             {
                 k.SO_LUONG = pDS.SO_LUONG;
@@ -37,7 +37,7 @@ namespace DAL_TOUR
         public int Delete(int pMaDV, int pMaTour)
         {
             int result = 0;
-            DANH_SACH_DICH_VU k = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pMaDV && m.MA_TOUR == pMaTour);
+            DANH_SACH_DICH_VU k = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pMaDV && m.MA_TOUR_DAT == pMaTour);
             context.DANH_SACH_DICH_VU.Remove(k);
             result = context.SaveChanges();
             return result;
@@ -49,10 +49,10 @@ namespace DAL_TOUR
             return list;
         }
 
-        public DANH_SACH_DICH_VU GetDVByMa(int pMaDV, int pMaTour)
+        public DANH_SACH_DICH_VU GetDVByMa(int pMaDV, int pMaHD)
         {
             DANH_SACH_DICH_VU result = new DANH_SACH_DICH_VU();
-            result = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pMaDV && m.MA_TOUR == pMaTour);
+            result = context.DANH_SACH_DICH_VU.FirstOrDefault(m => m.MA_DICH_VU == pMaDV && m.MA_TOUR_DAT == pMaHD);
             return result;
         }
     }

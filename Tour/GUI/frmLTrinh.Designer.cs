@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLTrinh));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,7 +49,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblma = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Lich)).BeginInit();
@@ -77,6 +82,7 @@
             // bbiAdd
             // 
             this.bbiAdd.Caption = "Add";
+            this.bbiAdd.Enabled = false;
             this.bbiAdd.Id = 3;
             this.bbiAdd.ImageOptions.ImageUri.Uri = "Add;Size32x32;Office2013";
             this.bbiAdd.Name = "bbiAdd";
@@ -97,6 +103,15 @@
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
             this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Reset";
+            this.barButtonItem4.Id = 24;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -129,19 +144,26 @@
             // 
             // gc_Lich
             // 
-            this.gc_Lich.Location = new System.Drawing.Point(750, 69);
+            this.gc_Lich.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gc_Lich.Location = new System.Drawing.Point(360, 0);
             this.gc_Lich.MainView = this.gridView1;
             this.gc_Lich.MenuManager = this.mainRibbonControl;
             this.gc_Lich.Name = "gc_Lich";
-            this.gc_Lich.Size = new System.Drawing.Size(400, 200);
+            this.gc_Lich.Size = new System.Drawing.Size(694, 452);
             this.gc_Lich.TabIndex = 1;
             this.gc_Lich.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.gridView1.GridControl = this.gc_Lich;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // panel2
             // 
@@ -276,12 +298,37 @@
             this.label3.TabIndex = 187;
             this.label3.Text = "Mã Lịch";
             // 
-            // barButtonItem4
+            // gridColumn1
             // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 24;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.gridColumn1.Caption = "Mã lịch";
+            this.gridColumn1.FieldName = "MA_LICH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tour";
+            this.gridColumn2.FieldName = "TOUR.TEN_TOUR";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tên lịch";
+            this.gridColumn3.FieldName = "TEN_LICH";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Ngày đi";
+            this.gridColumn4.FieldName = "NGAY_KHOI_HANH";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // frmLTrinh
             // 
@@ -332,5 +379,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

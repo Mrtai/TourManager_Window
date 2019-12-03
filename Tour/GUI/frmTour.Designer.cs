@@ -38,6 +38,8 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtGiamGia = new JMaterialTextbox.JMaterialTextbox();
             this.txtGia = new JMaterialTextbox.JMaterialTextbox();
             this.txtSoCho = new JMaterialTextbox.JMaterialTextbox();
@@ -55,8 +57,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.gc_tour = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.matour = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tentour = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.nameimg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_tour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +96,7 @@
             // bbiAdd
             // 
             this.bbiAdd.Caption = "Add";
+            this.bbiAdd.Enabled = false;
             this.bbiAdd.Id = 3;
             this.bbiAdd.ImageOptions.ImageUri.Uri = "Add;Size32x32;Office2013";
             this.bbiAdd.Name = "bbiAdd";
@@ -143,6 +156,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.nameimg);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txtGiamGia);
             this.panel1.Controls.Add(this.txtGia);
             this.panel1.Controls.Add(this.txtSoCho);
@@ -161,8 +177,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 452);
+            this.panel1.Size = new System.Drawing.Size(510, 452);
             this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 206;
+            this.button1.Text = " Browse";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.TabIndex = 205;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtGiamGia
             // 
@@ -174,7 +211,7 @@
             this.txtGiamGia.IsPassword = false;
             this.txtGiamGia.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtGiamGia.LineThickness = 3;
-            this.txtGiamGia.Location = new System.Drawing.Point(149, 353);
+            this.txtGiamGia.Location = new System.Drawing.Point(308, 321);
             this.txtGiamGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGiamGia.MaxLength = 32767;
             this.txtGiamGia.Name = "txtGiamGia";
@@ -196,7 +233,7 @@
             this.txtGia.IsPassword = false;
             this.txtGia.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtGia.LineThickness = 3;
-            this.txtGia.Location = new System.Drawing.Point(149, 308);
+            this.txtGia.Location = new System.Drawing.Point(308, 276);
             this.txtGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtGia.MaxLength = 32767;
             this.txtGia.Name = "txtGia";
@@ -218,7 +255,7 @@
             this.txtSoCho.IsPassword = false;
             this.txtSoCho.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSoCho.LineThickness = 3;
-            this.txtSoCho.Location = new System.Drawing.Point(149, 263);
+            this.txtSoCho.Location = new System.Drawing.Point(308, 231);
             this.txtSoCho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoCho.MaxLength = 32767;
             this.txtSoCho.Name = "txtSoCho";
@@ -240,7 +277,7 @@
             this.txtSoNgay.IsPassword = false;
             this.txtSoNgay.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSoNgay.LineThickness = 3;
-            this.txtSoNgay.Location = new System.Drawing.Point(149, 216);
+            this.txtSoNgay.Location = new System.Drawing.Point(308, 184);
             this.txtSoNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoNgay.MaxLength = 32767;
             this.txtSoNgay.Name = "txtSoNgay";
@@ -256,7 +293,7 @@
             // 
             this.cb_loait.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_loait.FormattingEnabled = true;
-            this.cb_loait.Location = new System.Drawing.Point(149, 123);
+            this.cb_loait.Location = new System.Drawing.Point(308, 91);
             this.cb_loait.Name = "cb_loait";
             this.cb_loait.Size = new System.Drawing.Size(170, 27);
             this.cb_loait.TabIndex = 200;
@@ -271,7 +308,7 @@
             this.txtTen.IsPassword = false;
             this.txtTen.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTen.LineThickness = 3;
-            this.txtTen.Location = new System.Drawing.Point(149, 166);
+            this.txtTen.Location = new System.Drawing.Point(308, 134);
             this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTen.MaxLength = 32767;
             this.txtTen.Name = "txtTen";
@@ -293,7 +330,7 @@
             this.txtMaTour.IsPassword = false;
             this.txtMaTour.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMaTour.LineThickness = 3;
-            this.txtMaTour.Location = new System.Drawing.Point(149, 72);
+            this.txtMaTour.Location = new System.Drawing.Point(308, 40);
             this.txtMaTour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaTour.MaxLength = 32767;
             this.txtMaTour.Name = "txtMaTour";
@@ -310,7 +347,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(51, 128);
+            this.label6.Location = new System.Drawing.Point(210, 96);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 22);
             this.label6.TabIndex = 197;
@@ -321,7 +358,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(52, 222);
+            this.label5.Location = new System.Drawing.Point(211, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 22);
             this.label5.TabIndex = 196;
@@ -332,7 +369,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(61, 269);
+            this.label4.Location = new System.Drawing.Point(220, 237);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 22);
             this.label4.TabIndex = 195;
@@ -343,7 +380,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(45, 172);
+            this.label2.Location = new System.Drawing.Point(204, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 22);
             this.label2.TabIndex = 194;
@@ -354,7 +391,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(91, 314);
+            this.label8.Location = new System.Drawing.Point(250, 282);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 22);
             this.label8.TabIndex = 193;
@@ -365,7 +402,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(41, 359);
+            this.label1.Location = new System.Drawing.Point(200, 327);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 22);
             this.label1.TabIndex = 192;
@@ -376,7 +413,7 @@
             this.lblma.AutoSize = true;
             this.lblma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblma.ForeColor = System.Drawing.Color.Red;
-            this.lblma.Location = new System.Drawing.Point(111, 126);
+            this.lblma.Location = new System.Drawing.Point(270, 94);
             this.lblma.Name = "lblma";
             this.lblma.Size = new System.Drawing.Size(0, 24);
             this.lblma.TabIndex = 191;
@@ -386,7 +423,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(49, 78);
+            this.label3.Location = new System.Drawing.Point(208, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 22);
             this.label3.TabIndex = 190;
@@ -395,19 +432,96 @@
             // gc_tour
             // 
             this.gc_tour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_tour.Location = new System.Drawing.Point(360, 143);
+            this.gc_tour.Location = new System.Drawing.Point(510, 143);
             this.gc_tour.MainView = this.gridView1;
             this.gc_tour.MenuManager = this.mainRibbonControl;
             this.gc_tour.Name = "gc_tour";
-            this.gc_tour.Size = new System.Drawing.Size(694, 452);
+            this.gc_tour.Size = new System.Drawing.Size(544, 452);
             this.gc_tour.TabIndex = 5;
             this.gc_tour.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.matour,
+            this.tentour,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7});
             this.gridView1.GridControl = this.gc_tour;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
+            // matour
+            // 
+            this.matour.Caption = "Mã Tour";
+            this.matour.FieldName = "MA_TOUR";
+            this.matour.Name = "matour";
+            this.matour.Visible = true;
+            this.matour.VisibleIndex = 0;
+            // 
+            // tentour
+            // 
+            this.tentour.Caption = "Tên Tour";
+            this.tentour.FieldName = "TEN_TOUR";
+            this.tentour.Name = "tentour";
+            this.tentour.Visible = true;
+            this.tentour.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Số ngày";
+            this.gridColumn3.FieldName = "SO_NGAY";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Loai Tour";
+            this.gridColumn4.FieldName = "LOAI_TOUR.TEN_LOAI";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Số chỗ";
+            this.gridColumn5.FieldName = "SO_CHO";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Giá";
+            this.gridColumn6.FieldName = "GIA";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Giảm giá";
+            this.gridColumn7.FieldName = "DISCOUNT";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // nameimg
+            // 
+            this.nameimg.AutoSize = true;
+            this.nameimg.Location = new System.Drawing.Point(12, 288);
+            this.nameimg.Name = "nameimg";
+            this.nameimg.Size = new System.Drawing.Size(0, 13);
+            this.nameimg.TabIndex = 207;
             // 
             // frmTour
             // 
@@ -424,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_tour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -459,5 +574,16 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraGrid.GridControl gc_tour;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraGrid.Columns.GridColumn matour;
+        private DevExpress.XtraGrid.Columns.GridColumn tentour;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label nameimg;
     }
 }

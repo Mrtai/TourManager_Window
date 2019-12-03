@@ -20,6 +20,7 @@ namespace GUI
         chuongTrinhTourDAL chuongtrinhtour = new chuongTrinhTourDAL();
         tourDAL tourService = new tourDAL();
         khachSanDAL khachSanService = new khachSanDAL();
+        diaDiemDuLichDAL diaDiemService = new diaDiemDuLichDAL();
         CHUONG_TRINH_TOUR chuong_trinh_tour = new CHUONG_TRINH_TOUR();
         public frmCTTour()
         {
@@ -37,6 +38,10 @@ namespace GUI
             cb_ks.DataSource = Listks;
             cb_ks.ValueMember = "MA_KHACH_SAN";
             cb_ks.DisplayMember = "TEN_KHACH_SAN";
+            var listdd = diaDiemService.GetListDD();
+            cb_diadiem.DataSource = listdd;
+            cb_diadiem.ValueMember = "MA_DIA_DIEM";
+            cb_diadiem.DisplayMember = "TEN_DIA_DIEM";
             var List = chuongtrinhtour.GetList();
             gc_CCT.DataSource = List; 
         }
@@ -54,8 +59,9 @@ namespace GUI
             }
             else
             {
+                chuong_trinh_tour.MA_DIA_DIEM = Int32.Parse(cb_diadiem.SelectedValue.ToString());
                 chuong_trinh_tour.TEN_CHUONG_TRINH = txtTen.TextName;
-                chuong_trinh_tour.CHI_TIET = txtChiTiet.TextName;
+                chuong_trinh_tour.CHI_TIET = txtchitiet.Text;
                 chuong_trinh_tour.NGAY = dtpNgay.Value;
                 chuong_trinh_tour.MA_TOUR = Int32.Parse(cb_tour.SelectedValue.ToString());
                 chuong_trinh_tour.MA_KHACH_SAN = Int32.Parse(cb_ks.SelectedValue.ToString());
@@ -78,8 +84,10 @@ namespace GUI
             txtMaCT.TextName = gridView1.GetRowCellValue(position, "MA_CHUONG_TRINH").ToString();
             cb_ks.SelectedValue = Int32.Parse(gridView1.GetRowCellValue(position, "MA_KHACH_SAN").ToString());
             cb_tour.SelectedValue = Int32.Parse(gridView1.GetRowCellValue(position, "MA_TOUR").ToString());
+            cb_diadiem.SelectedValue = Int32.Parse(gridView1.GetRowCellValue(position, "MA_DIA_DIEM").ToString());
             txtTen.TextName = gridView1.GetRowCellValue(position, "TEN_CHUONG_TRINH").ToString();
-            txtChiTiet.TextName = gridView1.GetRowCellValue(position, "CHI_TIET").ToString();
+            txtchitiet.Text = gridView1.GetRowCellValue(position, "CHI_TIET").ToString();
+            bbiAdd.Enabled = false;
         }
         private void bbiEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -93,15 +101,15 @@ namespace GUI
                 MessageBox.Show("Bạn phải nhập tên chương trình", "Thông báo");
                 txtTen.Focus();
             }
-            if (txtChiTiet.TextName == "")
+            if (txtchitiet.Text== "")
             {
                 MessageBox.Show("Bạn phải nhập chi tiết chương trình", "Thông báo");
-                txtChiTiet.Focus();
+                txtchitiet.Focus();
             }
             else
             {
                 chuong_trinh_tour.TEN_CHUONG_TRINH = txtTen.TextName;
-                chuong_trinh_tour.CHI_TIET = txtChiTiet.TextName;
+                chuong_trinh_tour.CHI_TIET = txtchitiet.Text;
                 chuong_trinh_tour.NGAY = dtpNgay.Value;
                 chuong_trinh_tour.MA_TOUR = Int32.Parse(cb_tour.SelectedValue.ToString());
                 chuong_trinh_tour.MA_KHACH_SAN = Int32.Parse(cb_ks.SelectedValue.ToString());
@@ -148,8 +156,14 @@ namespace GUI
         {
             txtMaCT.TextName = "";
             txtTen.TextName = "";
-            txtChiTiet.TextName = "";
+            txtchitiet.Text = "";
+            bbiAdd.Enabled = true;
         
+        }
+
+        private void gc_CCT_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

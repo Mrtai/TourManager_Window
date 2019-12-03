@@ -124,6 +124,7 @@ namespace GUI
             txtMa.TextName = gridView1.GetRowCellValue(position, "MA_LICH").ToString();     
             cb_Tour.SelectedValue = Int32.Parse(gridView1.GetRowCellValue(position, "MA_TOUR").ToString());
             txtTen.TextName = gridView1.GetRowCellValue(position, "TEN_LICH").ToString();
+            bbiAdd.Enabled = false;
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -134,6 +135,7 @@ namespace GUI
         {
             txtMa.TextName = "";
             txtTen.TextName = "";
+            bbiAdd.Enabled = true;
         }
     }
 }

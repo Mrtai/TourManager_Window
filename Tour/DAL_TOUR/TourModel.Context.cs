@@ -15,7 +15,6 @@ namespace DAL_TOUR
     
     public partial class DB_TOUREntities : DbContext
     {
-
         public DB_TOUREntities(string connectionString) : base("name=DB_TOUREntities")
         {
             //data source = MR_TAI1\SQLEXPRESS; initial catalog = DB_TOUR; user id = sa; password = sa2012; MultipleActiveResultSets = True; App = EntityFramework
@@ -61,25 +60,20 @@ namespace DAL_TOUR
                 string[] partpass = dataSourcestr.Split('=');
                 datasource = partpass[1].Trim();
             }
-            string dbconnect = "data source ="+datasource+"; initial catalog ="+database+"; user id ="+user+"; password ="+password+"; MultipleActiveResultSets = True; App = EntityFramework";
+            string dbconnect = "data source =" + datasource + "; initial catalog =" + database + "; user id =" + user + "; password =" + password + "; MultipleActiveResultSets = True; App = EntityFramework";
             this.Database.Connection.ConnectionString = dbconnect;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<CHI_TIET_THAM_QUAN> CHI_TIET_THAM_QUAN { get; set; }
-        public DbSet<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
-        public DbSet<DANH_SACH_DICH_VU> DANH_SACH_DICH_VU { get; set; }
         public DbSet<DIA_DIEM_DU_LICH> DIA_DIEM_DU_LICH { get; set; }
         public DbSet<DICH_VU> DICH_VU { get; set; }
-        public DbSet<HOA_DON> HOA_DON { get; set; }
         public DbSet<KHACH_HANG> KHACH_HANG { get; set; }
         public DbSet<KHACH_SAN> KHACH_SAN { get; set; }
         public DbSet<LICH_KHOI_HANH> LICH_KHOI_HANH { get; set; }
-        public DbSet<LOAI_THANH_TOAN> LOAI_THANH_TOAN { get; set; }
         public DbSet<LOAI_TOUR> LOAI_TOUR { get; set; }
         public DbSet<MAN_HINH> MAN_HINH { get; set; }
         public DbSet<NHAN_VIEN> NHAN_VIEN { get; set; }
@@ -88,6 +82,9 @@ namespace DAL_TOUR
         public DbSet<PHAN_QUYEN> PHAN_QUYEN { get; set; }
         public DbSet<TINH> TINHs { get; set; }
         public DbSet<TOUR> TOURs { get; set; }
+        public DbSet<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
+        public DbSet<DANH_SACH_DICH_VU> DANH_SACH_DICH_VU { get; set; }
+        public DbSet<LOAI_THANH_TOAN> LOAI_THANH_TOAN { get; set; }
         public DbSet<TOUR_DAT> TOUR_DAT { get; set; }
     }
 }

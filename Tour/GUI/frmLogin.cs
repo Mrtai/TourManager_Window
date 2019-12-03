@@ -62,6 +62,7 @@ namespace GUI
                     Program.frmMain = new frmMain();
                 }
                 this.Hide();
+                Program.frmMain.username = txt_username.TextName;
                 Program.frmMain.Show();
             }
             else

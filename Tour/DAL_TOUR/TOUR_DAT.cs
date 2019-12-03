@@ -16,7 +16,7 @@ namespace DAL_TOUR
     {
         public TOUR_DAT()
         {
-            this.HOA_DON = new HashSet<HOA_DON>();
+            this.DANH_SACH_DICH_VU = new HashSet<DANH_SACH_DICH_VU>();
         }
     
         public int MA_TOUR_DAT { get; set; }
@@ -26,10 +26,13 @@ namespace DAL_TOUR
         public Nullable<System.DateTime> NGAY_DAT { get; set; }
         public string TRANG_THAI { get; set; }
         public Nullable<int> MA_NV { get; set; }
+        public Nullable<int> MA_LOAI_TT { get; set; }
+        public Nullable<double> TONG_TIEN { get; set; }
     
-        public virtual ICollection<HOA_DON> HOA_DON { get; set; }
+        public virtual ICollection<DANH_SACH_DICH_VU> DANH_SACH_DICH_VU { get; set; }
         public virtual KHACH_HANG KHACH_HANG { get; set; }
         public virtual LICH_KHOI_HANH LICH_KHOI_HANH { get; set; }
+        public virtual LOAI_THANH_TOAN LOAI_THANH_TOAN { get; set; }
         public virtual NHAN_VIEN NHAN_VIEN { get; set; }
     }
 }
