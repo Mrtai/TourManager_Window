@@ -9,11 +9,11 @@ namespace DAL_TOUR
 {
     public class NhanVienDAL
     {
-        DB_TOUREntities context;
+        DB_TOUREntities1 context;
         public NhanVienDAL()
         {
             string c = Config.GetConnectionString();
-            context = new DB_TOUREntities(c);
+            context = new DB_TOUREntities1(c);
             
         }
 

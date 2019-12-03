@@ -23,11 +23,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listDV = new System.Windows.Forms.ListBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.jThinButton1 = new JThinButton.JThinButton();
-            this.jMaterialTextbox1 = new JMaterialTextbox.JMaterialTextbox();
+            this.txt_giam = new JMaterialTextbox.JMaterialTextbox();
             this.label9 = new System.Windows.Forms.Label();
             this.imgTour = new System.Windows.Forms.PictureBox();
             this.txt_gia = new JMaterialTextbox.JMaterialTextbox();
@@ -50,18 +48,24 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.rb_themDV = new System.Windows.Forms.RadioButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.rb_false = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listDV = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgTour)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.listDV);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.jThinButton1);
-            this.panel1.Controls.Add(this.jMaterialTextbox1);
+            this.panel1.Controls.Add(this.txt_giam);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.imgTour);
             this.panel1.Controls.Add(this.txt_gia);
@@ -89,28 +93,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1054, 595);
             this.panel1.TabIndex = 2;
-            // 
-            // listDV
-            // 
-            this.listDV.FormattingEnabled = true;
-            this.listDV.Location = new System.Drawing.Point(131, 271);
-            this.listDV.Name = "listDV";
-            this.listDV.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listDV.Size = new System.Drawing.Size(157, 95);
-            this.listDV.TabIndex = 243;
-            this.listDV.SelectedIndexChanged += new System.EventHandler(this.listDV_SelectedIndexChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.LightGray;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(18, 271);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 22);
-            this.label11.TabIndex = 242;
-            this.label11.Text = "Dịch vụ";
             // 
             // label10
             // 
@@ -143,28 +125,29 @@
             this.jThinButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.jThinButton1.Size = new System.Drawing.Size(103, 43);
             this.jThinButton1.TabIndex = 240;
+            this.jThinButton1.Click += new System.EventHandler(this.jThinButton1_Click);
             // 
-            // jMaterialTextbox1
+            // txt_giam
             // 
-            this.jMaterialTextbox1.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jMaterialTextbox1.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.HintText = null;
-            this.jMaterialTextbox1.IsPassword = false;
-            this.jMaterialTextbox1.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox1.LineThickness = 3;
-            this.jMaterialTextbox1.Location = new System.Drawing.Point(706, 374);
-            this.jMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox1.MaxLength = 32767;
-            this.jMaterialTextbox1.Name = "jMaterialTextbox1";
-            this.jMaterialTextbox1.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox1.ReadOnly = true;
-            this.jMaterialTextbox1.Size = new System.Drawing.Size(157, 23);
-            this.jMaterialTextbox1.TabIndex = 239;
-            this.jMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox1.TextName = "";
+            this.txt_giam.BackColor = System.Drawing.Color.Transparent;
+            this.txt_giam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_giam.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_giam.ForeColors = System.Drawing.Color.Black;
+            this.txt_giam.HintText = null;
+            this.txt_giam.IsPassword = false;
+            this.txt_giam.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_giam.LineThickness = 3;
+            this.txt_giam.Location = new System.Drawing.Point(706, 374);
+            this.txt_giam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_giam.MaxLength = 32767;
+            this.txt_giam.Name = "txt_giam";
+            this.txt_giam.OnFocusedColor = System.Drawing.Color.Black;
+            this.txt_giam.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txt_giam.ReadOnly = true;
+            this.txt_giam.Size = new System.Drawing.Size(157, 23);
+            this.txt_giam.TabIndex = 239;
+            this.txt_giam.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_giam.TextName = "";
             // 
             // label9
             // 
@@ -440,6 +423,82 @@
             this.label23.TabIndex = 217;
             this.label23.Text = "Mã Vé";
             // 
+            // rb_themDV
+            // 
+            this.rb_themDV.AutoSize = true;
+            this.rb_themDV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_themDV.ForeColor = System.Drawing.Color.Black;
+            this.rb_themDV.Location = new System.Drawing.Point(154, 29);
+            this.rb_themDV.Name = "rb_themDV";
+            this.rb_themDV.Size = new System.Drawing.Size(48, 23);
+            this.rb_themDV.TabIndex = 244;
+            this.rb_themDV.Text = "Có";
+            this.rb_themDV.UseVisualStyleBackColor = true;
+            this.rb_themDV.CheckedChanged += new System.EventHandler(this.rb_themDV_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.LightGray;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(24, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(120, 22);
+            this.label12.TabIndex = 245;
+            this.label12.Text = "Thêm dịch vụ";
+            // 
+            // rb_false
+            // 
+            this.rb_false.AutoSize = true;
+            this.rb_false.Checked = true;
+            this.rb_false.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_false.ForeColor = System.Drawing.Color.Black;
+            this.rb_false.Location = new System.Drawing.Point(235, 30);
+            this.rb_false.Name = "rb_false";
+            this.rb_false.Size = new System.Drawing.Size(78, 23);
+            this.rb_false.TabIndex = 246;
+            this.rb_false.TabStop = true;
+            this.rb_false.Text = "Không";
+            this.rb_false.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listDV);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.rb_false);
+            this.groupBox1.Controls.Add(this.rb_themDV);
+            this.groupBox1.Location = new System.Drawing.Point(22, 269);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(347, 225);
+            this.groupBox1.TabIndex = 247;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dịch vụ";
+            // 
+            // listDV
+            // 
+            this.listDV.Enabled = false;
+            this.listDV.FormattingEnabled = true;
+            this.listDV.Location = new System.Drawing.Point(154, 70);
+            this.listDV.Name = "listDV";
+            this.listDV.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.listDV.Size = new System.Drawing.Size(187, 134);
+            this.listDV.TabIndex = 248;
+            this.listDV.SelectedIndexChanged += new System.EventHandler(this.listDV_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.LightGray;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(24, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 22);
+            this.label11.TabIndex = 247;
+            this.label11.Text = "Dịch vụ";
+            // 
             // frmDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +511,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgTour)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -476,12 +537,16 @@
         private System.Windows.Forms.Label label7;
         private JMaterialTextbox.JMaterialTextbox txt_gia;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox listDV;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private JThinButton.JThinButton jThinButton1;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox1;
+        private JMaterialTextbox.JMaterialTextbox txt_giam;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox imgTour;
+        private System.Windows.Forms.RadioButton rb_themDV;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListBox listDV;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RadioButton rb_false;
     }
 }

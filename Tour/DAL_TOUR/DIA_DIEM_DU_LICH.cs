@@ -23,7 +23,7 @@ namespace DAL_TOUR
         public Nullable<int> MA_TINH { get; set; }
         public string TEN_DIA_DIEM { get; set; }
     
-        public virtual TINH TINH { get; set; }
         public virtual ICollection<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
+        public virtual TINH TINH { get; set; }
     }
 }

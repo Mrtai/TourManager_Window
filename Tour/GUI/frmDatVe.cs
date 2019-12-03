@@ -26,6 +26,10 @@ namespace GUI
         tourDatDAL tourdat = new tourDatDAL();
         loaiThanhToanDAL loaiThanhToanService = new loaiThanhToanDAL();
         dichvuDAL dvService = new dichvuDAL();
+        Double tongtien = 0;
+        Double tong = 0;
+        bool flag = false;
+        Double dv = 0;
         public frmDatVe()
         {
             InitializeComponent();
@@ -186,6 +190,14 @@ namespace GUI
                 {
                     img = Image.FromFile(path + "\\Image\\Dubai_Kesari_Tours.jpg");
                 }
+                imgTour.Image = img;
+                imgTour.SizeMode= PictureBoxSizeMode.StretchImage;
+                tong = (l.TOUR.GIA - (l.TOUR.GIA * (l.TOUR.DISCOUNT / 100))).GetValueOrDefault();
+                tongtien = tong;
+                txt_gia.TextName = tongtien.ToString();
+                txt_giam.TextName = l.TOUR.DISCOUNT + "%";
+                flag = false;
+                rb_false.Checked = true;
             }
 
         }
@@ -197,10 +209,86 @@ namespace GUI
 
         private void listDV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            foreach (DICH_VU i in listDV.SelectedItems)
+            if (flag)
             {
-                MessageBox.Show(i.MA_DICH_VU.ToString());
+                tongtien = tong;
+                dv = 0;
+                foreach (DICH_VU i in listDV.SelectedItems)
+                {
+                    dv += i.GIA.GetValueOrDefault();
+                }
+                tongtien += dv;
+                txt_gia.TextName = tongtien.ToString();
+            }
+           
+           
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_themDV_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rb_themDV.Checked)
+            {
+                flag = false;
+                listDV.Enabled = false;
+                tongtien = tong;
+                txt_gia.TextName = tongtien.ToString();
+            }
+            else
+            {
+                flag = true;
+                listDV.Enabled = true;
+            }
+        }
+
+        private void jThinButton1_Click(object sender, EventArgs e)
+        {
+            if (txtDiemDon.TextName == "" || cb_trangthai.SelectedItem == null)
+            {
+                MessageBox.Show("Bạn phải nhập tên điểm đón hoặc trạng thái", "Thông báo");
+                txtDiemDon.Focus();
+            }
+            else
+            {
+                tour_dat.MA_LOAI_TT = Int32.Parse(cb_tt.SelectedValue.ToString());
+                tour_dat.DIEM_DON = txtDiemDon.TextName;
+                tour_dat.NGAY_DAT = dtp_Ngay.Value;
+                tour_dat.MA_LICH = Int32.Parse(cb_LT.SelectedValue.ToString());
+                tour_dat.MA_NV = Int32.Parse(cb_NV.SelectedValue.ToString());
+                tour_dat.MA_KHACH_HANG = Int32.Parse(cb_KH.SelectedValue.ToString());
+                tour_dat.TRANG_THAI = cb_trangthai.SelectedItem.ToString();
+                int idlt = Int32.Parse(cb_LT.SelectedValue.ToString());
+                LICH_KHOI_HANH l = lichService.GetDVByMa(idlt);
+                tour_dat.TONG_TIEN = double.Parse(txt_gia.TextName);
+               
+                if (tourdat.Add(tour_dat) == 1)
+                {
+                    if (flag)
+                    {
+                        DanhSachDichVuDAL danhSachDichVuService = new DanhSachDichVuDAL();
+                        foreach (DICH_VU i in listDV.SelectedItems)
+                        {
+                            DANH_SACH_DICH_VU ds = new DANH_SACH_DICH_VU();
+                            ds.MA_TOUR_DAT = tour_dat.MA_TOUR_DAT;
+                            ds.MA_DICH_VU = i.MA_DICH_VU;
+                            ds.SO_LUONG = 1;
+                            ds.THANH_TIEN = i.GIA.GetValueOrDefault();
+                            danhSachDichVuService.Add(ds);                            
+                        }
+                    }
+                    MessageBox.Show("Thêm thành công", "Thông báo");
+                    load();
+                    resetTextbox();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công", "Thông báo");
+                }
+
             }
         }
     }

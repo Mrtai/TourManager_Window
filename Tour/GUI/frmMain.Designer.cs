@@ -49,7 +49,6 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemDV = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.employeesNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemNV = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
@@ -231,7 +230,6 @@
             this.navBarItemDVu,
             this.navBarItemDV,
             this.navBarItem11,
-            this.navBarItem12,
             this.navBarItem13,
             this.navBarItem14,
             this.navBarItem15,
@@ -252,8 +250,7 @@
             this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDV),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
             this.navBarGroup2.Name = "navBarGroup2";
             this.navBarGroup2.Tag = "4";
             // 
@@ -265,14 +262,9 @@
             // 
             // navBarItem11
             // 
-            this.navBarItem11.Caption = "Thanh toán";
+            this.navBarItem11.Caption = "Danh sách vé";
             this.navBarItem11.Name = "navBarItem11";
             this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Caption = "Danh sách vé";
-            this.navBarItem12.Name = "navBarItem12";
             // 
             // employeesNavBarGroup
             // 
@@ -468,7 +460,6 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItemDV;
         private DevExpress.XtraNavBar.NavBarItem navBarItem11;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btn_dangxuat;

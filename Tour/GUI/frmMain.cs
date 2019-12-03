@@ -220,7 +220,7 @@ namespace GUI
         {
             paneload.Controls.Clear();
 
-            frmDatVe frmdv = new frmDatVe();
+            frmTT frmdv = new frmTT();
             frmdv.Dock = DockStyle.Fill;
             frmdv.TopLevel = false;
             frmdv.TopMost = true;

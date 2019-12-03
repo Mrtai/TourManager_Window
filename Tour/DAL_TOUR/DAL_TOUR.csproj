@@ -142,22 +142,24 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TourModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TourModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TourModel.edmx</DependentUpon>
-      <LastGenOutput>TourModel.Context.cs</LastGenOutput>
-    </None>
     <None Include="TourModel.edmx.diagram">
       <DependentUpon>TourModel.edmx</DependentUpon>
-    </None>
-    <None Include="TourModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TourModel.edmx</DependentUpon>
-      <LastGenOutput>TourModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TourModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+      <LastGenOutput>TourModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TourModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TourModel.edmx</DependentUpon>
+      <LastGenOutput>TourModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

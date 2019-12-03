@@ -16,8 +16,8 @@ namespace DAL_TOUR
     {
         public TOUR()
         {
-            this.LICH_KHOI_HANH = new HashSet<LICH_KHOI_HANH>();
             this.CHUONG_TRINH_TOUR = new HashSet<CHUONG_TRINH_TOUR>();
+            this.LICH_KHOI_HANH = new HashSet<LICH_KHOI_HANH>();
         }
     
         public int MA_TOUR { get; set; }
@@ -29,8 +29,8 @@ namespace DAL_TOUR
         public Nullable<double> DISCOUNT { get; set; }
         public string IMAGE { get; set; }
     
+        public virtual ICollection<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
         public virtual ICollection<LICH_KHOI_HANH> LICH_KHOI_HANH { get; set; }
         public virtual LOAI_TOUR LOAI_TOUR { get; set; }
-        public virtual ICollection<CHUONG_TRINH_TOUR> CHUONG_TRINH_TOUR { get; set; }
     }
 }

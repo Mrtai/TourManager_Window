@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DAL_TOUR
 {
-    class DanhSachDichVuDAL
+    public class DanhSachDichVuDAL
     {
-        private DB_TOUREntities context ;
+        private DB_TOUREntities1 context ;
         public DanhSachDichVuDAL()
         {
             string c = Config.GetConnectionString();
-            context = new DB_TOUREntities(c);
+            context = new DB_TOUREntities1(c);
         }
         public int Add(DANH_SACH_DICH_VU pDS)
         {
@@ -46,6 +46,12 @@ namespace DAL_TOUR
         {
             List<DANH_SACH_DICH_VU> list = new List<DANH_SACH_DICH_VU>();
             list = context.DANH_SACH_DICH_VU.ToList();
+            return list;
+        }
+        public List<DANH_SACH_DICH_VU> GetList(int mave)
+        {
+            List<DANH_SACH_DICH_VU> list = new List<DANH_SACH_DICH_VU>();
+            list = context.DANH_SACH_DICH_VU.Where(m => m.MA_TOUR_DAT == mave).ToList();
             return list;
         }
 

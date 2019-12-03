@@ -8,11 +8,11 @@ namespace DAL_TOUR
 {
     public class nhomDAL
     {
-        private DB_TOUREntities context;
+        private DB_TOUREntities1 context;
         public nhomDAL()
         {
             string c = Config.GetConnectionString();
-            context = new DB_TOUREntities(c);
+            context = new DB_TOUREntities1(c);
         }
         public int Add(NHOM pT)
         {

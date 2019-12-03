@@ -8,11 +8,11 @@ namespace DAL_TOUR
 {
     public class lichKhoiHanhDAL
     {
-        private DB_TOUREntities context ;
+        private DB_TOUREntities1 context ;
         public lichKhoiHanhDAL()
         {
             string c = Config.GetConnectionString();
-            context = new DB_TOUREntities(c);
+            context = new DB_TOUREntities1(c);
         }
         public int Add(LICH_KHOI_HANH pLKH)
         {

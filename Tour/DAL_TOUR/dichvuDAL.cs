@@ -8,11 +8,11 @@ namespace DAL_TOUR
 {
     public class dichvuDAL
     {
-        private DB_TOUREntities context;
+        private DB_TOUREntities1 context;
         public dichvuDAL()
         {
             string c = Config.GetConnectionString();
-            context = new DB_TOUREntities(c);
+            context = new DB_TOUREntities1(c);
         }
         public int AddNewDichVu(DICH_VU pDV)
         {
