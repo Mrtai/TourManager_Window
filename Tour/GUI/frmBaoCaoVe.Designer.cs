@@ -61,7 +61,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1048, 108);
+            this.panel1.Size = new System.Drawing.Size(1048, 57);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(349, 26);
+            this.label1.Location = new System.Drawing.Point(367, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 36);
             this.label1.TabIndex = 0;
@@ -77,15 +77,18 @@
             // 
             // txt_from
             // 
-            this.txt_from.Location = new System.Drawing.Point(153, 153);
+            this.txt_from.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_from.Location = new System.Drawing.Point(152, 89);
             this.txt_from.Name = "txt_from";
             this.txt_from.Size = new System.Drawing.Size(200, 20);
             this.txt_from.TabIndex = 1;
+            this.txt_from.Value = new System.DateTime(2019, 12, 3, 18, 12, 48, 0);
             this.txt_from.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // txt_to
             // 
-            this.txt_to.Location = new System.Drawing.Point(569, 153);
+            this.txt_to.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_to.Location = new System.Drawing.Point(568, 89);
             this.txt_to.Name = "txt_to";
             this.txt_to.Size = new System.Drawing.Size(200, 20);
             this.txt_to.TabIndex = 2;
@@ -95,7 +98,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(26, 151);
+            this.label28.Location = new System.Drawing.Point(25, 87);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(84, 24);
             this.label28.TabIndex = 149;
@@ -106,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(443, 151);
+            this.label2.Location = new System.Drawing.Point(442, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 150;
@@ -117,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 203);
+            this.label3.Location = new System.Drawing.Point(25, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 24);
             this.label3.TabIndex = 152;
@@ -128,7 +131,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(443, 198);
+            this.label4.Location = new System.Drawing.Point(442, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 24);
             this.label4.TabIndex = 154;
@@ -228,7 +231,7 @@
             this.btn_ngay.HoverBorder = System.Drawing.Color.Empty;
             this.btn_ngay.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.btn_ngay.LineThickness = 2;
-            this.btn_ngay.Location = new System.Drawing.Point(808, 144);
+            this.btn_ngay.Location = new System.Drawing.Point(807, 80);
             this.btn_ngay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_ngay.Name = "btn_ngay";
             this.btn_ngay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -250,7 +253,7 @@
             this.jThinButton1.HoverBorder = System.Drawing.Color.Empty;
             this.jThinButton1.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.jThinButton1.LineThickness = 2;
-            this.jThinButton1.Location = new System.Drawing.Point(808, 193);
+            this.jThinButton1.Location = new System.Drawing.Point(807, 129);
             this.jThinButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jThinButton1.Name = "jThinButton1";
             this.jThinButton1.Size = new System.Drawing.Size(86, 29);
@@ -271,18 +274,19 @@
             this.btn_bc.HoverBorder = System.Drawing.Color.Empty;
             this.btn_bc.HoverFontColor = System.Drawing.SystemColors.Highlight;
             this.btn_bc.LineThickness = 2;
-            this.btn_bc.Location = new System.Drawing.Point(808, 238);
+            this.btn_bc.Location = new System.Drawing.Point(386, 162);
             this.btn_bc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_bc.Name = "btn_bc";
             this.btn_bc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_bc.Size = new System.Drawing.Size(119, 34);
             this.btn_bc.TabIndex = 160;
+            this.btn_bc.Click += new System.EventHandler(this.btn_bc_Click);
             // 
             // dpMonth
             // 
             this.dpMonth.CustomFormat = "MM";
             this.dpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpMonth.Location = new System.Drawing.Point(153, 205);
+            this.dpMonth.Location = new System.Drawing.Point(152, 141);
             this.dpMonth.Name = "dpMonth";
             this.dpMonth.Size = new System.Drawing.Size(200, 20);
             this.dpMonth.TabIndex = 161;
@@ -291,7 +295,7 @@
             // 
             this.dpYear.CustomFormat = "yyyy";
             this.dpYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpYear.Location = new System.Drawing.Point(569, 203);
+            this.dpYear.Location = new System.Drawing.Point(568, 139);
             this.dpYear.Name = "dpYear";
             this.dpYear.Size = new System.Drawing.Size(200, 20);
             this.dpYear.TabIndex = 162;

@@ -346,6 +346,7 @@ namespace GUI
         // Khai báo trùng với tên đặt trong file cần điền dữ liệu ra
         public const string T_BieuMau = "BieuMau";
         public const string T_DanhMucKhoa = "DanhMucKhoa";
+        public const string T_DanhSachVe = "DanhSachVe";
         #endregion
 
         #region ---- Variables ----
@@ -520,7 +521,7 @@ namespace GUI
                 DateTime currentDate = DateTime.Now;
                 string ngay = "Ngày " + currentDate.Day + " tháng " + currentDate.Month + " năm " + currentDate.Year;
                 pReplacer.Add("%NgayThangNam", ngay);
-                pReplacer.Add("%Tong", "100");
+                //pReplacer.Add("%Tong", "100");
             }
         }
 
@@ -882,7 +883,10 @@ namespace GUI
 
                 case T_DanhMucKhoa:
                     // path += Constants.FILE_KEHOACHTD;
-                    arrByte = File.ReadAllBytes("DanhMucKhoa.xls").ToArray();
+                    arrByte = File.ReadAllBytes("DanhSachVe.xls").ToArray();
+                    break;
+                case T_DanhSachVe:
+                    arrByte = File.ReadAllBytes("DanhSachVe.xls").ToArray();
                     break;
                     #endregion
             }
@@ -961,7 +965,24 @@ namespace GUI
         #endregion
 
 
-        public bool ExportKhoa(List<TOUR_DAT> dataSource, ref string fileName, bool isPrintPreview)
+        //public bool ExportVe(List<TOUR_DAT> dataSource, ref string fileName, bool isPrintPreview)
+        //{
+        //    // Check if data is null
+        //    if (dataSource == null || (dataSource != null && dataSource.Count == 0))
+        //    {
+        //        return false;
+        //    }
+
+           
+        //    Dictionary<string, string> replacer = new Dictionary<string, string>();
+        //    //DateTime dateTime = new DateTime();
+        //    //replacer.Add(V_NGAYTHANGANAM, dateTime.ToShortDateString());
+
+        //    BuildReplacerCurrentDate(ref replacer);
+
+        //    return OutSimpleReport(dataSource, replacer, "DanhMucKhoa", isPrintPreview, ref fileName);
+        //}
+        public bool ExportExcelVe(List<Ve> dataSource, ref string fileName,bool isPrintPreview)
         {
             // Check if data is null
             if (dataSource == null || (dataSource != null && dataSource.Count == 0))
@@ -969,20 +990,14 @@ namespace GUI
                 return false;
             }
 
-            // Set the So thu tu
-            //for (int i = 1; i <= dataSource.Count; i++)
-            //{
-            //    dataSource[i - 1].STT = i.ToString();
-            //}
-            //  string tongSo = dataSource.Sum(t => t.SoLuong).Value.ToString();
-            // Create replacer
-            Dictionary<string, string> replacer = new Dictionary<string, string>();
 
-            //replacer.Add(V_TONGSO, tongSo);
+            Dictionary<string, string> replacer = new Dictionary<string, string>();
+            //DateTime dateTime = new DateTime();
+            //replacer.Add(V_NGAYTHANGANAM, dateTime.ToShortDateString());
 
             BuildReplacerCurrentDate(ref replacer);
 
-            return OutSimpleReport(dataSource, replacer, "DanhSachVe", isPrintPreview, ref fileName);
+            return OutSimpleReport(dataSource, replacer, T_DanhSachVe, isPrintPreview, ref fileName);
         }
 
 

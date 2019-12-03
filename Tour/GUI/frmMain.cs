@@ -230,5 +230,20 @@ namespace GUI
             paneload.Controls.Add(frmdv);
             frmdv.Show();
         }
+
+        private void navBarItem14_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            frmBaoCaoVe frmdv = new frmBaoCaoVe();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
     }
 }

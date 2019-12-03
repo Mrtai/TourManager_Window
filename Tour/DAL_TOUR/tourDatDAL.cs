@@ -58,19 +58,20 @@ namespace DAL_TOUR
             result = context.TOUR_DAT.FirstOrDefault(m => m.MA_TOUR_DAT == pMaTD);
             return result;
         }
-        //public List<TOUR_DAT> GetDVByFilterNgay(System.DateTime from, System.DateTime to)
-        //{
-        //    List<TOUR_DAT> list = new List<TOUR_DAT>();
+        public List<TOUR_DAT> GetDVByFilterNgay(System.DateTime from, System.DateTime to)
+        {
+            
+            List<TOUR_DAT> list = new List<TOUR_DAT>();
 
-        //    list = context.TOUR_DAT.Where(m => m.NGAY_DAT >= from && m.NGAY_DAT <= to).ToList();
-        //    return list;
-        //}
-        //public List<TOUR_DAT> GetDVByFilterNgay(int month, int year)
-        //{
-        //    List<TOUR_DAT> list = new List<TOUR_DAT>();
+            list = context.TOUR_DAT.Where(m => m.NGAY_DAT >= from && m.NGAY_DAT <= to).ToList();
+            return list;
+        }
+        public List<TOUR_DAT> GetDVByFilterNgay(int month, int year)
+        {
+            List<TOUR_DAT> list = new List<TOUR_DAT>();
 
-        //    list = context.TOUR_DAT.Where(m => m.NGAY_DAT.Value.Month == month && m.NGAY_DAT.Value.Year == year).ToList();
-        //    return list;
-        //}
+            list = context.TOUR_DAT.Where(m => m.NGAY_DAT.Value.Month == month && m.NGAY_DAT.Value.Year == year).ToList();
+            return list;
+        }
     }
 }

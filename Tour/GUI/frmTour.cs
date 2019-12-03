@@ -179,6 +179,7 @@ namespace GUI
             txtGia.TextName = gridView1.GetRowCellValue(position, "GIA").ToString();
             txtGiamGia.TextName = gridView1.GetRowCellValue(position, "DISCOUNT").ToString();
             int id = Int32.Parse(txtMaTour.TextName);
+            nameimg.Text = "";
             //Bitmap img = 
             string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
             Image img;
@@ -205,6 +206,7 @@ namespace GUI
             txtSoCho.TextName = "";
             txtSoNgay.TextName = "";
             txtTen.TextName = "";
+            nameimg.Text = "";
             bbiAdd.Enabled = true;
         }
 

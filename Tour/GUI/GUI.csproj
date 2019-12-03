@@ -226,6 +226,7 @@
     <Compile Include="Report\ExcelExport.cs" />
     <Compile Include="Report\FileCommon.cs" />
     <Compile Include="Report\Global.cs" />
+    <Compile Include="Report\Ve.cs" />
     <EmbeddedResource Include="frmBaoCaoVe.resx">
       <DependentUpon>frmBaoCaoVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +298,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Template\DanhSachVe.xls" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -304,9 +306,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Template\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Image\Dubai_Kesari_Tours.jpg" />
   </ItemGroup>

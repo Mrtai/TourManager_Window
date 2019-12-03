@@ -38,6 +38,7 @@
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nameimg = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtGiamGia = new JMaterialTextbox.JMaterialTextbox();
@@ -65,7 +66,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.nameimg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -179,6 +179,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 452);
             this.panel1.TabIndex = 2;
+            // 
+            // nameimg
+            // 
+            this.nameimg.AutoSize = true;
+            this.nameimg.Location = new System.Drawing.Point(12, 288);
+            this.nameimg.Name = "nameimg";
+            this.nameimg.Size = new System.Drawing.Size(0, 13);
+            this.nameimg.TabIndex = 207;
+            this.nameimg.Visible = false;
             // 
             // button1
             // 
@@ -514,14 +523,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // nameimg
-            // 
-            this.nameimg.AutoSize = true;
-            this.nameimg.Location = new System.Drawing.Point(12, 288);
-            this.nameimg.Name = "nameimg";
-            this.nameimg.Size = new System.Drawing.Size(0, 13);
-            this.nameimg.TabIndex = 207;
             // 
             // frmTour
             // 

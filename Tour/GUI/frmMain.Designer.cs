@@ -46,9 +46,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.officeNavigationBar = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
             this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItemDV = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.employeesNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemNV = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
@@ -63,12 +62,12 @@
             this.navBarItemDD = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemDV = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemCH = new DevExpress.XtraNavBar.NavBarItem();
             this.paneload = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
@@ -211,7 +210,7 @@
             // 
             // navBarControl
             // 
-            this.navBarControl.ActiveGroup = this.navBarGroup2;
+            this.navBarControl.ActiveGroup = this.navBarGroup3;
             this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.employeesNavBarGroup,
@@ -230,9 +229,7 @@
             this.navBarItemDVu,
             this.navBarItemDV,
             this.navBarItem11,
-            this.navBarItem13,
             this.navBarItem14,
-            this.navBarItem15,
             this.navBarItemDD,
             this.navBarItem1,
             this.navBarItem3});
@@ -244,27 +241,20 @@
             this.navBarControl.TabIndex = 0;
             this.navBarControl.Text = "navBarControl";
             // 
-            // navBarGroup2
+            // navBarGroup3
             // 
-            this.navBarGroup2.Caption = "Vé";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDV),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
-            this.navBarGroup2.Name = "navBarGroup2";
-            this.navBarGroup2.Tag = "4";
+            this.navBarGroup3.Caption = "Báo cáo";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14)});
+            this.navBarGroup3.Name = "navBarGroup3";
+            this.navBarGroup3.Tag = "5";
             // 
-            // navBarItemDV
+            // navBarItem14
             // 
-            this.navBarItemDV.Caption = "Đặt vé";
-            this.navBarItemDV.Name = "navBarItemDV";
-            this.navBarItemDV.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemDV_LinkClicked);
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Danh sách vé";
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
+            this.navBarItem14.Caption = "Vé";
+            this.navBarItem14.Name = "navBarItem14";
+            this.navBarItem14.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem14_LinkClicked);
             // 
             // employeesNavBarGroup
             // 
@@ -362,30 +352,26 @@
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
             // 
-            // navBarGroup3
+            // navBarGroup2
             // 
-            this.navBarGroup3.Caption = "Báo cáo";
-            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15)});
-            this.navBarGroup3.Name = "navBarGroup3";
-            this.navBarGroup3.Tag = "5";
+            this.navBarGroup2.Caption = "Vé";
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDV),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
+            this.navBarGroup2.Name = "navBarGroup2";
+            this.navBarGroup2.Tag = "4";
             // 
-            // navBarItem13
+            // navBarItemDV
             // 
-            this.navBarItem13.Caption = "Tour";
-            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItemDV.Caption = "Đặt vé";
+            this.navBarItemDV.Name = "navBarItemDV";
+            this.navBarItemDV.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemDV_LinkClicked);
             // 
-            // navBarItem14
+            // navBarItem11
             // 
-            this.navBarItem14.Caption = "Vé";
-            this.navBarItem14.Name = "navBarItem14";
-            // 
-            // navBarItem15
-            // 
-            this.navBarItem15.Caption = "Doanh thu";
-            this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem11.Caption = "Danh sách vé";
+            this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
             // 
             // navBarItemCH
             // 
@@ -401,11 +387,23 @@
             this.paneload.Size = new System.Drawing.Size(929, 412);
             this.paneload.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(307, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 41);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Quản lý tour";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 667);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.paneload);
             this.Controls.Add(this.navBarControl);
             this.Controls.Add(this.officeNavigationBar);
@@ -443,9 +441,7 @@
         private DevExpress.XtraBars.BarButtonItem customersBarButtonItem;
         private DevExpress.XtraNavBar.NavBarControl navBarControl;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
         private DevExpress.XtraNavBar.NavBarGroup employeesNavBarGroup;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNV;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
@@ -471,5 +467,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraEditors.PanelControl paneload;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private System.Windows.Forms.Label label1;
     }
 }
