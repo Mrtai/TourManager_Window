@@ -60,5 +60,11 @@ namespace DAL_TOUR
             result = context.NHAN_VIEN_NHOM.FirstOrDefault(m => m.MA_NV == pMaNV);
             return result;
         }
+        public List<NHAN_VIEN_NHOM> GetDVByMaNhom(int pMaNhom)
+        {
+            List<NHAN_VIEN_NHOM> result = new List<NHAN_VIEN_NHOM>();
+            result = context.NHAN_VIEN_NHOM.Where(m => m.MA_NHOM == pMaNhom).ToList();
+            return result;
+        }
     }
 }

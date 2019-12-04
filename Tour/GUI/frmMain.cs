@@ -245,5 +245,33 @@ namespace GUI
             paneload.Controls.Add(frmdv);
             frmdv.Show();
         }
+
+        private void navBarItem4_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            paneload.Controls.Clear();
+
+            FrmNhom frmdv = new FrmNhom();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
+
+        private void navBarItem5_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            FrmThemNVNhom frmdv = new FrmThemNVNhom();
+            frmdv.Dock = DockStyle.Fill;
+            frmdv.TopLevel = false;
+            frmdv.TopMost = true;
+            frmdv.MaximizeBox = true;
+            frmdv.MinimizeBox = false;
+            frmdv.StartPosition = FormStartPosition.CenterScreen;
+            paneload.Controls.Add(frmdv);
+            frmdv.Show();
+        }
     }
 }

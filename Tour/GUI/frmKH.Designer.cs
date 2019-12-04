@@ -30,6 +30,7 @@
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
             this.bbiEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,15 +41,20 @@
             this.txtTen = new JMaterialTextbox.JMaterialTextbox();
             this.dtp_NgayS = new System.Windows.Forms.DateTimePicker();
             this.txtSDT = new JMaterialTextbox.JMaterialTextbox();
+            this.txtMaKH = new JMaterialTextbox.JMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblma = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.gc_kh = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtMaKH = new JMaterialTextbox.JMaterialTextbox();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc_kh)).BeginInit();
@@ -121,6 +127,15 @@
             this.bbiEdit.ImageOptions.ImageUri.Uri = "Edit;Size32x32";
             this.bbiEdit.Name = "bbiEdit";
             this.bbiEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEdit_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Reset";
+            this.barButtonItem1.Id = 12;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -281,6 +296,28 @@
             this.txtSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSDT.TextName = "";
             // 
+            // txtMaKH
+            // 
+            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.ForeColors = System.Drawing.Color.Black;
+            this.txtMaKH.HintText = null;
+            this.txtMaKH.IsPassword = false;
+            this.txtMaKH.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMaKH.LineThickness = 3;
+            this.txtMaKH.Location = new System.Drawing.Point(164, 29);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaKH.MaxLength = 32767;
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtMaKH.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtMaKH.ReadOnly = false;
+            this.txtMaKH.Size = new System.Drawing.Size(149, 28);
+            this.txtMaKH.TabIndex = 201;
+            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaKH.TextName = "";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -335,15 +372,6 @@
             this.label3.TabIndex = 196;
             this.label3.Text = "Mã Khách Hàng";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Reset";
-            this.barButtonItem1.Id = 12;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // gc_kh
             // 
             this.gc_kh.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -358,30 +386,64 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
             this.gridView1.GridControl = this.gc_kh;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // txtMaKH
+            // gridColumn1
             // 
-            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Font_Size = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.ForeColors = System.Drawing.Color.Black;
-            this.txtMaKH.HintText = null;
-            this.txtMaKH.IsPassword = false;
-            this.txtMaKH.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaKH.LineThickness = 3;
-            this.txtMaKH.Location = new System.Drawing.Point(164, 29);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaKH.MaxLength = 32767;
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtMaKH.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtMaKH.ReadOnly = false;
-            this.txtMaKH.Size = new System.Drawing.Size(149, 28);
-            this.txtMaKH.TabIndex = 201;
-            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaKH.TextName = "";
+            this.gridColumn1.Caption = "Mã khách hàng";
+            this.gridColumn1.FieldName = "MA_KHACH_HANG";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên KH";
+            this.gridColumn2.FieldName = "TEN";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Điện thoai";
+            this.gridColumn3.FieldName = "DIEN_THOAI";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Ngày sinh";
+            this.gridColumn4.FieldName = "NGAY_SINH";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Email";
+            this.gridColumn5.FieldName = "EMAIL";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Địa chỉ";
+            this.gridColumn6.FieldName = "DIA_CHI";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
             // 
             // frmKH
             // 
@@ -430,5 +492,11 @@
         private DevExpress.XtraGrid.GridControl gc_kh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private JMaterialTextbox.JMaterialTextbox txtMaKH;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

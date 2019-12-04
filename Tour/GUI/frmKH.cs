@@ -102,11 +102,12 @@ namespace GUI
             }
             else
             {
-                khach_hang.TEN = txtTen.TextName;
-                khach_hang.DIEN_THOAI = txtSDT.TextName;
-                khach_hang.DIA_CHI = txtDC.TextName;
-                khach_hang.EMAIL = txtEmail.TextName;
-                if (khachhang.Update(khach_hang) == 1)
+                KHACH_HANG kh = khachhang.GetDVByMa(Int32.Parse(txtMaKH.TextName));
+                kh.TEN = txtTen.TextName;
+                kh.DIEN_THOAI = txtSDT.TextName;
+                kh.DIA_CHI = txtDC.TextName;
+                kh.EMAIL = txtEmail.TextName;
+                if (khachhang.Update(kh) == 1)
                 {
                     MessageBox.Show("Sửa thành công", "Thông báo");
                     load();

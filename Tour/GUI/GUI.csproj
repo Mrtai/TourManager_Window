@@ -202,11 +202,23 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhom.Designer.cs">
+      <DependentUpon>FrmNhom.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNV.Designer.cs">
       <DependentUpon>frmNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemNVNhom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemNVNhom.Designer.cs">
+      <DependentUpon>FrmThemNVNhom.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTour.cs">
       <SubType>Form</SubType>
@@ -266,8 +278,14 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhom.resx">
+      <DependentUpon>FrmNhom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNV.resx">
       <DependentUpon>frmNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemNVNhom.resx">
+      <DependentUpon>FrmThemNVNhom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTour.resx">
       <DependentUpon>frmTour.cs</DependentUpon>
